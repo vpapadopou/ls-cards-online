@@ -10,12 +10,12 @@ describe('Component: Navigation', () => {
     render(<Navigation onClick={stub} />);
   });
 
-  test('should display the Navigation title text inside <span>', () => {
-    expect(screen.getByText('Liberating Structures Card Deck', { selector: 'span' })).toBeDefined();
+  test('should display the Navigation title text inside <h2>', () => {
+    expect(screen.getByText('Liberating Structures Card Deck', { selector: 'h2' })).toBeDefined();
   });
 
-  test('should call the provided callback function when the About link is clicked', () => {
-    const card = screen.getByText('About', { selector: 'a' });
+  test('should call the provided callback function when the About button is clicked', () => {
+    const card = screen.getByText('About', { selector: 'button' });
     fireEvent.click(card);
 
     // We expect the callback with no parameters
