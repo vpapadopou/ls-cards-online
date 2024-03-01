@@ -1,28 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Modal } from 'flowbite-react';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
 
 import AboutCard from '../about-card/AboutCard';
 import LSCard from '../ls-card/LSCard';
 
-/* Use a custom modal theme in order to have a full size modal
-   instead of one that uses max-h-[90vh] and shows an ugly
-   scrollbar */
-const customModalTheme = {
-  content: {
-    base: 'relative h-full w-full p-4',
-    inner: 'relative rounded-lg bg-white shadow dark:bg-gray-700 flex flex-col max-h-fit',
-  },
-};
-
 function CardModal({ openModal, setOpenModal, cardData }) {
   return (
-    <Modal theme={customModalTheme} size="md" show={openModal} onClose={() => setOpenModal(false)} dismissible popup>
-      <Modal.Header />
-      {/* If card data is provided, show LS Card. Otherwise show the About Card. */}
-      <Modal.Body>{cardData ? <LSCard data={cardData} /> : <AboutCard />}</Modal.Body>
-    </Modal>
+    <Dialog
+      open={openModal}
+      onOpenChange={(open) => {
+        setOpenModal(open);
+      }}
+    >
+      <DialogContent className="max-w-sm">
+        {/* <DialogContent className="max-w-sm max-h-screen overflow-y-scroll"> */}
+        {/* If card data is provided, show LS Card. Otherwise show the About Card. */}
+        {cardData ? <LSCard data={cardData} /> : <AboutCard />}
+      </DialogContent>
+    </Dialog>
   );
 }
 
