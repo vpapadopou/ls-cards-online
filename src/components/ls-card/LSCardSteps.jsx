@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Badge } from '@/components/ui/badge';
+
 function LSCardSteps({ title, steps }) {
   return (
     <div>
@@ -17,12 +19,9 @@ function LSCardSteps({ title, steps }) {
             {/* Step time (Needs a div wrapper) */}
             {step.time && (
               <div className="flex flex-row-reverse">
-                <span
-                  className="font-medium text-xs text-center min-w-14 text-nowrap h-6 px-3 py-1 rounded-full bg-gray-200 text-gray-800 dark:text-gray-700 ml-auto"
-                  data-testid="step-time"
-                >
+                <Badge className="min-w-14 h-6 text-center text-nowrap ml-auto" variant="secondary" data-testid="step-time">
                   {step.time}
-                </span>
+                </Badge>
               </div>
             )}
             {/* /Step time (Needs a div wrapper) */}

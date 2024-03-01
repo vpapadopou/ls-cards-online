@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Badge } from '@/components/ui/badge';
+
 function LSCardHeader({ data }) {
   return (
     <>
@@ -43,7 +45,7 @@ function LSCardHeader({ data }) {
         ))}
         {/* /Loop through categories */}
         {/* Time */}
-        <div className="bg-gray-200 dark:text-gray-700 px-3 py-1 rounded-full text-xs font-medium text-gray-800  ml-auto">{`${data.time} min`}</div>
+        <Badge className="ml-auto" variant="secondary">{`${data.time} min`}</Badge>
         {/* /Time */}
       </div>
       {/* /Row 2 - Categories & Time */}

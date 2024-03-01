@@ -40,7 +40,7 @@ describe('Component: LSCardSteps', () => {
     expect(screen.getAllByTestId('step-time').length).toEqual(1);
   });
 
-  test('should display time for the first step text inside <span>', () => {
-    expect(screen.getByText('5 min', { selector: 'span' })).toBeDefined();
+  test('should display time for the first step text inside <div>', () => {
+    expect(screen.getByText('5 min', { selector: 'div' })).toBeDefined();
   });
 });
