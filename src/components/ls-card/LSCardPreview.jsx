@@ -1,30 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Card } from 'flowbite-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 import LSCardHeader from './LSCardHeader';
 
-/* Use a custom card theme in order to have a proper full size
-   card with minimum height that appears the same as all other
-   cards */
-const customCardTheme = {
-  root: {
-    children: 'flex flex-col place-content-evenly gap-4 min-h-44 p-4',
-  },
-};
-
 function LSCardPreview({ data, onClick }) {
   return (
-    // On click send back the card id so we can now which card we show in the modal
-    <Card
-      className="max-w-sm hover:bg-gray-50 dark:hover:bg-gray-600"
-      theme={customCardTheme}
-      onClick={() => onClick(data.id)}
-      onKeyDown={() => onClick(data.id)}
-      role="button"
-    >
-      <LSCardHeader data={data} />
+    <Card className="max-w-sm hover:bg-gray-50 dark:hover:bg-gray-600" onClick={() => onClick(data.id)} role="button">
+      <CardContent className="flex flex-col min-h-44 place-content-between gap-4 p-4">
+        <LSCardHeader data={data} />
+      </CardContent>
     </Card>
   );
 }
