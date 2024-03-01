@@ -14,11 +14,10 @@ module.exports = {
   settings: {
     'import/resolver': {
       alias: {
-        map: [
-          ['@', './src']
-        ]
+        map: [['@', './src']],
       },
-    react: { version: '18.2' }
+    },
+    react: { version: '18.2' },
   },
   plugins: ['react', 'react-refresh'],
   rules: {
