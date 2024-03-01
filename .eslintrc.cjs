@@ -9,12 +9,13 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', 'src/components/ui/*.jsx'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: {
     'import/resolver': {
       alias: {
         map: [['@', './src']],
+        extensions: ['.js', '.jsx'],
       },
     },
     react: { version: '18.2' },
