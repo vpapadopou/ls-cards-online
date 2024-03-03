@@ -6,13 +6,13 @@ import { Badge } from '@/components/ui/badge';
 function LSCardSteps({ title, steps }) {
   return (
     <div>
-      <h5 className="text-m font-bold tracking-tight text-gray-700 dark:text-white">{title}</h5>
+      <h5 className="scroll-m-20 text-m font-semibold tracking-tight text-foreground">{title}</h5>
 
       <div className="flex flex-col gap-3">
         {steps.map((step) => (
           <div className="flex flex-row" key={step.id}>
             {/* Step text */}
-            <p className="grow font-normal text-sm whitespace-pre-line text-gray-500 dark:text-gray-400 mr-5" data-testid="step-description">
+            <p className="text-sm font-normal tracking-normal grow whitespace-pre-line text-muted-foreground mr-5" data-testid="step-description">
               {step.description}
             </p>
             {/* /Step text */}

@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 function LSCardText({ title, text }) {
   return (
     <div>
-      <h5 className="text-m font-bold tracking-tight text-gray-700 dark:text-white">{title}</h5>
-      <p className="font-normal text-sm whitespace-pre-line text-gray-500 dark:text-gray-400">{text}</p>
+      <h5 className="scroll-m-20 text-m font-semibold tracking-tight text-foreground">{title}</h5>
+      <p className="text-sm font-normal tracking-normal whitespace-pre-line text-muted-foreground">{text}</p>
     </div>
   );
 }

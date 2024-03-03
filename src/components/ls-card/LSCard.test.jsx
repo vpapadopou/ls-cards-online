@@ -26,8 +26,8 @@ describe('Component: LSCard', () => {
     render(<LSCard data={testCardData} />);
   });
 
-  test('should display the title text inside <h3>', () => {
-    expect(screen.getByText('Testing Title', { selector: 'h3' })).toBeDefined();
+  test('should display the title text inside <h4>', () => {
+    expect(screen.getByText('Testing Title', { selector: 'h4' })).toBeDefined();
   });
 
   test('should display "Invitation" as title text inside <h5>', () => {

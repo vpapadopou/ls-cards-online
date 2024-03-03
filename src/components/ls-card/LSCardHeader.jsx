@@ -10,7 +10,7 @@ function LSCardHeader({ data }) {
       <div className="flex flex-row space-x-5">
         {/* Left column - Icon */}
         <div className="basis-1/5 pt-2">
-          <img className="max-h-16" src={data.logo} alt="1-2-4-All Icon" data-testid="card-logo" />
+          <img className="max-h-16" src={data.logo} alt="Card Icon" data-testid="card-logo" />
         </div>
         {/* /Left column - Icon */}
         {/* Right column - Details */}
@@ -18,7 +18,7 @@ function LSCardHeader({ data }) {
           {/* Title & actions */}
           <div className="flex items-start">
             {/* Title */}
-            <h3 className="text-xl font-bold tracking-tight text-gray-700 dark:text-white mt-1">{data.title}</h3>
+            <h4 className="scroll-m-20 text-xl font-semibold tracking-tight text-foreground mt-1">{data.title}</h4>
             {/* /Title */}
             {/* Actions */}
             <div className="flex flex-row ml-auto" />
@@ -26,7 +26,7 @@ function LSCardHeader({ data }) {
           </div>
           {/* /Title & actions */}
           {/* Short description */}
-          <p className="text-base font-normal text-gray-500 dark:text-gray-400">{data.description}</p>
+          <p className="text-sm text-muted-foreground">{data.description}</p>
           {/* /Short description */}
         </div>
         {/* /Right column - Details */}
@@ -38,7 +38,7 @@ function LSCardHeader({ data }) {
         {data.categories.map((item) => (
           <div className="flex items-center mr-3" key={item.title}>
             <span className={`w-3 h-3 ${item.color} rounded-full mr-2`} data-testid="category-color" />
-            <span className="text-gray-500 dark:text-gray-400 font-bold text-sm" data-testid="category-title">
+            <span className="text-sm font-bold text-muted-foreground" data-testid="category-title">
               {item.title}
             </span>
           </div>

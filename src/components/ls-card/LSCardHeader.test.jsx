@@ -24,8 +24,8 @@ describe('Component: LSCardHeader', () => {
     expect(screen.getByTestId('card-logo').src).toContain('testing_path');
   });
 
-  test('should display the title text inside <h3>', () => {
-    expect(screen.getByText('Testing Title', { selector: 'h3' })).toBeDefined();
+  test('should display the title text inside <h4>', () => {
+    expect(screen.getByText('Testing Title', { selector: 'h4' })).toBeDefined();
   });
 
   test('should display the description text inside <p>', () => {

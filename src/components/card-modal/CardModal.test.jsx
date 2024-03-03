@@ -22,32 +22,32 @@ describe('Component: CardModal', () => {
     stringWith: 'Testing String With',
   };
 
-  test('should call LSCard component when the modal is open and Card Data is passed. Diplay the card title text inside <h3>', () => {
+  test('should call LSCard component when the modal is open and Card Data is passed. Diplay the card title text inside <h4>', () => {
     const stub = vi.fn();
     render(<CardModal cardData={testCardData} openModal setOpenModal={stub} />);
 
-    expect(screen.getByText('Testing Title', { selector: 'h3' })).toBeDefined();
+    expect(screen.getByText('Testing Title', { selector: 'h4' })).toBeDefined();
   });
 
-  test('should call AboutCard component when the modal is open and Card Data is NOT passed. Diplay the card title text inside <h3>', () => {
+  test('should call AboutCard component when the modal is open and Card Data is NOT passed. Diplay the card title text inside <h4>', () => {
     const stub = vi.fn();
     render(<CardModal cardData={null} openModal setOpenModal={stub} />);
 
-    expect(screen.getByText('Liberating Structures Card Deck', { selector: 'h3' })).toBeDefined();
+    expect(screen.getByText('Liberating Structures Card Deck', { selector: 'h4' })).toBeDefined();
   });
 
-  test('should NOT diplay the card title text inside <h3> when the modal is closed. Card Data is passed', () => {
+  test('should NOT diplay the card title text inside <h4> when the modal is closed. Card Data is passed', () => {
     const stub = vi.fn();
     render(<CardModal cardData={testCardData} openModal={false} setOpenModal={stub} />);
 
-    expect(screen.queryByText('Testing Title', { selector: 'h3' })).toBeNull();
+    expect(screen.queryByText('Testing Title', { selector: 'h4' })).toBeNull();
   });
 
-  test('should NOT diplay the card title text inside <h3> when the modal is closed. Card Data is NOT passed', () => {
+  test('should NOT diplay the card title text inside <h4> when the modal is closed. Card Data is NOT passed', () => {
     const stub = vi.fn();
     render(<CardModal cardData={null} openModal={false} setOpenModal={stub} />);
 
-    expect(screen.queryByText('Liberating Structures Card Deck', { selector: 'h3' })).toBeNull();
+    expect(screen.queryByText('Liberating Structures Card Deck', { selector: 'h4' })).toBeNull();
   });
 
   test('should call the provided callback function when the card X button is clicked', () => {

@@ -7,7 +7,7 @@ import LSCardHeader from './LSCardHeader';
 
 function LSCardPreview({ data, onClick }) {
   return (
-    <Card className="max-w-sm hover:bg-gray-50 dark:hover:bg-gray-600" onClick={() => onClick(data.id)} role="button">
+    <Card className="max-w-sm hover:bg-accent" onClick={() => onClick(data.id)} role="button">
       <CardContent className="flex flex-col min-h-44 place-content-between gap-4 p-4">
         <LSCardHeader data={data} />
       </CardContent>

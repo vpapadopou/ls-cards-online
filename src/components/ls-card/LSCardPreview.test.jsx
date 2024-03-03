@@ -20,7 +20,7 @@ describe('Component: LSCardPreview', () => {
     cleanup();
     render(<LSCardPreview data={testCardData} onClick={() => {}} />);
 
-    expect(screen.getByText('Testing Title', { selector: 'h3' })).toBeDefined();
+    expect(screen.getByText('Testing Title', { selector: 'h4' })).toBeDefined();
   });
 
   test('should call the provided callback function when the card is clicked', () => {

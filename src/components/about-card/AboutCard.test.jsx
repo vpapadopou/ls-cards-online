@@ -8,8 +8,8 @@ describe('Component: AboutCard', () => {
     render(<AboutCard />);
   });
 
-  test('should display the title text inside <h3>', () => {
-    expect(screen.getByText('Liberating Structures Card Deck', { selector: 'h3' })).toBeDefined();
+  test('should display the title text inside <h4>', () => {
+    expect(screen.getByText('Liberating Structures Card Deck', { selector: 'h4' })).toBeDefined();
   });
 
   test('should display "Description" as title text inside <h5>', () => {
