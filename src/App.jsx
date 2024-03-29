@@ -6,7 +6,7 @@ import Sidebar from './components/navigation/Sidebar';
 import CardModal from './components/card-modal/CardModal';
 import LSCardPreview from './components/ls-card/LSCardPreview';
 
-import deckData from './data';
+import deckData from './data/cards';
 
 function App() {
   const [openLSCardModal, setOpenLSCardModal] = useState(false);

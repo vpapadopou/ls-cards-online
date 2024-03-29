@@ -1,6 +1,6 @@
 import React from 'react';
 
-import LSLogo from '../../data/logos/ls-menu.svg';
+import LSLogo from '@/data/ls-logo.svg';
 
 function AboutCard() {
   return (

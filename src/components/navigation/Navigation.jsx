@@ -6,7 +6,7 @@ import { CircleIcon, HamburgerMenuIcon, InfoCircledIcon } from '@radix-ui/react-
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
-import LSLogo from '../../data/logos/ls-menu.svg';
+import LSLogo from '@/data/ls-logo.svg';
 
 function Navigation({ onClick }) {
   return (

@@ -5,7 +5,7 @@ import { CircleIcon } from '@radix-ui/react-icons';
 
 import { Button } from '@/components/ui/button';
 
-import LSLogo from '../../data/logos/ls-menu.svg';
+import LSLogo from '@/data/ls-logo.svg';
 
 function Sidebar({ onClick }) {
   return (
