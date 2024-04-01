@@ -32,6 +32,6 @@ describe('Component: LSCardPreview', () => {
     fireEvent.click(card);
 
     // We expect the callback with the card's id as parameter
-    expect(stub).toHaveBeenCalledWith(1);
+    expect(stub).toHaveBeenCalledWith(testCardData);
   });
 });
