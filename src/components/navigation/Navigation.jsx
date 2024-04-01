@@ -8,13 +8,13 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 import LSLogo from '@/data/ls-logo.svg';
 
-function Navigation({ onClick }) {
+function Navigation({ onAboutClick, onCategoryClick }) {
   return (
     <header className="flex gap-5 h-14 items-center px-4 border-b lg:h-[60px] lg:px-6">
       {/* Side sheet (shown on small screens) */}
       <Sheet>
         <SheetTrigger asChild>
-          <Button className="shrink-0 md:hidden" size="icon" variant="outline">
+          <Button className="shrink-0 md:hidden" size="icon" variant="outline" data-testid="sheet-toggle-button">
             <HamburgerMenuIcon className="w-5 h-5" />
             <span className="sr-only">Toggle navigation menu</span>
           </Button>
@@ -98,7 +98,8 @@ function Navigation({ onClick }) {
       {/* /Side sheet (shown on small screens) */}
       {/* Navbar */}
       <div className="flex-1 w-full">{/* Content to be added */}</div>
-      <Button size="icon" variant="outline" onClick={() => onClick('about')}>
+      {/* On click send NULL back so the about modal opens */}
+      <Button size="icon" variant="outline" onClick={() => onAboutClick(null)} data-testid="about-button">
         <InfoCircledIcon className="w-5 h-5" />
         <span className="sr-only">About</span>
       </Button>
@@ -108,7 +109,8 @@ function Navigation({ onClick }) {
 }
 
 Navigation.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onAboutClick: PropTypes.func.isRequired,
+  onCategoryClick: PropTypes.func.isRequired,
 };
 
 export default Navigation;
