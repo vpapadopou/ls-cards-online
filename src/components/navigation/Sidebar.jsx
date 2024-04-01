@@ -7,14 +7,14 @@ import { Button } from '@/components/ui/button';
 
 import LSLogo from '@/data/ls-logo.svg';
 
-function Sidebar({ onClick }) {
+function Sidebar({ onCategoryClick }) {
   return (
     <div className="border-r hidden md:block">
       <div className="flex flex-col gap-5 h-full max-h-screen">
         {/* Logo */}
         <div className="flex items-center border-b h-14 min-h-14 px-4 lg:h-[60px] lg:min-h-[60px] lg:px-6">
           <a href="/" className="flex gap-5 text-sm font-semibold items-center lg:text-base">
-            <img src={LSLogo} className="h-8" alt="LS Card Deck Logo" />
+            <img src={LSLogo} className="h-8" alt="LS Card Deck Logo" data-testid="sidebar-logo" />
             <span>Liberating Structures Card Deck</span>
           </a>
         </div>
@@ -59,7 +59,7 @@ function Sidebar({ onClick }) {
 }
 
 Sidebar.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onCategoryClick: PropTypes.func.isRequired,
 };
 
 export default Sidebar;
