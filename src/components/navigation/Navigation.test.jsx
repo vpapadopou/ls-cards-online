@@ -47,7 +47,7 @@ describe('Component: Navigation', () => {
     expect(aboutStub).toHaveBeenCalledWith(null);
   });
 
-  test('should call the provided onCategoryClick function with "All" when the All Cards category button is clicked', () => {
+  test('should call the provided onCategoryClick function with "0" when the All Cards category button is clicked', () => {
     // Open sheet
     const sheetToggleButton = screen.getByTestId('sheet-toggle-button');
     fireEvent.click(sheetToggleButton);
@@ -57,6 +57,6 @@ describe('Component: Navigation', () => {
     fireEvent.click(categoryButton);
 
     // We expect the callback with "All" as parameter
-    expect(categoryStub).toHaveBeenCalledWith('All');
+    expect(categoryStub).toHaveBeenCalledWith(0);
   });
 });

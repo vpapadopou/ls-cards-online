@@ -1,10 +1,12 @@
 import { describe, expect, test, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 
+import deckData from '@/data/cards';
+
 import CardDeck from './CardDeck';
 
 describe('Component: CardDeck', () => {
-  const cardList = [
+  const mockCardList = [
     {
       id: 1,
       title: 'Testing Title 1',
@@ -37,47 +39,62 @@ describe('Component: CardDeck', () => {
   const stub = vi.fn();
 
   test('should display the selected category title inside <h1>', () => {
-    render(<CardDeck cardList={cardList} selectedCategory="All" onClick={stub} />);
+    render(<CardDeck cardList={mockCardList} selectedCategory={0} onClick={stub} />);
 
-    expect(screen.getByText('All', { selector: 'h1' })).toBeDefined();
+    expect(screen.getByText('All Cards', { selector: 'h1' })).toBeDefined();
   });
 
   test('should display the two card titles inside <h4>', () => {
-    render(<CardDeck cardList={cardList} selectedCategory="All" onClick={stub} />);
+    render(<CardDeck cardList={mockCardList} selectedCategory={0} onClick={stub} />);
 
     expect(screen.getByText('Testing Title 1', { selector: 'h4' })).toBeDefined();
     expect(screen.getByText('Testing Title 2', { selector: 'h4' })).toBeDefined();
   });
 
-  test('should display only the first card when the selected category is "Reveal"', () => {
-    render(<CardDeck cardList={cardList} selectedCategory="Reveal" onClick={stub} />);
+  test('should display 12 cards when the selected category is "Reveal"', () => {
+    render(<CardDeck cardList={deckData} selectedCategory={1} onClick={stub} />);
 
-    expect(screen.getByText('Testing Title 1', { selector: 'h4' })).toBeDefined();
-    expect(screen.queryByText('Testing Title 2', { selector: 'h4' })).toBeNull();
+    expect(screen.getAllByTestId('card-preview').length).toEqual(12);
   });
 
-  test('should display only the second card when the selected category is "Analyze"', () => {
-    render(<CardDeck cardList={cardList} selectedCategory="Analyze" onClick={stub} />);
+  test('should display 7 cards when the selected category is "Share"', () => {
+    render(<CardDeck cardList={deckData} selectedCategory={2} onClick={stub} />);
 
-    expect(screen.getByText('Testing Title 2', { selector: 'h4' })).toBeDefined();
-    expect(screen.queryByText('Testing Title 1', { selector: 'h4' })).toBeNull();
+    expect(screen.getAllByTestId('card-preview').length).toEqual(7);
   });
 
-  test('should display both cards when the selected category is "Share"', () => {
-    render(<CardDeck cardList={cardList} selectedCategory="Share" onClick={stub} />);
+  test('should display 7 cards when the selected category is "Analyze"', () => {
+    render(<CardDeck cardList={deckData} selectedCategory={3} onClick={stub} />);
 
-    expect(screen.getByText('Testing Title 1', { selector: 'h4' })).toBeDefined();
-    expect(screen.getByText('Testing Title 2', { selector: 'h4' })).toBeDefined();
+    expect(screen.getAllByTestId('card-preview').length).toEqual(7);
+  });
+
+  test('should display 6 cards when the selected category is "Help"', () => {
+    render(<CardDeck cardList={deckData} selectedCategory={4} onClick={stub} />);
+
+    expect(screen.getAllByTestId('card-preview').length).toEqual(6);
+  });
+
+  test('should display 5 cards when the selected category is "Strategize"', () => {
+    render(<CardDeck cardList={deckData} selectedCategory={5} onClick={stub} />);
+
+    expect(screen.getAllByTestId('card-preview').length).toEqual(5);
+  });
+
+  test('should display 2 cards when the selected category is "Plan"', () => {
+    render(<CardDeck cardList={deckData} selectedCategory={6} onClick={stub} />);
+
+    expect(screen.getAllByTestId('card-preview').length).toEqual(2);
   });
 
   test('should call the provided onClick function with the appropriate card data when the first card is clicked', () => {
-    render(<CardDeck cardList={cardList} selectedCategory="All" onClick={stub} />);
+    render(<CardDeck cardList={mockCardList} selectedCategory={0} onClick={stub} />);
 
     // Click All Cards button
     const card = screen.getAllByTestId('card-preview')[0];
     fireEvent.click(card);
 
     // We expect the callback with first card's data as parameter
-    expect(stub).toHaveBeenCalledWith(cardList[0]);
+    expect(stub).toHaveBeenCalledWith(mockCardList[0]);
   });
 });

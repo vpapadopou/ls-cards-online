@@ -11,7 +11,7 @@ import deckData from './data/cards';
 function App() {
   const [openCardModal, setOpenCardModal] = useState(false);
   const [selectedCard, setSelectedCard] = useState(deckData[0]);
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState(0);
 
   const handleModalClick = (cardData) => {
     setSelectedCard(cardData);

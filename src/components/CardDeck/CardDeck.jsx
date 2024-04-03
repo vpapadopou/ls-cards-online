@@ -3,25 +3,32 @@ import PropTypes from 'prop-types';
 
 import LSCardPreview from '@/components/LSCard/LSCardPreview';
 
-import { categoryList } from '@/data/card-categories';
+import { categoryIndex, categoryList } from '@/data/card-categories';
 
 function CardDeck({ cardList, selectedCategory, onClick }) {
+  const [selectedCategoryTitle, setSelectedCategoryTitle] = useState('All Cards');
   const [selectedCardList, setSelectedCardList] = useState(cardList);
 
   // When selectedCategory changes we need to update the selectedCardList
   useEffect(() => {
-    // If all cards are selected just return cardList
-    if (selectedCategory === 'All') {
+    // Zero is used as a special id for all cards
+    // so simply return cardList
+    if (selectedCategory === 0) {
+      setSelectedCategoryTitle('All Cards');
       setSelectedCardList(cardList);
       return;
     }
 
-    // Else we need to check if the category of each card matches the selected one
-    // we use some as some cards have multiple categories
-    const selectedCards = cardList.filter((card) => {
-      return card.categories.some((cardCategory) => categoryList[cardCategory - 1].title === selectedCategory);
-    });
+    // If a category is selected use the index to get all card ids for the
+    // selected category. Then pick the card data one by one from the card list
+    // and add them to a newly created array.
+    // Note: Position in the array is simply -1 since id numbering starts from 1
+    const selectedCards = categoryIndex[selectedCategory].reduce((accumulator, cardId) => {
+      accumulator.push(cardList[cardId - 1]);
+      return accumulator;
+    }, []);
 
+    setSelectedCategoryTitle(categoryList[selectedCategory - 1].title);
     setSelectedCardList(selectedCards);
   }, [cardList, selectedCategory]);
 
@@ -29,7 +36,7 @@ function CardDeck({ cardList, selectedCategory, onClick }) {
     <>
       {/* Selected category title */}
       <div className="flex items-center">
-        <h1 className="text-lg font-semibold md:text-2xl">{selectedCategory}</h1>
+        <h1 className="text-lg font-semibold md:text-2xl">{selectedCategoryTitle}</h1>
       </div>
       {/* /Selected category title */}
       {/* Card grid */}
@@ -66,7 +73,7 @@ CardDeck.propTypes = {
       stringWith: PropTypes.string,
     })
   ).isRequired,
-  selectedCategory: PropTypes.string.isRequired,
+  selectedCategory: PropTypes.number.isRequired,
   onClick: PropTypes.func.isRequired,
 };
 
