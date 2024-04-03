@@ -5,7 +5,7 @@ const twentyfiveTenCrowdsourcing = {
   title: '25/10 Crowd Sourcing',
   description: "Rapidly generate & sift a group's most powerful actionable ideas",
   logo: twentyfiveTenCrowdsourcingLogo,
-  categories: [{ title: 'Reveal', color: 'bg-green-500' }],
+  categories: [1],
   time: 30,
   invitation: 'Ask:\n"If you were ten times bolder, what big idea would you recommend? What first step would you take to get started?"',
   people: 'Start alone, mill around, then in pairs',

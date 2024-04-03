@@ -5,10 +5,7 @@ const troikaConsulting = {
   title: 'Troika Consulting',
   description: 'Get practical and imaginative help from colleagues immediately',
   logo: troikaConsultingLogo,
-  categories: [
-    { title: 'Help', color: 'bg-amber-700' },
-    { title: 'Reveal', color: 'bg-green-500' },
-  ],
+  categories: [4, 1],
   time: 30,
   invitation: 'Invite the group to explore the questions:\n- "What is your challenge?"\n- "What kind of help do you need?"',
   people: '- Ask participants to form groups of 3 people\n- People with diverse backgrounds and perspectives are most helpful',

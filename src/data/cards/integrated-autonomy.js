@@ -5,7 +5,7 @@ const integratedAutonomy = {
   title: 'Integrated~Autonomy',
   description: 'Move from either-or to robust both-and solutions',
   logo: integratedAutonomyLogo,
-  categories: [{ title: 'Strategize', color: 'bg-red-500' }],
+  categories: [5],
   time: 80,
   invitation:
     '"Will our purpose be best served by increased local autonomy, customization, competition, and freedom among units/sites? Or by increased integration, standardization, and control among units/sites? Or both?"',

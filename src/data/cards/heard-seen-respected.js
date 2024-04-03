@@ -5,7 +5,7 @@ const heardSeenRespected = {
   title: 'Heard, Seen, Respected (HSR)',
   description: 'Practice deeper listening and empathy with colleagues',
   logo: heardSeenRespectedLogo,
-  categories: [{ title: 'Help', color: 'bg-amber-700' }],
+  categories: [4],
   time: 35,
   invitation:
     '- Tell a story to a partner about a time when you felt you were not heard, seen or respected\n- Ask listeners to avoid any interruptions except for asking clarifying questions',

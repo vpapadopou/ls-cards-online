@@ -5,7 +5,7 @@ const agreementCertaintyMatrix = {
   title: 'Agreement-Certainty Matrix',
   description: 'Sort challenges into simple, complicated, complex and chaotic domains',
   logo: agreementCertaintyMatrixLogo,
-  categories: [{ title: 'Analyze', color: 'bg-purple-500' }],
+  categories: [3],
   time: 45,
   invitation: 'Categorize challenges as simple, complicated, complex or chaotic & place them in the matrix',
   people: 'Start alone, groups of 4-6, whole group',

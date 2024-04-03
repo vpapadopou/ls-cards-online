@@ -5,7 +5,7 @@ const minSpecs = {
   title: 'Min Specs',
   description: 'Specify only the absolute "Must do\'s" & "Must not do\'s" for achieving a purpose',
   logo: minSpecsLogo,
-  categories: [{ title: 'Strategize', color: 'bg-red-500' }],
+  categories: [5],
   time: 45,
   invitation:
     "- In the context of a challenging activity, a new initiative, or a strategic bottleneck, invite participants to generate a list of all the do's and don'ts they should pay attention to in order to achieve a successful outcome (Max Specs)\n- Ask participants to reduce the previous list to the absolute minimum needed to achieve their purpose (Min Specs)",

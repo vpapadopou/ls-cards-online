@@ -5,7 +5,7 @@ const oneTwoFourAll = {
   title: '1-2-4-All',
   description: 'Engage everyone simultaneously in generating questions, ideas and suggestions',
   logo: oneTwoFourAllLogo,
-  categories: [{ title: 'Reveal', color: 'bg-green-500' }],
+  categories: [1],
   time: 12,
   invitation: 'Ask a question in response to the presentation of an issue, or about a problem to resolve or a proposal put forward',
   people: 'Start alone, then in pairs, then groups of four, then the whole group',

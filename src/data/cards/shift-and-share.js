@@ -5,7 +5,7 @@ const shiftAndShare = {
   title: 'Shift & Share',
   description: 'Spread good ideas and make informal connections with innovators',
   logo: shiftAndShareLogo,
-  categories: [{ title: 'Share', color: 'bg-blue-500' }],
+  categories: [2],
   time: 90,
   invitation: 'Visit several innovators who will share something new or innovative',
   people:

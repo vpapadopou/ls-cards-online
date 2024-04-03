@@ -5,7 +5,7 @@ const generativeRelationships = {
   title: 'Generative Relationships',
   description: 'Reveal and understand relationship patterns that create value or dysfunctions',
   logo: generativeRelationshipsLogo,
-  categories: [{ title: 'Analyze', color: 'bg-purple-500' }],
+  categories: [3],
   time: 25,
   invitation:
     'Invite participants to assess their working group or team in terms of four attributes:\nS - Separateness (diversity)\nT - Tuning (listening, reflecting on challenges)\nA - Action (opporunities to act on ideas)\nR - Reason to work together',

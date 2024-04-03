@@ -5,7 +5,7 @@ const simpleEthnography = {
   title: 'Simple Ethnography',
   description: 'Observe and record actual behaviors of users in the field',
   logo: simpleEthnographyLogo,
-  categories: [{ title: 'Analyze', color: 'bg-purple-500' }],
+  categories: [3],
   time: 75,
   invitation:
     'Invite participants to silently observe people with experience relevant to the challenge at hand and then follow up with interviews for more insight',

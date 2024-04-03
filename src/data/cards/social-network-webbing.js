@@ -5,10 +5,7 @@ const socialNetworkWebbing = {
   title: 'Social Network Webbing',
   description: 'Map informal connections and decide how to strengthen the network to achieve a purpose',
   logo: socialNetworkWebbingLogo,
-  categories: [
-    { title: 'Share', color: 'bg-blue-500' },
-    { title: 'Help', color: 'bg-amber-700' },
-  ],
+  categories: [2, 4],
   time: 60,
   invitation:
     'Invite members of a core working group with a shared purpose to create a map of their network and decide how to expand and strengthen it',

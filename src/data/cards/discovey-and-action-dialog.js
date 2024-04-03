@@ -5,7 +5,7 @@ const discoveryAndActionDialog = {
   title: 'Discovery & Action Dialog',
   description: 'Discover, invent and unleash local solutions to chronic problems',
   logo: discoveryAndActionDialogLogo,
-  categories: [{ title: 'Reveal', color: 'bg-green-500' }],
+  categories: [1],
   time: 50,
   people:
     '- Facilitator works with a partner to serve as a recorder\n- Total group size should be between 5-15 people\n- Diversity in roles and experience is an important asset',

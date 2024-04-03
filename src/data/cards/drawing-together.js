@@ -5,7 +5,7 @@ const drawingTogether = {
   title: 'Drawing Together',
   description: 'Reveal insights and paths forward through non-verbal expression',
   logo: drawingTogetherLogo,
-  categories: [{ title: 'Reveal', color: 'bg-green-500' }],
+  categories: [1],
   time: 40,
   invitation: 'Invite participants to tell a story about a challenge they face or a common challenge, using only five symbols and no words',
   people: 'Start alone, then in groups of 1-4 people, then the whole group',

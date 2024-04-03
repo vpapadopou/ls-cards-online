@@ -5,7 +5,7 @@ const purposeToPractice = {
   title: 'Purpose-To-Practice (P2P)',
   description: 'Define the five essential elements for a resilient & enduring initiative',
   logo: purposeToPracticeLogo,
-  categories: [{ title: 'Plan', color: 'bg-orange-500' }],
+  categories: [6],
   time: 120,
   invitation:
     'Invite all or most stakeholders to participate in the design of their new initiative in order to specify its five essential elements: purpose, principles, participants, structure and practices',

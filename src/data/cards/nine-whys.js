@@ -5,7 +5,7 @@ const nineWhys = {
   title: 'Nine Whys',
   description: 'Make the purpose of your work together clear',
   logo: nineWhysLogo,
-  categories: [{ title: 'Analyze', color: 'bg-purple-500' }],
+  categories: [3],
   time: 20,
   invitation:
     'Ask:\n- "What do you do when working on ... (the subject matter or challenge at hand)? Please make a short list of activities."\n- "Why is that important to you?"\n- Keep asking, "Why? Why? Why?" up to nine times or until participants have reached the fundamental purpose for this work',

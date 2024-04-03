@@ -5,7 +5,7 @@ const conversationCafe = {
   title: 'Conversation Cafe',
   description: 'Engage everyone in making sense of profound challenges',
   logo: conversationCafeLogo,
-  categories: [{ title: 'Share', color: 'bg-blue-500' }],
+  categories: [2],
   time: 50,
   invitation: "Invite all participants to gather in small groups to listen to one another's thoughts and reflect together on a shared challenge",
   people:

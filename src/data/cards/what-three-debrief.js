@@ -5,7 +5,7 @@ const whatThreeDebrief = {
   title: 'What? So What? Now What?',
   description: 'Together, look back on progress to date and decide what adjustments are needed',
   logo: whatThreeDebriefLogo,
-  categories: [{ title: 'Analyze', color: 'bg-purple-500' }],
+  categories: [3],
   time: 45,
   invitation:
     'After a shared experience, ask three questions to reflect in a way that builds understanding and spurs coordinated action while avoiding unproductive conflict',

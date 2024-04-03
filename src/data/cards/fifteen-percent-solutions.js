@@ -5,7 +5,7 @@ const fifteenPercentSolutions = {
   title: '15% Solutions',
   description: 'Discover & focus on what each person has the freedom and resources to do now',
   logo: fifteenPercentSolutionsLogo,
-  categories: [{ title: 'Reveal', color: 'bg-green-500' }],
+  categories: [1],
   time: 20,
   invitation:
     'In connection with their personal challenge or their group\'s challenge, ask:\n- "What is your 15 percent?"\n- "Where do you have discretion and freedom to act?"\n- "What can you do without more resources or authority?"',

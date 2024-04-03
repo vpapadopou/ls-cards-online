@@ -5,7 +5,7 @@ const criticalUncertainties = {
   title: 'Critical Uncertainties',
   description: 'Develop strategies for successfully operating in a range of plausible yet unpredictable futures',
   logo: criticalUncertaintiesLogo,
-  categories: [{ title: 'Strategize', color: 'bg-red-500' }],
+  categories: [5],
   time: 100,
   invitation: 'Identify the most critical and uncertain "realities" in your operating environment or market. Which strategies can help?',
   people: 'Have a group large and diverse enough to break it up into four separate small groups',

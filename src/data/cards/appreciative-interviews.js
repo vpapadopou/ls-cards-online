@@ -5,10 +5,7 @@ const appreciativeInterviews = {
   title: 'Appreciative Interviews',
   description: 'Discover & build on the root causes of success',
   logo: appreciativeInterviewsLogo,
-  categories: [
-    { title: 'Share', color: 'bg-blue-500' },
-    { title: 'Reveal', color: 'bg-green-500' },
-  ],
+  categories: [2, 1],
   time: 60,
   invitation:
     'Ask:\n"Please tell a story about a time when you worked on a challenge with others and you are proud of what you accomplished. What is the story and what made the success possible? Pair up preferably with someone you don\'t know well."',

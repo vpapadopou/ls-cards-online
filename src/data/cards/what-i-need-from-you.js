@@ -5,7 +5,7 @@ const whatINeedFromYou = {
   title: 'What I Need From You (WINFY)',
   description: 'Surface most essential needs across functions and accept or reject requests for support',
   logo: whatINeedFromYouLogo,
-  categories: [{ title: 'Help', color: 'bg-amber-700' }],
+  categories: [4],
   time: 65,
   invitation: 'Invite participants to ask for what they need from others to be successful in reaching a specific goal',
   people: '- 3-7 functional clusters (unlimited members)\n- One spokesperson from each cluster',

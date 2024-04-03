@@ -5,7 +5,7 @@ const wickedQuestions = {
   title: 'Wicked Questions',
   description: 'Articulate the paradoxical challenges that a group must confront to succeed',
   logo: wickedQuestionsLogo,
-  categories: [{ title: 'Reveal', color: 'bg-green-500' }],
+  categories: [1],
   time: 25,
   invitation: 'Ask:\n"What opposing-yet-complementary strategies do we need to pursue simultaneously in order to be successful?"',
   people: 'Ask participants to form groups of 4 to 6 people',

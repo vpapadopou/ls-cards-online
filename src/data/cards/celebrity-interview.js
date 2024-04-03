@@ -5,7 +5,7 @@ const celebrityInterview = {
   title: 'Celebrity Interview',
   description: 'Reconnect the experience of leaders and experts with people closest to the challenge at hand',
   logo: celebrityInterviewLogo,
-  categories: [{ title: 'Share', color: 'bg-blue-500' }],
+  categories: [2],
   time: 45,
   invitation:
     '- Invite the celebrity to let go of their formal presentation or speech and answer the harder questions in a casual "talk show" format\n- Invite group members to listen, see the person behind the celebrity and write down questions with colleagues',

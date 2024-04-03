@@ -5,7 +5,7 @@ const triz = {
   title: 'TRIZ',
   description: 'Stop counterproductive activities & behaviors to make space for innovation',
   logo: trizLogo,
-  categories: [{ title: 'Reveal', color: 'bg-green-500' }],
+  categories: [1],
   time: 35,
   people: 'Ask participants to form groups of 4 to 7 people',
   spaceAndMaterials: '- Chairs\n- Paper for participants to record observations and insights\n- Small tables (optional)',

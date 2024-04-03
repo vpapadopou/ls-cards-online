@@ -5,10 +5,7 @@ const ecocyclePlanning = {
   title: 'Ecocycle Planning',
   description: 'Analyze the full portfolio of activities & relationships to identify obstacles & opportunities for progress',
   logo: ecocyclePlanningLogo,
-  categories: [
-    { title: 'Analyze', color: 'bg-purple-500' },
-    { title: 'Strategize', color: 'bg-red-500' },
-  ],
+  categories: [3, 5],
   time: 95,
   invitation:
     'View, organize, and prioritize current activities using four developmental phases: birth, maturity, creative destruction and renewal. Formulate action steps linked to each phase',

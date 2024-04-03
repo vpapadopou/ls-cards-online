@@ -5,7 +5,7 @@ const userExperienceFishbowl = {
   title: 'User Experience Fishbowl',
   description: 'Share know-how gained from experience with a larger community',
   logo: userExperienceFishbowlLogo,
-  categories: [{ title: 'Share', color: 'bg-blue-500' }],
+  categories: [2],
   time: 50,
   invitation:
     "Ask those in the fishbowl to describe their experience - the good, the bad and the ugly - informally, concretely, and openly. Invite them to do it in conversation with each other as if the audience wasn't there. Firmly, ask them to avoid presenting to the audience",

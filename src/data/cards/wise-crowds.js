@@ -5,10 +5,7 @@ const wiseCrowds = {
   title: 'Wise Crowds',
   description: 'Tap the wisdom of the whole group in rapid cycles',
   logo: wiseCrowdsLogo,
-  categories: [
-    { title: 'Reveal', color: 'bg-green-500' },
-    { title: 'Help', color: 'bg-amber-700' },
-  ],
+  categories: [1, 4],
   time: 15,
   invitation:
     '- Ask each participant to be the "client" when their turn comes and briefly describe their challenge and ask for help\n- Ask the other participants to act as a group of "consultants" whose task is to help the "client" and offer advice or recommendations',

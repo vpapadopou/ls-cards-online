@@ -5,7 +5,7 @@ const designStoryboards = {
   title: 'Design Storyboards',
   description: 'Define step-by-step elements for bringing initiatives or meetings to productive endpoints',
   logo: designStoryboardsLogo,
-  categories: [{ title: 'Plan', color: 'bg-orange-500' }],
+  categories: [6],
   time: 50,
   invitation:
     'Invite a design team (a representative subset of the group) to create a detailed plan, including visual cues, for how participants will interact to achieve their purpose',

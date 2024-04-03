@@ -5,10 +5,7 @@ const panarchy = {
   title: 'Panarchy',
   description: 'Understand how embedded systems interact, evolve, influence the spread of innovation and transform',
   logo: panarchyLogo,
-  categories: [
-    { title: 'Analyze', color: 'bg-purple-500' },
-    { title: 'Strategize', color: 'bg-red-500' },
-  ],
+  categories: [3, 5],
   time: 120,
   invitation: 'What is contributing to the existence of a challenge at levels above and below you?',
   people: '1-2-4-All',

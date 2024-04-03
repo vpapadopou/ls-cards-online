@@ -5,7 +5,7 @@ const helpingHeuristics = {
   title: 'Helping Heuristics',
   description: 'Practice progressive methods for helping others, receiving and asking for help',
   logo: helpingHeuristicsLogo,
-  categories: [{ title: 'Help', color: 'bg-amber-700' }],
+  categories: [4],
   time: 15,
   invitation: 'Participants view all human interactions as offers that are either accepted or blocked',
   people:

@@ -5,7 +5,7 @@ const openSpaceTechnology = {
   title: 'Open Space Technology',
   description: 'Liberate inherent action and leadership in large groups',
   logo: openSpaceTechnologyLogo,
-  categories: [{ title: 'Reveal', color: 'bg-green-500' }],
+  categories: [1],
   time: 90,
   invitation: 'Invite participants to co-construct the agenda by posting sessions that they will convene on topics they are passionate about',
   people:

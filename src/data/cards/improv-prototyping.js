@@ -5,7 +5,7 @@ const improvPrototyping = {
   title: 'Improv Prototyping',
   description: 'Develop effective solutions to chronic challenges while having serious fun',
   logo: improvPrototypingLogo,
-  categories: [{ title: 'Reveal', color: 'bg-green-500' }],
+  categories: [1],
   time: 20,
   invitation:
     'Identify a chronic challenge in your work, then playfully experiment, invent, and discover better ways to address the challenge by acting out the situation and possible solutions',
