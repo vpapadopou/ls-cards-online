@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import { Badge } from '@/components/ui/badge';
 
+import { categoryList } from '@/data/card-categories';
+
 function LSCardHeader({ data }) {
   return (
     <>
@@ -35,11 +37,12 @@ function LSCardHeader({ data }) {
       {/* Row 2 - Categories & Time */}
       <div className="flex flex-row">
         {/* Loop through categories */}
-        {data.categories.map((item) => (
-          <div className="flex items-center mr-3" key={item.title}>
-            <span className={`w-3 h-3 ${item.color} rounded-full mr-2`} data-testid="category-color" />
+        {data.categories.map((categoryId) => (
+          <div className="flex items-center mr-3" key={categoryId}>
+            {/* The category data is in the -1 position in the array since id numbering starts from 1 */}
+            <span className={`w-3 h-3 ${categoryList[categoryId - 1].color} rounded-full mr-2`} data-testid="category-color" />
             <span className="text-sm font-bold text-muted-foreground" data-testid="category-title">
-              {item.title}
+              {categoryList[categoryId - 1].title}
             </span>
           </div>
         ))}
@@ -59,12 +62,7 @@ LSCardHeader.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     logo: PropTypes.node.isRequired,
-    categories: PropTypes.arrayOf(
-      PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        color: PropTypes.string.isRequired,
-      })
-    ).isRequired,
+    categories: PropTypes.arrayOf(PropTypes.number).isRequired,
     time: PropTypes.number.isRequired,
   }).isRequired,
 };

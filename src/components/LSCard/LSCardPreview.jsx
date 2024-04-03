@@ -22,12 +22,7 @@ LSCardPreview.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     logo: PropTypes.node.isRequired,
-    categories: PropTypes.arrayOf(
-      PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        color: PropTypes.string.isRequired,
-      })
-    ).isRequired,
+    categories: PropTypes.arrayOf(PropTypes.number).isRequired,
     time: PropTypes.number.isRequired,
   }).isRequired,
   onClick: PropTypes.func.isRequired,

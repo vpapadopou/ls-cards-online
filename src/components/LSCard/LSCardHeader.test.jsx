@@ -9,10 +9,7 @@ describe('Component: LSCardHeader', () => {
     title: 'Testing Title',
     description: 'Testing Description',
     logo: 'testing_path',
-    categories: [
-      { title: 'Category 1', color: 'bg-red-500' },
-      { title: 'Category 2', color: 'bg-green-500' },
-    ],
+    categories: [1, 2],
     time: 20,
   };
 
@@ -36,22 +33,22 @@ describe('Component: LSCardHeader', () => {
     expect(screen.getAllByTestId('category-title').length).toEqual(2);
   });
 
-  test('should assign the proper color class to Category 1', () => {
-    const { container } = render(<LSCardHeader data={testCardData} />);
-    expect(container.getElementsByClassName('bg-red-500').length).toBe(1);
+  test('should display "Reveal" category text inside <span>', () => {
+    expect(screen.getByText('Reveal', { selector: 'span' })).toBeDefined();
   });
 
-  test('should display Category 1 text inside <span>', () => {
-    expect(screen.getByText('Category 1', { selector: 'span' })).toBeDefined();
-  });
-
-  test('should assign the proper color class to Category 2', () => {
+  test('should assign the proper color class to "Reveal" category', () => {
     const { container } = render(<LSCardHeader data={testCardData} />);
     expect(container.getElementsByClassName('bg-green-500').length).toBe(1);
   });
 
-  test('should display Category 2 text inside <span>', () => {
-    expect(screen.getByText('Category 2', { selector: 'span' })).toBeDefined();
+  test('should display "Share" category text inside <span>', () => {
+    expect(screen.getByText('Share', { selector: 'span' })).toBeDefined();
+  });
+
+  test('should assign the proper color class "Share" category', () => {
+    const { container } = render(<LSCardHeader data={testCardData} />);
+    expect(container.getElementsByClassName('bg-blue-500').length).toBe(1);
   });
 
   test('should display the time text', () => {

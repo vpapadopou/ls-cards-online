@@ -9,10 +9,7 @@ describe('Component: LSCard', () => {
     title: 'Testing Title',
     description: 'Testing Description',
     logo: 'testing_path',
-    categories: [
-      { title: 'Category 1', color: 'bg-red-500' },
-      { title: 'Category 2', color: 'bg-green-500' },
-    ],
+    categories: [1, 2],
     time: 20,
     invitation: 'Testing Invitation',
     people: 'Testing People',
