@@ -10,10 +10,7 @@ describe('Component: CardDeck', () => {
       title: 'Testing Title 1',
       description: 'Testing Description 1',
       logo: 'testing_path1',
-      categories: [
-        { title: 'Reveal', color: 'bg-red-500' },
-        { title: 'Share', color: 'bg-green-500' },
-      ],
+      categories: [1, 2],
       time: 20,
       invitation: 'Testing Invitation 1',
       people: 'Testing People 1',
@@ -27,10 +24,7 @@ describe('Component: CardDeck', () => {
       title: 'Testing Title 2',
       description: 'Testing Description 2',
       logo: 'testing_path2',
-      categories: [
-        { title: 'Analyze', color: 'bg-red-500' },
-        { title: 'Share', color: 'bg-green-500' },
-      ],
+      categories: [3, 2],
       time: 30,
       invitation: 'Testing Invitation 2',
       people: 'Testing People 2',

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import LSCardPreview from '@/components/LSCard/LSCardPreview';
 
+import { categoryList } from '@/data/card-categories';
+
 function CardDeck({ cardList, selectedCategory, onClick }) {
   const [selectedCardList, setSelectedCardList] = useState(cardList);
 
@@ -17,7 +19,7 @@ function CardDeck({ cardList, selectedCategory, onClick }) {
     // Else we need to check if the category of each card matches the selected one
     // we use some as some cards have multiple categories
     const selectedCards = cardList.filter((card) => {
-      return card.categories.some((cardCategory) => cardCategory.title === selectedCategory);
+      return card.categories.some((cardCategory) => categoryList[cardCategory - 1].title === selectedCategory);
     });
 
     setSelectedCardList(selectedCards);
@@ -48,12 +50,7 @@ CardDeck.propTypes = {
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       logo: PropTypes.node.isRequired,
-      categories: PropTypes.arrayOf(
-        PropTypes.shape({
-          title: PropTypes.string.isRequired,
-          color: PropTypes.string.isRequired,
-        })
-      ).isRequired,
+      categories: PropTypes.arrayOf(PropTypes.number).isRequired,
       time: PropTypes.number.isRequired,
       invitation: PropTypes.string,
       people: PropTypes.string.isRequired,
