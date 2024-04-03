@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 
-import AboutCard from '../about-card/AboutCard';
-import LSCard from '../ls-card/LSCard';
+import AboutCard from '../AboutCard/AboutCard';
+import LSCard from '../LSCard/LSCard';
 
 function CardModal({ openModal, setOpenModal, cardData }) {
   return (

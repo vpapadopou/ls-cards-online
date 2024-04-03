@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import LSCardPreview from '@/components/ls-card/LSCardPreview';
+import LSCardPreview from '@/components/LSCard/LSCardPreview';
 
 function CardDeck({ cardList, selectedCategory, onClick }) {
   const [selectedCardList, setSelectedCardList] = useState(cardList);

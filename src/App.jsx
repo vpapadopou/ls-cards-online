@@ -1,10 +1,10 @@
 import { React, useState } from 'react';
 
-import Navigation from './components/navigation/Navigation';
-import Sidebar from './components/navigation/Sidebar';
+import Navigation from './components/Navigation/Navigation';
+import Sidebar from './components/Navigation/Sidebar';
 
-import CardDeck from './components/card-deck/CardDeck';
-import CardModal from './components/card-modal/CardModal';
+import CardDeck from './components/CardDeck/CardDeck';
+import CardModal from './components/CardModal/CardModal';
 
 import deckData from './data/cards';
 
