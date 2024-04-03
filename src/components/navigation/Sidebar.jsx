@@ -10,7 +10,7 @@ import LSLogo from '@/data/ls-logo.svg';
 function Sidebar({ onCategoryClick }) {
   return (
     <div className="border-r hidden md:block">
-      <div className="flex flex-col gap-5 h-full max-h-screen">
+      <div className="flex flex-col gap-5 h-full max-h-screen sticky top-0">
         {/* Logo */}
         <div className="flex items-center border-b h-14 min-h-14 px-4 lg:h-[60px] lg:min-h-[60px] lg:px-6">
           <a href="/" className="flex gap-5 text-sm font-semibold items-center lg:text-base">
