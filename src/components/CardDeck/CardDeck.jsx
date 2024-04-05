@@ -1,6 +1,10 @@
 import { React, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
+import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@/components/ui/resizable';
+import { ScrollArea } from '@/components/ui/scroll-area';
+
+import LSCard from '@/components/LSCard/LSCard';
 import LSCardPreview from '@/components/LSCard/LSCardPreview';
 
 import { categoryIndex, categoryList } from '@/data/card-categories';
@@ -33,20 +37,39 @@ function CardDeck({ cardList, selectedCategory, onClick }) {
   }, [cardList, selectedCategory]);
 
   return (
-    <>
-      {/* Selected category title */}
-      <div className="flex items-center">
-        <h1 className="text-lg font-semibold md:text-2xl">{selectedCategoryTitle}</h1>
-      </div>
-      {/* /Selected category title */}
-      {/* Card grid */}
-      <div className="flex flex-wrap gap-4 place-content-center items-start py-8">
-        {selectedCardList.map((card) => (
-          <LSCardPreview key={card.id} data={card} onClick={onClick} />
-        ))}
-      </div>
-      {/* /Card grid */}
-    </>
+    <ResizablePanelGroup direction="horizontal">
+      {/* Left panel (card grid) */}
+      <ResizablePanel defaultSize={65}>
+        <div className="flex flex-col">
+          {/* Selected category title */}
+          <div className="px-4 py-8">
+            <h1 className="text-lg font-semibold md:text-2xl">{selectedCategoryTitle}</h1>
+          </div>
+          {/* /Selected category title */}
+          {/* Card grid (scroll height is screen minus navbar minus approx 5rem) */}
+          <ScrollArea className="h-[calc(100vh-60px-6rem)]">
+            <div className="flex flex-wrap gap-4 place-content-between items-start px-4 pb-4">
+              {selectedCardList.map((card) => (
+                <LSCardPreview key={card.id} data={card} onClick={onClick} />
+              ))}
+            </div>
+          </ScrollArea>
+        </div>
+        {/* /Card grid */}
+      </ResizablePanel>
+      {/* /Left panel (card grid) */}
+      <ResizableHandle withHandle />
+      {/* Right panel (card details) */}
+      <ResizablePanel defaultSize={35} maxSize={50} minSize={25}>
+        {/* Height of scroll is screen minus header */}
+        <ScrollArea className="h-[calc(100vh-60px)]">
+          <div className="flex justify-center p-8">
+            <LSCard data={selectedCardList[0]} />
+          </div>
+        </ScrollArea>
+      </ResizablePanel>
+      {/* /Right panel (card details) */}
+    </ResizablePanelGroup>
   );
 }
 

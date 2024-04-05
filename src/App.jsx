@@ -24,17 +24,17 @@ function App() {
       <CardModal openModal={openCardModal} setOpenModal={setOpenCardModal} cardData={selectedCard} />
       {/* /Modal */}
       {/* Main page */}
-      <div className="grid w-full min-h-screen md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
+      <div className="grid w-full h-screen md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
         {/* Sidebar */}
         <Sidebar onCategoryClick={setSelectedCategory} />
         {/* /Sidebar */}
         {/* Main panel */}
-        <div className="flex flex-col">
+        <div>
           {/* Navigation bar */}
           <Navigation onCategoryClick={setSelectedCategory} onAboutClick={handleModalClick} />
           {/* /Navigation bar */}
-          {/* Content */}
-          <main className="flex flex-col flex-1 p-4 lg:p-6">
+          {/* Content (height is screen minus header) */}
+          <main className="h-[calc(100vh-60px)]">
             <CardDeck cardList={deckData} selectedCategory={selectedCategory} onClick={handleModalClick} />
           </main>
           {/* /Content */}

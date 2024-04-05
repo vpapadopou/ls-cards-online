@@ -21,7 +21,7 @@ function Navigation({ onAboutClick, onCategoryClick }) {
   };
 
   return (
-    <header className="flex gap-5 h-14 sticky top-0 bg-background items-center px-4 border-b lg:h-[60px] lg:px-6">
+    <header className="flex gap-5 h-14 min-h-14 bg-background items-center px-4 border-b lg:h-[60px] lg:min-h-[60px] lg:px-6">
       {/* Side sheet (shown on small screens) */}
       <Sheet open={openSheet} onOpenChange={setOpenSheet}>
         <SheetTrigger asChild>
