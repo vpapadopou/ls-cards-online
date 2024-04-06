@@ -6,13 +6,12 @@ import Sidebar from './components/Navigation/Sidebar';
 import CardDeck from './components/CardDeck/CardDeck';
 import CardModal from './components/CardModal/CardModal';
 
-import deckData from './data/cards';
-
 function App() {
   const [openCardModal, setOpenCardModal] = useState(false);
-  const [selectedCard, setSelectedCard] = useState(deckData[0]);
+  const [selectedCard, setSelectedCard] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(0);
 
+  // TODO: Obsolete and to be removed
   const handleModalClick = (cardData) => {
     setSelectedCard(cardData);
     setOpenCardModal(true);
@@ -35,7 +34,7 @@ function App() {
           {/* /Navigation bar */}
           {/* Content (height is screen minus header) */}
           <main className="h-[calc(100vh-60px)]">
-            <CardDeck cardList={deckData} selectedCategory={selectedCategory} onClick={handleModalClick} />
+            <CardDeck selectedCategory={selectedCategory} />
           </main>
           {/* /Content */}
         </div>
