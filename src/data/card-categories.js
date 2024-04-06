@@ -22,5 +22,3 @@ export const categoryIndex = cardList.reduce((accumulator, card) => {
   card.categories.forEach((cardCategory) => accumulator[cardCategory].push(card.id));
   return accumulator;
 }, emptyIndex);
-
-export default categoryList;
