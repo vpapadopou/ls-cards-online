@@ -1,7 +1,9 @@
 import cardList from '@/data/cards';
 import { categoryIndex, categoryList } from '@/data/card-categories';
 
-export const filterByCategory = (selectedCategoryId) => {
+export const getAllCards = () => cardList;
+
+export const getCardsByCategory = (selectedCategoryId) => {
   // Zero is used as a special id for all cards
   // so simply return cardList
   if (selectedCategoryId === 0) {
@@ -19,5 +21,3 @@ export const filterByCategory = (selectedCategoryId) => {
 
   return { selectedCategoryTitle: categoryList[selectedCategoryId - 1].title, selectedCards };
 };
-
-export const getAllCards = () => cardList;
