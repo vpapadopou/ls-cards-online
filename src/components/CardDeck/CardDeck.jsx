@@ -7,34 +7,20 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import LSCard from '@/components/LSCard/LSCard';
 import LSCardPreview from '@/components/LSCard/LSCardPreview';
 
-import { categoryIndex, categoryList } from '@/data/card-categories';
+import { getAllCards, getCardsByCategory } from '@/services/card-filtering';
 
-function CardDeck({ cardList, selectedCategory, onClick }) {
-  const [selectedCategoryTitle, setSelectedCategoryTitle] = useState('All Cards');
-  const [selectedCardList, setSelectedCardList] = useState(cardList);
+function CardDeck({ selectedCategory }) {
+  const [displayedCategoryTitle, setDisplayedCategoryTitle] = useState('All Cards');
+  const [displayedCardList, setDisplayedCardList] = useState(getAllCards());
+  const [selectedCard, setSelectedCard] = useState(displayedCardList[0]);
 
-  // When selectedCategory changes we need to update the selectedCardList
+  // When selectedCategory changes we need to update the displayedCardList
   useEffect(() => {
-    // Zero is used as a special id for all cards
-    // so simply return cardList
-    if (selectedCategory === 0) {
-      setSelectedCategoryTitle('All Cards');
-      setSelectedCardList(cardList);
-      return;
-    }
+    const { selectedCategoryTitle, selectedCards } = getCardsByCategory(selectedCategory);
 
-    // If a category is selected use the index to get all card ids for the
-    // selected category. Then pick the card data one by one from the card list
-    // and add them to a newly created array.
-    // Note: Position in the array is simply -1 since id numbering starts from 1
-    const selectedCards = categoryIndex[selectedCategory].reduce((accumulator, cardId) => {
-      accumulator.push(cardList[cardId - 1]);
-      return accumulator;
-    }, []);
-
-    setSelectedCategoryTitle(categoryList[selectedCategory - 1].title);
-    setSelectedCardList(selectedCards);
-  }, [cardList, selectedCategory]);
+    setDisplayedCategoryTitle(selectedCategoryTitle);
+    setDisplayedCardList(selectedCards);
+  }, [selectedCategory]);
 
   return (
     <ResizablePanelGroup direction="horizontal">
@@ -43,14 +29,14 @@ function CardDeck({ cardList, selectedCategory, onClick }) {
         <div className="flex flex-col">
           {/* Selected category title */}
           <div className="px-4 py-8">
-            <h1 className="text-lg font-semibold md:text-2xl">{selectedCategoryTitle}</h1>
+            <h1 className="text-lg font-semibold md:text-2xl">{displayedCategoryTitle}</h1>
           </div>
           {/* /Selected category title */}
           {/* Card grid (scroll height is screen minus navbar minus approx 5rem) */}
           <ScrollArea className="h-[calc(100vh-60px-6rem)]">
             <div className="flex flex-wrap gap-4 place-content-between items-start px-4 pb-4">
-              {selectedCardList.map((card) => (
-                <LSCardPreview key={card.id} data={card} onClick={onClick} />
+              {displayedCardList.map((card) => (
+                <LSCardPreview key={card.id} data={card} onClick={setSelectedCard} />
               ))}
             </div>
           </ScrollArea>
@@ -63,8 +49,8 @@ function CardDeck({ cardList, selectedCategory, onClick }) {
       <ResizablePanel defaultSize={35} maxSize={50} minSize={25}>
         {/* Height of scroll is screen minus header */}
         <ScrollArea className="h-[calc(100vh-60px)]">
-          <div className="flex justify-center p-8">
-            <LSCard data={selectedCardList[0]} />
+          <div className="flex justify-center px-8 py-10">
+            <LSCard data={selectedCard} />
           </div>
         </ScrollArea>
       </ResizablePanel>
@@ -74,30 +60,7 @@ function CardDeck({ cardList, selectedCategory, onClick }) {
 }
 
 CardDeck.propTypes = {
-  cardList: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      logo: PropTypes.node.isRequired,
-      categories: PropTypes.arrayOf(PropTypes.number).isRequired,
-      time: PropTypes.number.isRequired,
-      invitation: PropTypes.string,
-      people: PropTypes.string.isRequired,
-      spaceAndMaterials: PropTypes.string.isRequired,
-      stepsAltTitle: PropTypes.string,
-      steps: PropTypes.arrayOf(
-        PropTypes.shape({
-          id: PropTypes.number.isRequired,
-          description: PropTypes.string.isRequired,
-          time: PropTypes.string,
-        })
-      ).isRequired,
-      stringWith: PropTypes.string,
-    })
-  ).isRequired,
   selectedCategory: PropTypes.number.isRequired,
-  onClick: PropTypes.func.isRequired,
 };
 
 export default CardDeck;
