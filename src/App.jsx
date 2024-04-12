@@ -34,7 +34,7 @@ function App() {
           {/* /Navigation bar */}
           {/* Content (height is screen minus header) */}
           <main className="h-[calc(100vh-60px)]">
-            <CardDeck selectedCategory={selectedCategory} />
+            <CardDeck selectedCategory={selectedCategory} onCardClick={handleModalClick} />
           </main>
           {/* /Content */}
         </div>
