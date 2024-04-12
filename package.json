@@ -1,7 +1,7 @@
 {
   "name": "ls-cards-online",
   "private": true,
-  "version": "0.3.2",
+  "version": "0.4.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -29,7 +29,7 @@
     "react-resizable-panels": "^2.0.16",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
-    "vite": "^5.0.8"
+    "vite": "^5.0.13"
   },
   "devDependencies": {
     "@testing-library/react": "^14.2.1",
