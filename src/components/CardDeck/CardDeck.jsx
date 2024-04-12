@@ -56,9 +56,9 @@ function CardDeck({ selectedCategory, onCardClick }) {
         {/* /Card grid */}
       </ResizablePanel>
       {/* /Left panel (card grid) */}
-      <ResizableHandle className="sm:max-lg:hidden" withHandle />
+      <ResizableHandle className="max-lg:hidden" withHandle />
       {/* Right panel (card details) */}
-      <ResizablePanel className="sm:max-lg:hidden" defaultSize={35} maxSize={50} minSize={25}>
+      <ResizablePanel className="max-lg:hidden" defaultSize={35} maxSize={50} minSize={25}>
         {/* Height of scroll is screen minus header */}
         <ScrollArea className="h-[calc(100vh-60px)]">
           <div className="flex justify-center px-8 py-10">
