@@ -43,7 +43,7 @@ describe('Component: Navigation', () => {
     const button = screen.getByTestId('about-button');
     fireEvent.click(button);
 
-    // We expect the callback with no NULL as parameter to open the about modal
+    // We expect the callback with no NULL as parameter to open the about drawer
     expect(aboutStub).toHaveBeenCalledWith(null);
   });
 

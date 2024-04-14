@@ -72,7 +72,7 @@ function Navigation({ onAboutClick, onCategoryClick }) {
       {/* /Side sheet (shown on small screens) */}
       {/* Navbar */}
       <div className="flex-1 w-full">{/* Content to be added */}</div>
-      {/* On click send NULL back so the about modal opens */}
+      {/* On click send NULL back so the about drawer opens */}
       <Button size="icon" variant="outline" onClick={() => onAboutClick(null)} data-testid="about-button">
         <InfoCircledIcon className="w-5 h-5" />
         <span className="sr-only">Open about modal</span>

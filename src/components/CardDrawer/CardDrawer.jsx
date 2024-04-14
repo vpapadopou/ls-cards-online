@@ -1,29 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Drawer, DrawerContent } from '@/components/ui/drawer';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 import AboutCard from '../AboutCard/AboutCard';
 import LSCard from '../LSCard/LSCard';
 
-function CardModal({ openModal, setOpenModal, cardData }) {
+function CardDrawer({ openDrawer, setOpenDrawer, cardData }) {
   return (
-    <Dialog
-      open={openModal}
+    <Drawer
+      open={openDrawer}
       onOpenChange={(open) => {
-        setOpenModal(open);
+        setOpenDrawer(open);
       }}
     >
-      <DialogContent className="max-w-sm">
-        {/* <DialogContent className="max-w-sm max-h-screen overflow-y-scroll"> */}
-        {/* If card data is provided, show LS Card. Otherwise show the About Card. */}
-        {cardData ? <LSCard data={cardData} /> : <AboutCard />}
-      </DialogContent>
-    </Dialog>
+      {/* Max drawer width set acconding to Material 3 guidelines */}
+      <DrawerContent className="max-w-[640px]">
+        <ScrollArea className="h-[80vh]">
+          <div className="flex flex-col items-center p-8">
+            <div className="max-w-sm">{cardData ? <LSCard data={cardData} /> : <AboutCard />}</div>
+          </div>
+        </ScrollArea>
+      </DrawerContent>
+    </Drawer>
   );
 }
 
-CardModal.propTypes = {
+CardDrawer.propTypes = {
   cardData: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
@@ -44,12 +48,12 @@ CardModal.propTypes = {
     ).isRequired,
     stringWith: PropTypes.string,
   }),
-  openModal: PropTypes.bool.isRequired,
-  setOpenModal: PropTypes.func.isRequired,
+  openDrawer: PropTypes.bool.isRequired,
+  setOpenDrawer: PropTypes.func.isRequired,
 };
 
-CardModal.defaultProps = {
+CardDrawer.defaultProps = {
   cardData: null,
 };
 
-export default CardModal;
+export default CardDrawer;

@@ -4,24 +4,24 @@ import Navigation from './components/Navigation/Navigation';
 import Sidebar from './components/Navigation/Sidebar';
 
 import CardDeck from './components/CardDeck/CardDeck';
-import CardModal from './components/CardModal/CardModal';
+import CardDrawer from './components/CardDrawer/CardDrawer';
 
 function App() {
-  const [openCardModal, setOpenCardModal] = useState(false);
+  const [openCardDrawer, setOpenCardDrawer] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(0);
 
   // TODO: Obsolete and to be removed
-  const handleModalClick = (cardData) => {
+  const handleDrawerClick = (cardData) => {
     setSelectedCard(cardData);
-    setOpenCardModal(true);
+    setOpenCardDrawer(true);
   };
 
   return (
     <div>
-      {/* Modal */}
-      <CardModal openModal={openCardModal} setOpenModal={setOpenCardModal} cardData={selectedCard} />
-      {/* /Modal */}
+      {/* Drawer */}
+      <CardDrawer openDrawer={openCardDrawer} setOpenDrawer={setOpenCardDrawer} cardData={selectedCard} />
+      {/* /Drawer */}
       {/* Main page */}
       <div className="grid w-full h-screen md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
         {/* Sidebar */}
@@ -30,11 +30,11 @@ function App() {
         {/* Main panel */}
         <div>
           {/* Navigation bar */}
-          <Navigation onCategoryClick={setSelectedCategory} onAboutClick={handleModalClick} />
+          <Navigation onCategoryClick={setSelectedCategory} onAboutClick={handleDrawerClick} />
           {/* /Navigation bar */}
           {/* Content (height is screen minus header) */}
           <main className="h-[calc(100vh-60px)]">
-            <CardDeck selectedCategory={selectedCategory} onCardClick={handleModalClick} />
+            <CardDeck selectedCategory={selectedCategory} onCardClick={handleDrawerClick} />
           </main>
           {/* /Content */}
         </div>
