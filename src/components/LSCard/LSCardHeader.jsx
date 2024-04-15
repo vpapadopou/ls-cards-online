@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Badge } from '@/components/ui/badge';
 
-import { categoryList } from '@/data/card-categories';
+import { getCategoryById } from '@/services/card-categories';
 
 function LSCardHeader({ data }) {
   return (
@@ -40,9 +40,9 @@ function LSCardHeader({ data }) {
         {data.categories.map((categoryId) => (
           <div className="flex items-center mr-3" key={categoryId}>
             {/* The category data is in the -1 position in the array since id numbering starts from 1 */}
-            <span className={`w-3 h-3 ${categoryList[categoryId - 1].color} rounded-full mr-2`} data-testid="category-color" />
+            <span className={`w-3 h-3 ${getCategoryById(categoryId).color} rounded-full mr-2`} data-testid="category-color" />
             <span className="text-sm font-bold text-muted-foreground" data-testid="category-title">
-              {categoryList[categoryId - 1].title}
+              {getCategoryById(categoryId).title}
             </span>
           </div>
         ))}
