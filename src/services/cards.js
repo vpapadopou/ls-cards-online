@@ -1,13 +1,21 @@
 import cardList from '@/data/cards';
-import { categoryIndex, categoryList } from '@/data/card-categories';
+
+import { categoryIndex } from './card-categories';
 
 export const getAllCards = () => cardList;
+
+//------------------------------
+
+// Index in the array is simply id - 1
+export const getCardById = (id) => cardList[id - 1];
+
+//------------------------------
 
 export const getCardsByCategory = (selectedCategoryId) => {
   // Zero is used as a special id for all cards
   // so simply return cardList
   if (selectedCategoryId === 0) {
-    return { selectedCategoryTitle: 'All Cards', selectedCards: cardList };
+    return cardList;
   }
 
   // If a category is selected use the index to get all card ids for the
@@ -19,5 +27,5 @@ export const getCardsByCategory = (selectedCategoryId) => {
     return accumulator;
   }, []);
 
-  return { selectedCategoryTitle: categoryList[selectedCategoryId - 1].title, selectedCards };
+  return selectedCards;
 };
