@@ -6,17 +6,22 @@ import { CircleIcon, HamburgerMenuIcon, InfoCircledIcon } from '@radix-ui/react-
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
-import { categoryList } from '@/data/card-categories';
 import LSLogo from '@/data/ls-logo.svg';
 
-function Navigation({ onAboutClick, onCategoryClick }) {
+import { useCardStore } from '@/hooks/use-card-store';
+
+import { getAllCategories } from '@/services/card-categories';
+
+function Navigation({ onAboutClick }) {
+  const setSelectedCategoryId = useCardStore((state) => state.setSelectedCategoryId);
+
   const [openSheet, setOpenSheet] = useState(false);
 
   // Call the appropriate callback and close the sheet.
   // Used to programmatically close the sheet after user selects a category.
   // Otherwise, the data in the background changes and the sheet remains open.
-  const selectCategory = (category) => {
-    onCategoryClick(category);
+  const selectCategory = (categoryId) => {
+    setSelectedCategoryId(categoryId);
     setOpenSheet(false);
   };
 
@@ -52,7 +57,7 @@ function Navigation({ onAboutClick, onCategoryClick }) {
             </Button>
             {/* /All cards button */}
             {/* Loop through categories */}
-            {categoryList.map((cardCategory) => (
+            {getAllCategories().map((cardCategory) => (
               <Button
                 key={cardCategory.id}
                 className="flex gap-5 text-md justify-start items-center px-3 py-2"
@@ -84,7 +89,6 @@ function Navigation({ onAboutClick, onCategoryClick }) {
 
 Navigation.propTypes = {
   onAboutClick: PropTypes.func.isRequired,
-  onCategoryClick: PropTypes.func.isRequired,
 };
 
 export default Navigation;

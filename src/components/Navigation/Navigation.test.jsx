@@ -5,10 +5,9 @@ import Navigation from './Navigation';
 
 describe('Component: Navigation', () => {
   const aboutStub = vi.fn();
-  const categoryStub = vi.fn();
 
   beforeEach(() => {
-    render(<Navigation onAboutClick={aboutStub} onCategoryClick={categoryStub} />);
+    render(<Navigation onAboutClick={aboutStub} />);
   });
 
   test('should display the toggle navigation button', () => {
@@ -45,18 +44,5 @@ describe('Component: Navigation', () => {
 
     // We expect the callback with no NULL as parameter to open the about drawer
     expect(aboutStub).toHaveBeenCalledWith(null);
-  });
-
-  test('should call the provided onCategoryClick function with "0" when the All Cards category button is clicked', () => {
-    // Open sheet
-    const sheetToggleButton = screen.getByTestId('sheet-toggle-button');
-    fireEvent.click(sheetToggleButton);
-
-    // Click All Cards button
-    const categoryButton = screen.getAllByTestId('category-button')[0];
-    fireEvent.click(categoryButton);
-
-    // We expect the callback with "All" as parameter
-    expect(categoryStub).toHaveBeenCalledWith(0);
   });
 });
