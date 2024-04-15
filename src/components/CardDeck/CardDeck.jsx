@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from 'react';
+import { React } from 'react';
 import PropTypes from 'prop-types';
 
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@/components/ui/resizable';
@@ -7,32 +7,29 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import LSCard from '@/components/LSCard/LSCard';
 import LSCardPreview from '@/components/LSCard/LSCardPreview';
 
+import { useCardStore } from '@/hooks/use-card-store';
 import { useMediaQuery } from '@/hooks/use-media-query';
-import { getAllCards, getCardsByCategory } from '@/services/card-filtering';
 
-function CardDeck({ selectedCategory, onCardClick }) {
-  const [displayedCategoryTitle, setDisplayedCategoryTitle] = useState('All Cards');
-  const [displayedCardList, setDisplayedCardList] = useState(getAllCards());
-  const [selectedCard, setSelectedCard] = useState(displayedCardList[0]);
+import { getCardById, getCardsByCategory } from '@/services/cards';
+import { getCategoryById } from '@/services/card-categories';
+
+function CardDeck({ onCardClick }) {
+  const selectedCardId = useCardStore((state) => state.selectedCardId);
+  const setSelectedCardId = useCardStore((state) => state.setSelectedCardId);
+  const selectedCategoryId = useCardStore((state) => state.selectedCategoryId);
+  const { title: selectedCategoryTitle } = getCategoryById(selectedCategoryId);
+
   const isDesktop = useMediaQuery('(min-width: 1024px)');
 
-  const handleCardPreviewClick = (cardData) => {
-    setSelectedCard(cardData);
+  // TODO: To be restructured
+  const handleCardPreviewClick = (cardId) => {
+    setSelectedCardId(cardId);
 
     if (!isDesktop) {
-      onCardClick(cardData);
+      // Temp hack: send data back instead of id
+      onCardClick(getCardById(cardId));
     }
   };
-
-  const handleSelectedCategoryChange = () => {
-    const { selectedCategoryTitle, selectedCards } = getCardsByCategory(selectedCategory);
-
-    setDisplayedCategoryTitle(selectedCategoryTitle);
-    setDisplayedCardList(selectedCards);
-  };
-
-  // When selectedCategory changes we need to update the displayedCardList
-  useEffect(handleSelectedCategoryChange, [selectedCategory]);
 
   return (
     <ResizablePanelGroup direction="horizontal">
@@ -41,13 +38,13 @@ function CardDeck({ selectedCategory, onCardClick }) {
         <div className="flex flex-col">
           {/* Selected category title */}
           <div className="px-4 py-8">
-            <h1 className="text-lg font-semibold md:text-2xl">{displayedCategoryTitle}</h1>
+            <h1 className="text-lg font-semibold md:text-2xl">{selectedCategoryTitle}</h1>
           </div>
           {/* /Selected category title */}
           {/* Card grid (scroll height is screen minus navbar minus approx 5rem) */}
           <ScrollArea className="h-[calc(100vh-60px-6rem)]">
             <div className="flex flex-wrap gap-4 place-content-center items-start px-4 pb-4">
-              {displayedCardList.map((card) => (
+              {getCardsByCategory(selectedCategoryId).map((card) => (
                 <LSCardPreview key={card.id} data={card} onClick={handleCardPreviewClick} />
               ))}
             </div>
@@ -62,7 +59,7 @@ function CardDeck({ selectedCategory, onCardClick }) {
         {/* Height of scroll is screen minus header */}
         <ScrollArea className="h-[calc(100vh-60px)]">
           <div className="flex justify-center px-8 py-10">
-            <LSCard data={selectedCard} />
+            <LSCard data={getCardById(selectedCardId)} />
           </div>
         </ScrollArea>
       </ResizablePanel>
@@ -72,7 +69,6 @@ function CardDeck({ selectedCategory, onCardClick }) {
 }
 
 CardDeck.propTypes = {
-  selectedCategory: PropTypes.number.isRequired,
   onCardClick: PropTypes.func.isRequired,
 };
 
