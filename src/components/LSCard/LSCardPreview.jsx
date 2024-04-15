@@ -7,8 +7,8 @@ import LSCardHeader from './LSCardHeader';
 
 function LSCardPreview({ data, onClick }) {
   return (
-    // On click send the card data back so the drawer will open
-    <Card className="max-w-sm hover:bg-accent" onClick={() => onClick(data)} role="button" data-testid="card-preview">
+    // On click send the card id back to open the drawer
+    <Card className="max-w-sm hover:bg-accent" onClick={() => onClick(data.id)} role="button" data-testid="card-preview">
       <CardContent className="flex flex-col min-h-44 place-content-between gap-4 p-4">
         <LSCardHeader data={data} />
       </CardContent>
