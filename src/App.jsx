@@ -9,7 +9,6 @@ import CardDrawer from './components/CardDrawer/CardDrawer';
 function App() {
   const [openCardDrawer, setOpenCardDrawer] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState(0);
 
   // TODO: Obsolete and to be removed
   const handleDrawerClick = (cardData) => {
@@ -25,16 +24,16 @@ function App() {
       {/* Main page */}
       <div className="grid w-full h-screen md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
         {/* Sidebar */}
-        <Sidebar onCategoryClick={setSelectedCategory} />
+        <Sidebar />
         {/* /Sidebar */}
         {/* Main panel */}
         <div>
           {/* Navigation bar */}
-          <Navigation onCategoryClick={setSelectedCategory} onAboutClick={handleDrawerClick} />
+          <Navigation onAboutClick={handleDrawerClick} />
           {/* /Navigation bar */}
           {/* Content (height is screen minus header) */}
           <main className="h-[calc(100vh-60px)]">
-            <CardDeck selectedCategory={selectedCategory} onCardClick={handleDrawerClick} />
+            <CardDeck onCardClick={handleDrawerClick} />
           </main>
           {/* /Content */}
         </div>
