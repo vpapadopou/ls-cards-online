@@ -21,13 +21,12 @@ function CardDeck({ onCardClick }) {
 
   const isDesktop = useMediaQuery('(min-width: 1024px)');
 
-  // TODO: To be restructured
   const handleCardPreviewClick = (cardId) => {
     setSelectedCardId(cardId);
 
+    // If not desktop use onCardClick to open drawer
     if (!isDesktop) {
-      // Temp hack: send data back instead of id
-      onCardClick(getCardById(cardId));
+      onCardClick();
     }
   };
 
