@@ -1,11 +1,17 @@
 import { beforeEach, describe, expect, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
+import { MemoryRouter } from 'react-router-dom';
+
 import Sidebar from './Sidebar';
 
 describe('Component: Sidebar', () => {
   beforeEach(() => {
-    render(<Sidebar />);
+    render(
+      <MemoryRouter>
+        <Sidebar />
+      </MemoryRouter>
+    );
   });
 
   test('should display the title text inside <span>', () => {
@@ -16,11 +22,11 @@ describe('Component: Sidebar', () => {
     expect(screen.getByTestId('sidebar-logo')).toBeDefined();
   });
 
-  test('should display the "All Cards" category button', () => {
+  test('should display the "All Cards" category link', () => {
     expect(screen.getByText('All Cards')).toBeDefined();
   });
 
-  test('should display 7 card category buttons', () => {
-    expect(screen.getAllByRole('button').length).toEqual(7);
+  test('should display 7 card category links', () => {
+    expect(screen.getAllByTestId('category-link').length).toEqual(7);
   });
 });

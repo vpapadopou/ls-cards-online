@@ -1,13 +1,17 @@
-import { beforeEach, describe, expect, test, vi } from 'vitest';
+import { beforeEach, describe, expect, test } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
+
+import { MemoryRouter } from 'react-router-dom';
 
 import Navigation from './Navigation';
 
 describe('Component: Navigation', () => {
-  const aboutStub = vi.fn();
-
   beforeEach(() => {
-    render(<Navigation onAboutClick={aboutStub} />);
+    render(
+      <MemoryRouter>
+        <Navigation />
+      </MemoryRouter>
+    );
   });
 
   test('should display the toggle navigation button', () => {
@@ -18,8 +22,8 @@ describe('Component: Navigation', () => {
     expect(screen.getByTestId('about-button')).toBeDefined();
   });
 
-  test('should NOT display the "All Cards" category button when the sheet is closed', () => {
-    expect(screen.queryByText('All Cards', { selector: 'button' })).toBeNull();
+  test('should NOT display the "All Cards" category link when the sheet is closed', () => {
+    expect(screen.queryByText('All Cards', { selector: 'link' })).toBeNull();
   });
 
   test('should display the "All Cards" category button when the sheet is open', () => {
@@ -30,19 +34,11 @@ describe('Component: Navigation', () => {
     expect(screen.getByText('All Cards')).toBeDefined();
   });
 
-  test('should display 7 card category buttons when the sheet is open', () => {
+  test('should display 7 card category links when the sheet is open', () => {
     // Open sheet
     const button = screen.getByTestId('sheet-toggle-button');
     fireEvent.click(button);
 
-    expect(screen.getAllByTestId('category-button').length).toEqual(7);
-  });
-
-  test('should call the provided onAboutClick function with NULL when the About button is clicked', () => {
-    const button = screen.getByTestId('about-button');
-    fireEvent.click(button);
-
-    // We expect the callback with no NULL as parameter to open the about drawer
-    expect(aboutStub).toHaveBeenCalledWith(null);
+    expect(screen.getAllByTestId('category-link').length).toEqual(7);
   });
 });
