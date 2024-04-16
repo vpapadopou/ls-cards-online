@@ -41,7 +41,7 @@ function CardDeck({ onCardClick }) {
             <h1 className="text-lg font-semibold md:text-2xl">{selectedCategoryTitle}</h1>
           </div>
           {/* /Selected category title */}
-          {/* Card grid (scroll height is screen minus navbar minus approx 5rem) */}
+          {/* Card grid (scroll height is screen minus navbar minus approx 6rem) */}
           <ScrollArea className="h-[calc(100vh-60px-6rem)]">
             <div className="flex flex-wrap gap-4 place-content-center items-start px-4 pb-4">
               {getCardsByCategory(selectedCategoryId).map((card) => (
