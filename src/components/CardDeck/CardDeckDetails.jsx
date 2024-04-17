@@ -1,6 +1,7 @@
 import React from 'react';
 
 import LSCard from '@/components/LSCard/LSCard';
+
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 import { useCardStore } from '@/hooks/use-card-store';
