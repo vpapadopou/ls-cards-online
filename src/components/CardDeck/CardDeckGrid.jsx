@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import LSCardPreview from '@/components/LSCard/LSCardPreview';
+
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 import { useCardStore } from '@/hooks/use-card-store';

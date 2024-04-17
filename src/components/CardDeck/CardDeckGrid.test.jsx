@@ -5,7 +5,7 @@ import deckData from '@/data/cards';
 
 import CardDeckGrid from './CardDeckGrid';
 
-describe('Component: CardDeck', () => {
+describe('Component: CardDeckGrid', () => {
   const stub = vi.fn();
 
   beforeEach(() => {
