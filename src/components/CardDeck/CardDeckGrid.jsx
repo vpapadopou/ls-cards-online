@@ -7,11 +7,12 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 
 import { useCardStore } from '@/hooks/use-card-store';
 
-import { getCardsByCategory } from '@/services/cards';
+import { getCardsByCategorySorted } from '@/services/cards';
 
 function CardDeckGrid({ onClick }) {
   const selectedCategoryId = useCardStore((state) => state.selectedCategoryId);
-  const cards = getCardsByCategory(selectedCategoryId);
+  const selectedSortingId = useCardStore((state) => state.selectedSortingId);
+  const cards = getCardsByCategorySorted(selectedCategoryId, selectedSortingId);
 
   return (
     // Scroll height is screen minus navbar minus approx 6rem for the category title
