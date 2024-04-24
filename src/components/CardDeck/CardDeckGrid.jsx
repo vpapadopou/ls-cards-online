@@ -15,8 +15,8 @@ function CardDeckGrid({ onClick }) {
   const cards = getCardsByCategorySorted(selectedCategoryId, selectedSortingId);
 
   return (
-    // Scroll height is screen minus navbar minus approx 6rem for the category title
-    <ScrollArea className="h-[calc(100vh-60px-6rem)]">
+    // Scroll height is screen minus navbar minus approx 5.2rem for the sorting options
+    <ScrollArea className="h-[calc(100vh-60px-5.2rem)]">
       <div className="flex flex-wrap gap-4 place-content-center items-start px-4 pb-4">
         {cards.map((card) => (
           <LSCardPreview key={card.id} data={card} onClick={onClick} />

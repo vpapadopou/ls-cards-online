@@ -6,6 +6,7 @@ import { useCardStore } from '@/hooks/use-card-store';
 import { useMediaQuery } from '@/hooks/use-media-query';
 
 import CardDeckGrid from './CardDeckGrid';
+import CardDeckOptions from './CardDeckOptions';
 
 function CardDeck() {
   const setSelectedCardId = useCardStore((state) => state.setSelectedCardId);
@@ -22,6 +23,7 @@ function CardDeck() {
       {/* Drawer (used for mobile devices only) */}
       <CardDrawer openDrawer={openCardDrawer} setOpenDrawer={setOpenCardDrawer} />
       {/* /Drawer */}
+      <CardDeckOptions />
       <CardDeckGrid onClick={handleCardPreviewclick} />
     </>
   );
