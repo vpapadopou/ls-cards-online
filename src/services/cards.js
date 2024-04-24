@@ -29,3 +29,40 @@ export const getCardsByCategory = (selectedCategoryId) => {
 
   return selectedCards;
 };
+
+//------------------------------
+
+// Helper function
+const compareByKey = (key) => {
+  return (a, b) => {
+    if (a[key] > b[key]) {
+      return 1;
+    }
+
+    if (b[key] > a[key]) {
+      return -1;
+    }
+
+    return 0;
+  };
+};
+
+export const getCardsByCategorySorted = (selectedCategoryId, selectedSortingId) => {
+  const cards = getCardsByCategory(selectedCategoryId);
+
+  // Native sort modifies the array in place so we use concat() to get a copy
+  switch (selectedSortingId) {
+    case 1:
+      return cards.concat().sort(compareByKey('title'));
+    case 2:
+      return cards.concat().sort(compareByKey('title')).reverse();
+    case 3:
+      return cards.concat().sort(compareByKey('time'));
+    case 4:
+      return cards.concat().sort(compareByKey('time')).reverse();
+    // Default case is id 0, we just return the array which is already sorted by id
+    case 0:
+    default:
+      return cards;
+  }
+};

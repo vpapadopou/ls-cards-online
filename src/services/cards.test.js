@@ -2,15 +2,9 @@ import { describe, expect, test } from 'vitest';
 
 import cardList from '@/data/cards';
 
-import { getAllCards, getCardById, getCardsByCategory } from './cards';
+import { getAllCards, getCardById, getCardsByCategory, getCardsByCategorySorted } from './cards';
 
 describe('Service: Cards', () => {
-  // test('should return "All Cards" as the selected category title when the selected category ID is 0', () => {
-  //   const { selectedCategoryTitle } = getCardsByCategory(0);
-
-  //   expect(selectedCategoryTitle).toEqual('All Cards');
-  // });
-
   test('should return an array that has 33 cards when getAllCards() is called', () => {
     const selectedCards = getAllCards();
 
@@ -63,5 +57,41 @@ describe('Service: Cards', () => {
     const selectedCards = getCardsByCategory(6);
 
     expect(selectedCards.length).toEqual(2);
+  });
+
+  test('should return an array sorted by id ASC when the selected sorting ID is 0', () => {
+    const selectedCards = getCardsByCategorySorted(0, 0);
+
+    expect(selectedCards[0].id < selectedCards[32].id).toBeTruthy();
+  });
+
+  test('should return an array sorted by name ASC when the selected sorting ID is 1', () => {
+    const selectedCards = getCardsByCategorySorted(0, 1);
+
+    expect(selectedCards[0].title < selectedCards[32].title).toBeTruthy();
+  });
+
+  test('should return an array sorted by name DESC when the selected sorting ID is 2', () => {
+    const selectedCards = getCardsByCategorySorted(0, 2);
+
+    expect(selectedCards[0].title > selectedCards[32].title).toBeTruthy();
+  });
+
+  test('should return an array sorted by time ASC when the selected sorting ID is 3', () => {
+    const selectedCards = getCardsByCategorySorted(0, 3);
+
+    expect(selectedCards[0].time < selectedCards[32].time).toBeTruthy();
+  });
+
+  test('should return an array sorted by time DESC when the selected sorting ID is 4', () => {
+    const selectedCards = getCardsByCategorySorted(0, 4);
+
+    expect(selectedCards[0].time > selectedCards[32].time).toBeTruthy();
+  });
+
+  test('should return an array sorted by id ASC when the selected sorting ID is not defined', () => {
+    const selectedCards = getCardsByCategorySorted(0);
+
+    expect(selectedCards[0].id < selectedCards[32].id).toBeTruthy();
   });
 });
