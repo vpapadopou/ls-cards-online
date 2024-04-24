@@ -2,7 +2,7 @@ import { describe, expect, test } from 'vitest';
 
 import cardList from '@/data/cards';
 
-import { getAllCards, getCardById, getCardsByCategory, getCardsByCategorySorted } from './cards';
+import { getAllCards, getCardById, getCardsByCategory, getCardsByCategorySorted, getSortingOptions } from './cards';
 
 describe('Service: Cards', () => {
   test('should return an array that has 33 cards when getAllCards() is called', () => {
@@ -93,5 +93,11 @@ describe('Service: Cards', () => {
     const selectedCards = getCardsByCategorySorted(0);
 
     expect(selectedCards[0].id < selectedCards[32].id).toBeTruthy();
+  });
+
+  test('should return an array with 5 sorting options', () => {
+    const sortingOptions = getSortingOptions();
+
+    expect(sortingOptions.length).toEqual(5);
   });
 });

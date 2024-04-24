@@ -66,3 +66,13 @@ export const getCardsByCategorySorted = (selectedCategoryId, selectedSortingId) 
       return cards;
   }
 };
+
+//------------------------------
+
+export const getSortingOptions = () => [
+  { name: 'Default Sorting', value: 0 },
+  { name: 'Name: A to Z', value: 1 },
+  { name: 'Name: Z to A', value: 2 },
+  { name: 'Duration: Shortest First', value: 3 },
+  { name: 'Duration: Longest First', value: 4 },
+];
