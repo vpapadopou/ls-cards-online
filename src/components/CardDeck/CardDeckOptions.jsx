@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { DropdownMenuIcon } from '@radix-ui/react-icons';
+
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 import { useCardStore } from '@/hooks/use-card-store';
@@ -17,10 +19,11 @@ function CardDeckOptions() {
         <Select defaultValue="id" value={selectedSortingId} onValueChange={setSelectedSortingId} data-testid="sorting-trigger">
           <SelectTrigger>
             <SelectValue placeholder="Sort By">
-              <span className="mr-4">{sortingOptions[selectedSortingId].name}</span>
+              <DropdownMenuIcon className="h-5" />
+              <span className="sr-only">Toggle sorting menu</span>
             </SelectValue>
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent align="end">
             <SelectGroup
               // Ref hack used to stop click propagation behind the select
               ref={(ref) =>
