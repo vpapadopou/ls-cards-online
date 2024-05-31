@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { DropdownMenuIcon } from '@radix-ui/react-icons';
+import { SortAscending } from '@phosphor-icons/react';
 
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
@@ -19,8 +19,8 @@ function CardDeckOptions() {
         <Select defaultValue="id" value={selectedSortingId} onValueChange={setSelectedSortingId} data-testid="sorting-trigger">
           <SelectTrigger>
             <SelectValue placeholder="Sort By">
-              <DropdownMenuIcon className="h-5" />
-              <span className="sr-only">Toggle sorting menu</span>
+              <SortAscending className="w-4 h-4" />
+              <span className="sr-only">Select sorting method</span>
             </SelectValue>
           </SelectTrigger>
           <SelectContent align="end">
