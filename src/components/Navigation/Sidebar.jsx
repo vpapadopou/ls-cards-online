@@ -1,6 +1,7 @@
+import clsx from 'clsx';
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { CircleIcon } from '@radix-ui/react-icons';
 
@@ -13,6 +14,8 @@ import { useCardStore } from '@/hooks/use-card-store';
 import { getAllCategories } from '@/services/card-categories';
 
 function Sidebar() {
+  const location = useLocation();
+  const selectedCategoryId = useCardStore((state) => state.selectedCategoryId);
   const setSelectedCategoryId = useCardStore((state) => state.setSelectedCategoryId);
 
   return (
@@ -31,7 +34,9 @@ function Sidebar() {
           <nav className="grid gap-1 text-sm font-medium items-start px-2 lg:px-4">
             {/* All cards link */}
             <Button
-              className="flex gap-5 justify-start items-center px-3 py-2"
+              className={clsx('flex gap-5 justify-start items-center px-3 py-2', {
+                'bg-secondary': location.pathname === '/' && selectedCategoryId === 0,
+              })}
               variant="ghost"
               // Use 0 as a special id for all cards
               onClick={() => setSelectedCategoryId(0)}
@@ -48,7 +53,9 @@ function Sidebar() {
             {getAllCategories().map((cardCategory) => (
               <Button
                 key={cardCategory.id}
-                className="flex gap-5 justify-start items-center px-3 py-2"
+                className={clsx('flex gap-5 justify-start items-center px-3 py-2', {
+                  'bg-secondary': location.pathname === '/' && selectedCategoryId === cardCategory.id,
+                })}
                 variant="ghost"
                 onClick={() => setSelectedCategoryId(cardCategory.id)}
                 data-testid="category-link"

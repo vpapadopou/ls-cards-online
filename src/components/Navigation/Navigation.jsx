@@ -1,5 +1,6 @@
+import clsx from 'clsx';
 import { React, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { CircleIcon, HamburgerMenuIcon, InfoCircledIcon } from '@radix-ui/react-icons';
 
@@ -13,6 +14,8 @@ import { useCardStore } from '@/hooks/use-card-store';
 import { getAllCategories } from '@/services/card-categories';
 
 function Navigation() {
+  const location = useLocation();
+  const selectedCategoryId = useCardStore((state) => state.selectedCategoryId);
   const setSelectedCategoryId = useCardStore((state) => state.setSelectedCategoryId);
 
   const [openSheet, setOpenSheet] = useState(false);
@@ -46,7 +49,9 @@ function Navigation() {
             {/* Sheet content */}
             {/* All cards link */}
             <Button
-              className="flex gap-5 text-md justify-start items-center px-3 py-2"
+              className={clsx('flex gap-5 text-md justify-start items-center px-3 py-2', {
+                'bg-secondary': location.pathname === '/' && selectedCategoryId === 0,
+              })}
               variant="ghost"
               // Use 0 as a special id for all cards
               onClick={() => handleCategoryClick(0)}
@@ -63,7 +68,9 @@ function Navigation() {
             {getAllCategories().map((cardCategory) => (
               <Button
                 key={cardCategory.id}
-                className="flex gap-5 text-md justify-start items-center px-3 py-2"
+                className={clsx('flex gap-5 text-md justify-start items-center px-3 py-2', {
+                  'bg-secondary': location.pathname === '/' && selectedCategoryId === cardCategory.id,
+                })}
                 variant="ghost"
                 onClick={() => handleCategoryClick(cardCategory.id)}
                 data-testid="category-link"
