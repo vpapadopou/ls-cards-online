@@ -17,7 +17,7 @@ function CardDeckOptions() {
     <div className="flex flex-row px-4 py-6">
       <div className="ml-auto">
         <Select defaultValue="id" value={selectedSortingId} onValueChange={setSelectedSortingId} data-testid="sorting-trigger">
-          <SelectTrigger>
+          <SelectTrigger data-testid="sorting-option-trigger">
             <SelectValue placeholder="Sort By">
               <SortAscending className="w-4 h-4" />
               <span className="sr-only">Select sorting method</span>
