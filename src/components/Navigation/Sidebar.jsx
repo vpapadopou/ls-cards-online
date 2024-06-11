@@ -35,7 +35,7 @@ function Sidebar() {
             {/* All cards link */}
             <Button
               className={clsx('flex gap-5 justify-start items-center px-3 py-2', {
-                'bg-secondary': location.pathname === '/' && selectedCategoryId === 0,
+                'bg-accent': location.pathname === '/' && selectedCategoryId === 0,
               })}
               variant="ghost"
               // Use 0 as a special id for all cards
@@ -54,7 +54,7 @@ function Sidebar() {
               <Button
                 key={cardCategory.id}
                 className={clsx('flex gap-5 justify-start items-center px-3 py-2', {
-                  'bg-secondary': location.pathname === '/' && selectedCategoryId === cardCategory.id,
+                  'bg-accent': location.pathname === '/' && selectedCategoryId === cardCategory.id,
                 })}
                 variant="ghost"
                 onClick={() => setSelectedCategoryId(cardCategory.id)}
