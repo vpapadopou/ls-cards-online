@@ -7,15 +7,10 @@ import LSLogo from '@/data/ls-logo.svg';
 
 function About() {
   return (
-    <div className="flex flex-col px-4">
-      {/* Page title */}
-      <div className="py-8">
-        <h1 className="text-lg font-semibold md:text-2xl">About</h1>
-      </div>
-      {/* /Page title */}
-      {/* About card (scroll height is screen minus navbar minus approx 6rem) */}
-      <ScrollArea className="h-[calc(100vh-60px-6rem)]">
-        <div className="flex flex-col">
+    <ScrollArea className="h-[calc(100vh-60px)]">
+      {/* About card */}
+      <div className="flex flex-1 items-center justify-center py-4">
+        <div className="flex flex-col p-4">
           {/* Header */}
           <div className="flex flex-row space-x-5 pb-4">
             {/* Left column - Icon */}
@@ -44,21 +39,21 @@ function About() {
               <p>Liberating Structures are developed by Henri Lipmanowicz and Keith McCandless:</p>
               <Button className="mb-4 px-0" variant="link" asChild>
                 <a href="http://liberatingstructures.com" target="_blank" rel="noopener noreferrer">
-                  http://liberatingstructures.com
+                  liberatingstructures.com
                 </a>
               </Button>
 
               <p>The original LS Cards were created by Holisticon AG:</p>
               <Button className="mb-4 px-0" variant="link" asChild>
                 <a href="https://holisticon.de" target="_blank" rel="noopener noreferrer">
-                  https://holisticon.de
+                  holisticon.de
                 </a>
               </Button>
 
               <p>Liberating Structures SVG icons were created by Julian Fastnacht:</p>
               <Button className="px-0" variant="link" asChild>
                 <a href="https://github.com/jfastnacht" target="_blank" rel="noopener noreferrer">
-                  https://github.com/jfastnacht
+                  github.com/jfastnacht
                 </a>
               </Button>
             </div>
@@ -70,7 +65,7 @@ function About() {
                 The Liberating Structures, the LS cards, the LS SVG icons, the Liberating Structures Card Deck and this online version of it are
                 licensed under:
               </p>
-              <Button className="px-0" variant="link" asChild>
+              <Button className="px-0 whitespace-normal" variant="link" asChild>
                 <a href="http://creativecommons.org/licenses/by-nc/3.0/" target="_blank" rel="noopener noreferrer">
                   Creative Commons Attribution Non Commercial 3.0 Unported (CC-BY-NC-3.0)
                 </a>
@@ -83,16 +78,16 @@ function About() {
               <p className="mb-4">I hope you like this electronic version of the Liberating Structures Card Deck!</p>
 
               <p>You can find the source code of this project on github:</p>
-              <Button className="mb-4 px-0" variant="link" asChild>
+              <Button className="mb-4 px-0 whitespace-normal" variant="link" asChild>
                 <a href="https://github.com/vpapadopou/ls-cards-online" target="_blank" rel="noopener noreferrer">
-                  https://github.com/vpapadopou/ls-cards-online
+                  github.com/vpapadopou/ls-cards-online
                 </a>
               </Button>
 
               <p>Feel free to also check the original one out if you want to create a hard copy:</p>
-              <Button className="mb-4 px-0" variant="link" asChild>
+              <Button className="mb-4 px-0 whitespace-normal" variant="link" asChild>
                 <a href="https://github.com/vpapadopou/liberating-structures-cards" target="_blank" rel="noopener noreferrer">
-                  https://github.com/vpapadopou/liberating-structures-cards
+                  github.com/vpapadopou/liberating-structures-cards
                 </a>
               </Button>
 
@@ -102,9 +97,9 @@ function About() {
           </div>
           {/* /Body */}
         </div>
-      </ScrollArea>
+      </div>
       {/* /About card */}
-    </div>
+    </ScrollArea>
   );
 }
 
