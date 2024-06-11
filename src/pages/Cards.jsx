@@ -7,7 +7,7 @@ import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@/componen
 
 function Cards() {
   return (
-    <ResizablePanelGroup direction="horizontal">
+    <ResizablePanelGroup direction="horizontal" autoSaveId="persistence">
       {/* Left panel (card grid) */}
       <ResizablePanel defaultSize={65}>
         <div className="flex flex-col">
