@@ -1,16 +1,21 @@
+import clsx from 'clsx';
 import React from 'react';
 import PropTypes from 'prop-types';
 
 // import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
+import { useCardStore } from '@/hooks/use-card-store';
+
 import LSCardHeader from './LSCardHeader';
 
 function LSCardPreview({ data, onClick }) {
+  const selectedCardId = useCardStore((state) => state.selectedCardId);
+
   return (
     // On click send the card id back to open the drawer
     <button type="button" onClick={() => onClick(data.id)} data-testid="card-preview">
-      <Card className="max-w-sm text-left hover:bg-secondary">
+      <Card className={clsx('max-w-sm text-left hover:bg-accent', { 'bg-accent': selectedCardId === data.id })}>
         <CardContent className="flex flex-col min-h-44 place-content-between gap-4 p-4">
           <LSCardHeader data={data} />
         </CardContent>
