@@ -39,7 +39,7 @@ function Navigation() {
           </Button>
         </SheetTrigger>
         <SheetContent className="flex flex-col w-[300px]" side="left">
-          <nav className="grid gap-2 text-md font-medium">
+          <nav className="grid gap-2 text-md font-medium overflow-auto">
             {/* Logo */}
             <div className="flex gap-5 text-lg font-semibold items-center mb-2">
               <img src={LSLogo} className="h-8" alt="Liberating Structures Card Deck Logo" />
