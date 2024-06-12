@@ -1,11 +1,11 @@
 import clsx from 'clsx';
 import React from 'react';
-
 import { Link, useLocation } from 'react-router-dom';
 
 import { CircleIcon } from '@radix-ui/react-icons';
 
 import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
 
 import LSLogo from '@/data/ls-logo.svg';
 
@@ -68,6 +68,19 @@ function Sidebar() {
               </Button>
             ))}
             {/* /Loop through categories */}
+            {/* Pages */}
+            <Separator className="my-4" />
+            <Button
+              className={clsx('flex gap-5 justify-start items-center px-3 py-2', {
+                'bg-accent': location.pathname === '/about',
+              })}
+              variant="ghost"
+              data-testid="about-button"
+              asChild
+            >
+              <Link to="/about">About</Link>
+            </Button>
+            {/* /Pages */}
           </nav>
         </div>
         {/* /Sidebar Content */}

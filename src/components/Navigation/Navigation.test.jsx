@@ -18,10 +18,6 @@ describe('Component: Navigation', () => {
     expect(screen.getByTestId('sheet-toggle-button')).toBeDefined();
   });
 
-  test('should display the about button', () => {
-    expect(screen.getByTestId('about-button')).toBeDefined();
-  });
-
   test('should NOT display the "All Cards" category link when the sheet is closed', () => {
     expect(screen.queryByText('All Cards', { selector: 'link' })).toBeNull();
   });
@@ -40,5 +36,13 @@ describe('Component: Navigation', () => {
     fireEvent.click(button);
 
     expect(screen.getAllByTestId('category-link').length).toEqual(7);
+  });
+
+  test('should display the about button when the sheet is open', () => {
+    // Open sheet
+    const button = screen.getByTestId('sheet-toggle-button');
+    fireEvent.click(button);
+
+    expect(screen.getByTestId('about-button')).toBeDefined();
   });
 });

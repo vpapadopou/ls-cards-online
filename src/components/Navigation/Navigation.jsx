@@ -2,9 +2,10 @@ import clsx from 'clsx';
 import { React, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import { CircleIcon, HamburgerMenuIcon, InfoCircledIcon } from '@radix-ui/react-icons';
+import { CircleIcon, HamburgerMenuIcon } from '@radix-ui/react-icons';
 
 import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 import LSLogo from '@/data/ls-logo.svg';
@@ -83,6 +84,20 @@ function Navigation() {
               </Button>
             ))}
             {/* /Loop through categories */}
+            {/* Pages */}
+            <Separator className="my-4" />
+            <Button
+              className={clsx('flex gap-5 text-md justify-start items-center px-3 py-2', {
+                'bg-accent': location.pathname === '/about',
+              })}
+              variant="ghost"
+              onClick={() => setOpenSheet(false)}
+              data-testid="about-button"
+              asChild
+            >
+              <Link to="/about">About</Link>
+            </Button>
+            {/* /Pages */}
             {/* /Sheet content */}
           </nav>
         </SheetContent>
@@ -90,13 +105,6 @@ function Navigation() {
       {/* /Side sheet (shown on small screens) */}
       {/* Navbar */}
       <div className="flex-1 w-full">{/* Content to be added */}</div>
-      {/* On click send NULL back so the about drawer opens */}
-      <Button size="icon" variant="outline" data-testid="about-button" asChild>
-        <Link to="/about">
-          <InfoCircledIcon className="w-5 h-5" />
-          <span className="sr-only">About Page</span>
-        </Link>
-      </Button>
       {/* /Navbar */}
     </header>
   );
