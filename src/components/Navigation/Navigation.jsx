@@ -14,6 +14,8 @@ import { useCardStore } from '@/hooks/use-card-store';
 
 import { getAllCategories } from '@/services/card-categories';
 
+import CommandMenu from './CommandMenu';
+
 function Navigation() {
   const location = useLocation();
   const selectedCategoryId = useCardStore((state) => state.selectedCategoryId);
@@ -104,7 +106,9 @@ function Navigation() {
       </Sheet>
       {/* /Side sheet (shown on small screens) */}
       {/* Navbar */}
-      <div className="flex-1 w-full">{/* Content to be added */}</div>
+      <div className="flex-1 w-full ml-auto md:flex-none md:w-auto">
+        <CommandMenu />
+      </div>
       {/* /Navbar */}
     </header>
   );
