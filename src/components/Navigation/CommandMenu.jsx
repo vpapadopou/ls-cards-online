@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command';
 
 import { useCardStore } from '@/hooks/use-card-store';
+import { useMediaQuery } from '@/hooks/use-media-query';
 
 import { getAllCards } from '@/services/cards';
 import { getCategoryById } from '@/services/card-categories';
@@ -11,6 +12,8 @@ import { getCategoryById } from '@/services/card-categories';
 function CommandMenu() {
   const cardList = getAllCards();
   const setSelectedCardId = useCardStore((state) => state.setSelectedCardId);
+  const setOpenCardDrawer = useCardStore((state) => state.setOpenCardDrawer);
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
   const [openCommandMenu, setOpenCommandMenu] = useState(false);
 
   // When selecting a card, set the selected card id in the store,
@@ -19,6 +22,10 @@ function CommandMenu() {
   const handleCardSelection = (cardId) => {
     setSelectedCardId(cardId);
     setOpenCommandMenu(false);
+
+    if (!isDesktop) {
+      setOpenCardDrawer(true);
+    }
   };
 
   // Used to handle heystrokes
