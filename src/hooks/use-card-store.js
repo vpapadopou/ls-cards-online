@@ -7,6 +7,8 @@ export const useCardStore = create((set) => ({
   setSelectedCategoryId: (category) => set(() => ({ selectedCategoryId: category })),
   selectedSortingId: 0,
   setSelectedSortingId: (sorting) => set(() => ({ selectedSortingId: sorting })),
+  openCardDrawer: false,
+  setOpenCardDrawer: (open) => set(() => ({ openCardDrawer: !!open })),
 }));
 
 export default useCardStore;
