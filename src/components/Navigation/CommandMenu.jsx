@@ -3,18 +3,30 @@ import { React, useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command';
 
+import { useCardStore } from '@/hooks/use-card-store';
+
 import { getAllCards } from '@/services/cards';
 import { getCategoryById } from '@/services/card-categories';
 
 function CommandMenu() {
-  const cards = getAllCards();
-  const [open, setOpen] = useState(false);
+  const cardList = getAllCards();
+  const setSelectedCardId = useCardStore((state) => state.setSelectedCardId);
+  const [openCommandMenu, setOpenCommandMenu] = useState(false);
 
+  // When selecting a card, set the selected card id in the store,
+  // then close the command menu and if we are on a mobile device
+  // or on a page other than the card deck show the card dialog
+  const handleCardSelection = (cardId) => {
+    setSelectedCardId(cardId);
+    setOpenCommandMenu(false);
+  };
+
+  // Used to handle heystrokes
   useEffect(() => {
     const handleKeyDown = (keyboardEvent) => {
-      if (keyboardEvent.key === 'j' && (keyboardEvent.metaKey || keyboardEvent.ctrlKey)) {
+      if (keyboardEvent.key === '/') {
         keyboardEvent.preventDefault();
-        setOpen((prevState) => !prevState);
+        setOpenCommandMenu((prevState) => !prevState);
       }
     };
 
@@ -27,20 +39,21 @@ function CommandMenu() {
       <Button
         variant="outline"
         className="relative h-8 w-full justify-start rounded-[0.5rem] bg-background text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-52 lg:w-80"
-        onClick={() => setOpen(true)}
+        onClick={() => setOpenCommandMenu(true)}
       >
         <span className="inline-flex">Search...</span>
         <kbd className="pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
-          <span className="text-xs">⌘</span>J
+          /
         </kbd>
       </Button>
-      <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Search cards..." />
+      <CommandDialog open={openCommandMenu} onOpenChange={setOpenCommandMenu}>
+        <CommandInput placeholder="Search Cards..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
+          {/* Cards */}
           <CommandGroup heading="Cards">
-            {cards.map((card) => (
-              <CommandItem key={card.id}>
+            {cardList.map((card) => (
+              <CommandItem key={card.id} onSelect={() => handleCardSelection(card.id)}>
                 {card.title}
                 <div className="flex flex-row ml-auto">
                   {/* Loop through categories */}
@@ -61,6 +74,7 @@ function CommandMenu() {
               </CommandItem>
             ))}
           </CommandGroup>
+          {/* /Cards */}
         </CommandList>
       </CommandDialog>
     </>
