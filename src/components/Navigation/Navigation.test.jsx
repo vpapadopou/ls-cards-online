@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, test } from 'vitest';
+import { beforeEach, describe, expect, test, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
@@ -6,6 +6,16 @@ import { MemoryRouter } from 'react-router-dom';
 import Navigation from './Navigation';
 
 describe('Component: Navigation', () => {
+  // Mock useMediaQuery to return that we are in a desktop by default
+  vi.mock('@/hooks/use-media-query', async (importOriginal) => {
+    const mod = await importOriginal();
+    return {
+      ...mod,
+      // return true to indicate we're on a desktop device
+      useMediaQuery: vi.fn().mockReturnValue(true),
+    };
+  });
+
   beforeEach(() => {
     render(
       <MemoryRouter>

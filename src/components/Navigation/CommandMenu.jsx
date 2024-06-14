@@ -1,4 +1,5 @@
 import { React, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { Button } from '@/components/ui/button';
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command';
@@ -13,8 +14,9 @@ function CommandMenu() {
   const cardList = getAllCards();
   const setSelectedCardId = useCardStore((state) => state.setSelectedCardId);
   const setOpenCardDrawer = useCardStore((state) => state.setOpenCardDrawer);
-  const isDesktop = useMediaQuery('(min-width: 1024px)');
   const [openCommandMenu, setOpenCommandMenu] = useState(false);
+  const location = useLocation();
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   // When selecting a card, set the selected card id in the store,
   // then close the command menu and if we are on a mobile device
@@ -23,7 +25,7 @@ function CommandMenu() {
     setSelectedCardId(cardId);
     setOpenCommandMenu(false);
 
-    if (!isDesktop) {
+    if (location.pathname !== '/' || !isDesktop) {
       setOpenCardDrawer(true);
     }
   };
