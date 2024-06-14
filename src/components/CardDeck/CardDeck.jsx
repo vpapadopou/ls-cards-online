@@ -1,6 +1,4 @@
-import { React, useState } from 'react';
-
-import CardDrawer from '@/components/CardDrawer/CardDrawer';
+import { React } from 'react';
 
 import { useCardStore } from '@/hooks/use-card-store';
 import { useMediaQuery } from '@/hooks/use-media-query';
@@ -10,7 +8,7 @@ import CardDeckOptions from './CardDeckOptions';
 
 function CardDeck() {
   const setSelectedCardId = useCardStore((state) => state.setSelectedCardId);
-  const [openCardDrawer, setOpenCardDrawer] = useState(false);
+  const setOpenCardDrawer = useCardStore((state) => state.setOpenCardDrawer);
   const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   const handleCardPreviewclick = (cardId) => {
@@ -20,9 +18,6 @@ function CardDeck() {
 
   return (
     <>
-      {/* Drawer (used for mobile devices only) */}
-      <CardDrawer openDrawer={openCardDrawer} setOpenDrawer={setOpenCardDrawer} />
-      {/* /Drawer */}
       <CardDeckOptions />
       <CardDeckGrid onClick={handleCardPreviewclick} />
     </>
