@@ -1,10 +1,10 @@
-import wickedQuestionsLogo from './logos/wicked-questions.svg';
+import WickedQuestionsSvg from './logos/WickedQuestions';
 
 const wickedQuestions = {
   id: 4,
   title: 'Wicked Questions',
   description: 'Articulate the paradoxical challenges that a group must confront to succeed',
-  logo: wickedQuestionsLogo,
+  logo: WickedQuestionsSvg,
   categories: [1],
   time: 25,
   invitation: 'Ask:\n"What opposing-yet-complementary strategies do we need to pursue simultaneously in order to be successful?"',

@@ -1,10 +1,10 @@
-import whatThreeDebriefLogo from './logos/what-three-debrief.svg';
+import WhatThreeDebriefSvg from './logos/WhatThreeDebrief';
 
 const whatThreeDebrief = {
   id: 9,
   title: 'What? So What? Now What?',
   description: 'Together, look back on progress to date and decide what adjustments are needed',
-  logo: whatThreeDebriefLogo,
+  logo: WhatThreeDebriefSvg,
   categories: [3],
   time: 45,
   invitation:

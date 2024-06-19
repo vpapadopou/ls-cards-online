@@ -1,10 +1,10 @@
-import shiftAndShareLogo from './logos/shift-and-share.svg';
+import ShiftAndShareSvg from './logos/ShiftAndShare';
 
 const shiftAndShare = {
   id: 11,
   title: 'Shift & Share',
   description: 'Spread good ideas and make informal connections with innovators',
-  logo: shiftAndShareLogo,
+  logo: ShiftAndShareSvg,
   categories: [2],
   time: 90,
   invitation: 'Visit several innovators who will share something new or innovative',

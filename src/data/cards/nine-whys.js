@@ -1,10 +1,10 @@
-import nineWhysLogo from './logos/nine-whys.svg';
+import NineWhysSvg from './logos/NineWhys';
 
 const nineWhys = {
   id: 3,
   title: 'Nine Whys',
   description: 'Make the purpose of your work together clear',
-  logo: nineWhysLogo,
+  logo: NineWhysSvg,
   categories: [3],
   time: 20,
   invitation:

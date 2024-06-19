@@ -1,10 +1,10 @@
-import conversationCafeLogo from './logos/conversation-cafe.svg';
+import ConversationCafeSvg from './logos/ConversationCafe';
 
 const conversationCafe = {
   id: 17,
   title: 'Conversation Cafe',
   description: 'Engage everyone in making sense of profound challenges',
-  logo: conversationCafeLogo,
+  logo: ConversationCafeSvg,
   categories: [2],
   time: 50,
   invitation: "Invite all participants to gather in small groups to listen to one another's thoughts and reflect together on a shared challenge",

@@ -1,10 +1,10 @@
-import heardSeenRespectedLogo from './logos/heard-seen-respected.svg';
+import HeardSeenRespectedSvg from './logos/HeardSeenRespected';
 
 const heardSeenRespected = {
   id: 19,
   title: 'Heard, Seen, Respected (HSR)',
   description: 'Practice deeper listening and empathy with colleagues',
-  logo: heardSeenRespectedLogo,
+  logo: HeardSeenRespectedSvg,
   categories: [4],
   time: 35,
   invitation:

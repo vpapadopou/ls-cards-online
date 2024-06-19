@@ -1,10 +1,10 @@
-import appreciativeInterviewsLogo from './logos/appreciative-interviews.svg';
+import AppreciativeInterviewsSvg from './logos/AppreciativeInterviews';
 
 const appreciativeInterviews = {
   id: 5,
   title: 'Appreciative Interviews',
   description: 'Discover & build on the root causes of success',
-  logo: appreciativeInterviewsLogo,
+  logo: AppreciativeInterviewsSvg,
   categories: [2, 1],
   time: 60,
   invitation:

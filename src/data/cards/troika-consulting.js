@@ -1,10 +1,10 @@
-import troikaConsultingLogo from './logos/troika-consulting.svg';
+import TroikaConsultingSvg from './logos/TroikaConsulting';
 
 const troikaConsulting = {
   id: 8,
   title: 'Troika Consulting',
   description: 'Get practical and imaginative help from colleagues immediately',
-  logo: troikaConsultingLogo,
+  logo: TroikaConsultingSvg,
   categories: [4, 1],
   time: 30,
   invitation: 'Invite the group to explore the questions:\n- "What is your challenge?"\n- "What kind of help do you need?"',

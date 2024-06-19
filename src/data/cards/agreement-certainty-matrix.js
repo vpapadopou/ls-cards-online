@@ -1,10 +1,10 @@
-import agreementCertaintyMatrixLogo from './logos/agreement-certainty-matrix.svg';
+import AgreementCertaintyMatrixSvg from './logos/AgreementCertaintyMatrix';
 
 const agreementCertaintyMatrix = {
   id: 27,
   title: 'Agreement-Certainty Matrix',
   description: 'Sort challenges into simple, complicated, complex and chaotic domains',
-  logo: agreementCertaintyMatrixLogo,
+  logo: AgreementCertaintyMatrixSvg,
   categories: [3],
   time: 45,
   invitation: 'Categorize challenges as simple, complicated, complex or chaotic & place them in the matrix',

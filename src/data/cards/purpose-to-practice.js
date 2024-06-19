@@ -1,10 +1,10 @@
-import purposeToPracticeLogo from './logos/purpose-to-practice.svg';
+import PurposeToPracticeSvg from './logos/PurposeToPractice';
 
 const purposeToPractice = {
   id: 33,
   title: 'Purpose-To-Practice (P2P)',
   description: 'Define the five essential elements for a resilient & enduring initiative',
-  logo: purposeToPracticeLogo,
+  logo: PurposeToPracticeSvg,
   categories: [6],
   time: 120,
   invitation:

@@ -1,10 +1,10 @@
-import oneTwoFourAllLogo from './logos/one-two-four-all.svg';
+import OneTwoFourAllSvg from './logos/OneTwoFourAll';
 
 const oneTwoFourAll = {
   id: 1,
   title: '1-2-4-All',
   description: 'Engage everyone simultaneously in generating questions, ideas and suggestions',
-  logo: oneTwoFourAllLogo,
+  logo: OneTwoFourAllSvg,
   categories: [1],
   time: 12,
   invitation: 'Ask a question in response to the presentation of an issue, or about a problem to resolve or a proposal put forward',

@@ -1,10 +1,10 @@
-import trizLogo from './logos/triz.svg';
+import TrizSvg from './logos/Triz';
 
 const triz = {
   id: 6,
   title: 'TRIZ',
   description: 'Stop counterproductive activities & behaviors to make space for innovation',
-  logo: trizLogo,
+  logo: TrizSvg,
   categories: [1],
   time: 35,
   people: 'Ask participants to form groups of 4 to 7 people',

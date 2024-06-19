@@ -1,10 +1,10 @@
-import userExperienceFishbowlLogo from './logos/user-experience-fishbowl.svg';
+import UserExperienceFishbowlSvg from './logos/UserExperienceFishbowl';
 
 const userExperienceFishbowl = {
   id: 18,
   title: 'User Experience Fishbowl',
   description: 'Share know-how gained from experience with a larger community',
-  logo: userExperienceFishbowlLogo,
+  logo: UserExperienceFishbowlSvg,
   categories: [2],
   time: 50,
   invitation:

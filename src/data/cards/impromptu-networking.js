@@ -1,10 +1,10 @@
-import impromptuNetworkingLogo from './logos/impromptu-networking.svg';
+import ImpromptuNetworkingSvg from './logos/ImpromptuNetworking';
 
 const impromptuNetworking = {
   id: 2,
   title: 'Impromptu Networking',
   description: 'Rapidly share challenges and expectactions, while building new connections',
-  logo: impromptuNetworkingLogo,
+  logo: ImpromptuNetworkingSvg,
   categories: [2],
   time: 20,
   invitation: 'Ask:\n- "What big challenge do you bring to this gathering?"\n- "What do you hope to get from and give this group or community?"',

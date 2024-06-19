@@ -1,10 +1,10 @@
-import minSpecsLogo from './logos/min-specs.svg';
+import MinSpecsSvg from './logos/MinSpecs';
 
 const minSpecs = {
   id: 14,
   title: 'Min Specs',
   description: 'Specify only the absolute "Must do\'s" & "Must not do\'s" for achieving a purpose',
-  logo: minSpecsLogo,
+  logo: MinSpecsSvg,
   categories: [5],
   time: 45,
   invitation:

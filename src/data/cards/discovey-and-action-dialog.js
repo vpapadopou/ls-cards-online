@@ -1,10 +1,10 @@
-import discoveryAndActionDialogLogo from './logos/discovery-and-action-dialog.svg';
+import DiscoveryAndActionDialogSvg from './logos/DiscoveryAndActionDialog';
 
 const discoveryAndActionDialog = {
   id: 10,
   title: 'Discovery & Action Dialog',
   description: 'Discover, invent and unleash local solutions to chronic problems',
-  logo: discoveryAndActionDialogLogo,
+  logo: DiscoveryAndActionDialogSvg,
   categories: [1],
   time: 50,
   people:

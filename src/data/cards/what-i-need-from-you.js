@@ -1,10 +1,10 @@
-import whatINeedFromYouLogo from './logos/what-i-need-from-you.svg';
+import WhatINeedFromYouSvg from './logos/WhatINeedFromYou';
 
 const whatINeedFromYou = {
   id: 24,
   title: 'What I Need From You (WINFY)',
   description: 'Surface most essential needs across functions and accept or reject requests for support',
-  logo: whatINeedFromYouLogo,
+  logo: WhatINeedFromYouSvg,
   categories: [4],
   time: 65,
   invitation: 'Invite participants to ask for what they need from others to be successful in reaching a specific goal',

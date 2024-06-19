@@ -1,10 +1,10 @@
-import helpingHeuristicsLogo from './logos/helping-heuristics.svg';
+import HelpingHeuristicsSvg from './logos/HelpingHeuristics';
 
 const helpingHeuristics = {
   id: 16,
   title: 'Helping Heuristics',
   description: 'Practice progressive methods for helping others, receiving and asking for help',
-  logo: helpingHeuristicsLogo,
+  logo: HelpingHeuristicsSvg,
   categories: [4],
   time: 15,
   invitation: 'Participants view all human interactions as offers that are either accepted or blocked',

@@ -1,10 +1,10 @@
-import openSpaceTechnologyLogo from './logos/open-space-technology.svg';
+import OpenSpaceTechnologySvg from './logos/OpenSpaceTechnology';
 
 const openSpaceTechnology = {
   id: 25,
   title: 'Open Space Technology',
   description: 'Liberate inherent action and leadership in large groups',
-  logo: openSpaceTechnologyLogo,
+  logo: OpenSpaceTechnologySvg,
   categories: [1],
   time: 90,
   invitation: 'Invite participants to co-construct the agenda by posting sessions that they will convene on topics they are passionate about',

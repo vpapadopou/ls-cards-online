@@ -1,10 +1,10 @@
-import integratedAutonomyLogo from './logos/integrated-autonomy.svg';
+import IntegratedAutonomySvg from './logos/IntegratedAutonomy';
 
 const integratedAutonomy = {
   id: 29,
   title: 'Integrated~Autonomy',
   description: 'Move from either-or to robust both-and solutions',
-  logo: integratedAutonomyLogo,
+  logo: IntegratedAutonomySvg,
   categories: [5],
   time: 80,
   invitation:

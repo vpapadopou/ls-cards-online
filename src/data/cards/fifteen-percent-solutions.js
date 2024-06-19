@@ -1,10 +1,10 @@
-import fifteenPercentSolutionsLogo from './logos/fifteen-percent-solutions.svg';
+import FifteenPercentSolutionsSvg from './logos/FifteenPercentSolutions';
 
 const fifteenPercentSolutions = {
   id: 7,
   title: '15% Solutions',
   description: 'Discover & focus on what each person has the freedom and resources to do now',
-  logo: fifteenPercentSolutionsLogo,
+  logo: FifteenPercentSolutionsSvg,
   categories: [1],
   time: 20,
   invitation:

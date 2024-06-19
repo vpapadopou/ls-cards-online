@@ -1,10 +1,10 @@
-import twentyfiveTenCrowdsourcingLogo from './logos/twentyfive-ten-crowdsourcing.svg';
+import TwentyfiveTenCrowdsourcingSvg from './logos/TwentyfiveTenCrowdsourcing';
 
 const twentyfiveTenCrowdsourcing = {
   id: 12,
   title: '25/10 Crowd Sourcing',
   description: "Rapidly generate & sift a group's most powerful actionable ideas",
-  logo: twentyfiveTenCrowdsourcingLogo,
+  logo: TwentyfiveTenCrowdsourcingSvg,
   categories: [1],
   time: 30,
   invitation: 'Ask:\n"If you were ten times bolder, what big idea would you recommend? What first step would you take to get started?"',

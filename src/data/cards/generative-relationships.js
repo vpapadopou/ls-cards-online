@@ -1,10 +1,10 @@
-import generativeRelationshipsLogo from './logos/generative-relationships.svg';
+import GenerativeRelationshipsSvg from './logos/GenerativeRelationships';
 
 const generativeRelationships = {
   id: 26,
   title: 'Generative Relationships',
   description: 'Reveal and understand relationship patterns that create value or dysfunctions',
-  logo: generativeRelationshipsLogo,
+  logo: GenerativeRelationshipsSvg,
   categories: [3],
   time: 25,
   invitation:

@@ -1,10 +1,10 @@
-import drawingTogetherLogo from './logos/drawing-together.svg';
+import DrawingTogetherSvg from './logos/DrawingTogether';
 
 const drawingTogether = {
   id: 20,
   title: 'Drawing Together',
   description: 'Reveal insights and paths forward through non-verbal expression',
-  logo: drawingTogetherLogo,
+  logo: DrawingTogetherSvg,
   categories: [1],
   time: 40,
   invitation: 'Invite participants to tell a story about a challenge they face or a common challenge, using only five symbols and no words',

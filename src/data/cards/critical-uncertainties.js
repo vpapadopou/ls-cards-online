@@ -1,10 +1,10 @@
-import criticalUncertaintiesLogo from './logos/critical-uncertainties.svg';
+import CriticalUncertaintiesSvg from './logos/CriticalUncertainties';
 
 const criticalUncertainties = {
   id: 30,
   title: 'Critical Uncertainties',
   description: 'Develop strategies for successfully operating in a range of plausible yet unpredictable futures',
-  logo: criticalUncertaintiesLogo,
+  logo: CriticalUncertaintiesSvg,
   categories: [5],
   time: 100,
   invitation: 'Identify the most critical and uncertain "realities" in your operating environment or market. Which strategies can help?',

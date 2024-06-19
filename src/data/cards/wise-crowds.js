@@ -1,10 +1,10 @@
-import wiseCrowdsLogo from './logos/wise-crowds.svg';
+import WiseCrowdsSvg from './logos/WiseCrowds';
 
 const wiseCrowds = {
   id: 13,
   title: 'Wise Crowds',
   description: 'Tap the wisdom of the whole group in rapid cycles',
-  logo: wiseCrowdsLogo,
+  logo: WiseCrowdsSvg,
   categories: [1, 4],
   time: 15,
   invitation:

@@ -1,10 +1,10 @@
-import socialNetworkWebbingLogo from './logos/social-network-webbing.svg';
+import SocialNetworkWebbingSvg from './logos/SocialNetworkWebbing';
 
 const socialNetworkWebbing = {
   id: 23,
   title: 'Social Network Webbing',
   description: 'Map informal connections and decide how to strengthen the network to achieve a purpose',
-  logo: socialNetworkWebbingLogo,
+  logo: SocialNetworkWebbingSvg,
   categories: [2, 4],
   time: 60,
   invitation:

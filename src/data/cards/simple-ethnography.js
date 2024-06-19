@@ -1,10 +1,10 @@
-import simpleEthnographyLogo from './logos/simple-ethnography.svg';
+import SimpleEthnographySvg from './logos/SimpleEthnography';
 
 const simpleEthnography = {
   id: 28,
   title: 'Simple Ethnography',
   description: 'Observe and record actual behaviors of users in the field',
-  logo: simpleEthnographyLogo,
+  logo: SimpleEthnographySvg,
   categories: [3],
   time: 75,
   invitation:

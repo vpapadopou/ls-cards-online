@@ -1,10 +1,10 @@
-import improvPrototypingLogo from './logos/improv-prototyping.svg';
+import ImprovPrototypingSvg from './logos/ImprovPrototyping';
 
 const improvPrototyping = {
   id: 15,
   title: 'Improv Prototyping',
   description: 'Develop effective solutions to chronic challenges while having serious fun',
-  logo: improvPrototypingLogo,
+  logo: ImprovPrototypingSvg,
   categories: [1],
   time: 20,
   invitation:

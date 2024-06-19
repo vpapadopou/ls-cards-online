@@ -1,10 +1,10 @@
-import designStoryboardsLogo from './logos/design-storyboards.svg';
+import DesignStoryboardsSvg from './logos/DesignStoryboards';
 
 const designStoryboards = {
   id: 21,
   title: 'Design Storyboards',
   description: 'Define step-by-step elements for bringing initiatives or meetings to productive endpoints',
-  logo: designStoryboardsLogo,
+  logo: DesignStoryboardsSvg,
   categories: [6],
   time: 50,
   invitation:

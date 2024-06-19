@@ -1,10 +1,10 @@
-import ecocyclePlanningLogo from './logos/ecocycle-planning.svg';
+import EcocyclePlanningSvg from './logos/EcocyclePlanning';
 
 const ecocyclePlanning = {
   id: 31,
   title: 'Ecocycle Planning',
   description: 'Analyze the full portfolio of activities & relationships to identify obstacles & opportunities for progress',
-  logo: ecocyclePlanningLogo,
+  logo: EcocyclePlanningSvg,
   categories: [3, 5],
   time: 95,
   invitation:

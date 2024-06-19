@@ -1,10 +1,10 @@
-import panarchyLogo from './logos/panarchy.svg';
+import PanarchySvg from './logos/Panarchy';
 
 const panarchy = {
   id: 32,
   title: 'Panarchy',
   description: 'Understand how embedded systems interact, evolve, influence the spread of innovation and transform',
-  logo: panarchyLogo,
+  logo: PanarchySvg,
   categories: [3, 5],
   time: 120,
   invitation: 'What is contributing to the existence of a challenge at levels above and below you?',

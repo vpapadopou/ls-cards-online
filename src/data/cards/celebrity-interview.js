@@ -1,10 +1,10 @@
-import celebrityInterviewLogo from './logos/celebrity-interview.svg';
+import CelebrityInterviewSvg from './logos/CelebrityInterview';
 
 const celebrityInterview = {
   id: 22,
   title: 'Celebrity Interview',
   description: 'Reconnect the experience of leaders and experts with people closest to the challenge at hand',
-  logo: celebrityInterviewLogo,
+  logo: CelebrityInterviewSvg,
   categories: [2],
   time: 45,
   invitation:
