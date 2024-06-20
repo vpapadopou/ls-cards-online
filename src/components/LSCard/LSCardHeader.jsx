@@ -6,13 +6,15 @@ import { Badge } from '@/components/ui/badge';
 import { getCategoryById } from '@/services/card-categories';
 
 function LSCardHeader({ data }) {
+  const CardLogo = data.logo;
+
   return (
     <>
       {/* Row 1 - Header */}
       <div className="flex flex-row space-x-5">
         {/* Left column - Icon */}
         <div className="basis-1/5 pt-2">
-          <img className="max-h-16" src={data.logo} alt="Card Icon" data-testid="card-logo" />
+          <CardLogo className="max-h-16" />
         </div>
         {/* /Left column - Icon */}
         {/* Right column - Details */}
@@ -61,7 +63,7 @@ LSCardHeader.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    logo: PropTypes.node.isRequired,
+    logo: PropTypes.elementType.isRequired,
     categories: PropTypes.arrayOf(PropTypes.number).isRequired,
     time: PropTypes.number.isRequired,
   }).isRequired,

@@ -23,7 +23,7 @@ LSCard.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    logo: PropTypes.node.isRequired,
+    logo: PropTypes.elementType.isRequired,
     categories: PropTypes.arrayOf(PropTypes.number).isRequired,
     time: PropTypes.number.isRequired,
     invitation: PropTypes.string,
