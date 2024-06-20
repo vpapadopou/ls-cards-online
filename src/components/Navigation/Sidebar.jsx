@@ -7,7 +7,7 @@ import { CircleIcon } from '@radix-ui/react-icons';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 
-import LSLogo from '@/data/ls-logo.svg';
+import LsLogoSvg from '@/data/LsLogo';
 
 import { useCardStore } from '@/hooks/use-card-store';
 
@@ -24,7 +24,7 @@ function Sidebar() {
         {/* Logo */}
         <div className="flex items-center border-b h-14 min-h-14 px-4 lg:h-[60px] lg:min-h-[60px] lg:px-6">
           <Link className="flex gap-5 text-sm font-semibold items-center lg:text-base" to="/">
-            <img src={LSLogo} className="h-8" alt="LS Card Deck Logo" data-testid="sidebar-logo" />
+            <LsLogoSvg className="h-10" data-testid="sidebar-logo" />
             <span>Liberating Structures Card Deck</span>
           </Link>
         </div>

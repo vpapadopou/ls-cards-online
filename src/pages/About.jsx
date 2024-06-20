@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
-import LSLogo from '@/data/ls-logo.svg';
+import LsLogoSvg from '@/data/LsLogo';
 
 function About() {
   return (
@@ -15,7 +15,7 @@ function About() {
           <div className="flex flex-row space-x-5 pb-4">
             {/* Left column - Icon */}
             <div className="pt-2">
-              <img className="max-h-16" src={LSLogo} alt="1-2-4-All Icon" />
+              <LsLogoSvg className="h-16" />
             </div>
             {/* /Left column - Icon */}
             {/* Right column - Title */}

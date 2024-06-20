@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
-import LSLogo from '@/data/ls-logo.svg';
+import LsLogoSvg from '@/data/LsLogo';
 
 import { useCardStore } from '@/hooks/use-card-store';
 
@@ -45,7 +45,7 @@ function Navigation() {
           <nav className="grid gap-2 text-md font-medium overflow-auto">
             {/* Logo */}
             <div className="flex gap-5 text-lg font-semibold items-center mb-2">
-              <img src={LSLogo} className="h-8" alt="Liberating Structures Card Deck Logo" />
+              <LsLogoSvg className="h-10" />
               <span>Liberating Structures Card Deck</span>
             </div>
             {/* /Logo */}
