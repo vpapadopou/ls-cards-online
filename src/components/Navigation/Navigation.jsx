@@ -5,7 +5,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { CircleIcon, HamburgerMenuIcon } from '@radix-ui/react-icons';
 
 import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 import LsLogoSvg from '@/data/LsLogo';
@@ -88,7 +87,7 @@ function Navigation() {
             ))}
             {/* /Loop through categories */}
             {/* Pages */}
-            <Separator className="my-4" />
+            {/* <Separator className="my-4" />
             <Button
               className={clsx('flex gap-5 text-md justify-start items-center px-3 py-2', {
                 'bg-accent': location.pathname === '/about',
@@ -99,7 +98,7 @@ function Navigation() {
               asChild
             >
               <Link to="/about">About</Link>
-            </Button>
+            </Button> */}
             {/* /Pages */}
             {/* /Sheet content */}
           </nav>

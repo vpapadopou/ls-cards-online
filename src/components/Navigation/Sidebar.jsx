@@ -5,7 +5,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { CircleIcon } from '@radix-ui/react-icons';
 
 import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
 
 import LsLogoSvg from '@/data/LsLogo';
 
@@ -69,7 +68,7 @@ function Sidebar() {
             ))}
             {/* /Loop through categories */}
             {/* Pages */}
-            <Separator className="my-4" />
+            {/* <Separator className="my-4" />
             <Button
               className={clsx('flex gap-5 justify-start items-center px-3 py-2', {
                 'bg-accent': location.pathname === '/about',
@@ -79,7 +78,7 @@ function Sidebar() {
               asChild
             >
               <Link to="/about">About</Link>
-            </Button>
+            </Button> */}
             {/* /Pages */}
           </nav>
         </div>
