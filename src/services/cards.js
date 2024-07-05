@@ -70,7 +70,7 @@ export const getCardsByCategorySorted = (selectedCategoryId, selectedSortingId) 
 //------------------------------
 
 export const getSortingOptions = () => [
-  { name: 'Default Order', value: 0 },
+  { name: 'Standard Order', value: 0 },
   { name: 'Title: A to Z', value: 1 },
   { name: 'Title: Z to A', value: 2 },
   { name: 'Duration: Shortest First', value: 3 },
