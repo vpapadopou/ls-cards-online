@@ -1,11 +1,15 @@
 import { React, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import { GlobeIcon, MoonIcon, SunIcon } from '@radix-ui/react-icons';
+
 import { Button } from '@/components/ui/button';
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command';
 
 import { useCardStore } from '@/hooks/use-card-store';
 import { useMediaQuery } from '@/hooks/use-media-query';
+
+import { useTheme } from '@/providers/theme-provider';
 
 import { getAllCards } from '@/services/cards';
 import { getCategoryById } from '@/services/card-categories';
@@ -17,6 +21,7 @@ function CommandMenu() {
   const [openCommandMenu, setOpenCommandMenu] = useState(false);
   const location = useLocation();
   const isDesktop = useMediaQuery('(min-width: 1024px)');
+  const { setTheme } = useTheme();
 
   // When selecting a card, set the selected card id in the store,
   // then close the command menu and if we are on a mobile device
@@ -28,6 +33,12 @@ function CommandMenu() {
     if (location.pathname !== '/' || !isDesktop) {
       setOpenCardDrawer(true);
     }
+  };
+
+  // When selecting a theme simply use the provider and close the command menu
+  const handleThemeChange = (selectedTheme) => {
+    setTheme(selectedTheme);
+    setOpenCommandMenu(false);
   };
 
   // Used to handle heystrokes
@@ -56,7 +67,7 @@ function CommandMenu() {
         </kbd>
       </Button>
       <CommandDialog open={openCommandMenu} onOpenChange={setOpenCommandMenu}>
-        <CommandInput placeholder="Search Cards..." />
+        <CommandInput placeholder="Search cards or type a command..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           {/* Cards */}
@@ -82,6 +93,20 @@ function CommandMenu() {
                 {/* /Loop through categories */}
               </CommandItem>
             ))}
+          </CommandGroup>
+          <CommandGroup heading="Appearance">
+            <CommandItem onSelect={() => handleThemeChange('light')}>
+              <SunIcon className="w-4 h-4 mr-2" />
+              <span>Light</span>
+            </CommandItem>
+            <CommandItem onSelect={() => handleThemeChange('dark')}>
+              <MoonIcon className="w-4 h-4 mr-2" />
+              <span>Dark</span>
+            </CommandItem>
+            <CommandItem onSelect={() => handleThemeChange('system')}>
+              <GlobeIcon className="w-4 h-4 mr-2" />
+              <span>System</span>
+            </CommandItem>
           </CommandGroup>
           {/* /Cards */}
         </CommandList>
