@@ -15,6 +15,7 @@ import { useCardStore } from '@/hooks/use-card-store';
 import { getAllCategories } from '@/services/card-categories';
 
 import CommandMenu from './CommandMenu';
+import NavigationOptions from './NavigationOptions';
 
 function Navigation() {
   const location = useLocation();
@@ -106,8 +107,9 @@ function Navigation() {
       </Sheet>
       {/* /Side sheet (shown on small screens) */}
       {/* Navbar */}
-      <div className="flex-1 w-full ml-auto md:flex-none md:w-auto">
+      <div className="flex w-full gap-2 items-center ml-auto md:flex-none md:w-auto">
         <CommandMenu />
+        <NavigationOptions />
       </div>
       {/* /Navbar */}
     </header>
