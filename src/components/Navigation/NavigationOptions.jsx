@@ -22,28 +22,27 @@ function NavigationOptions() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button className="w-10 md:w-9" variant="outline" size="icon">
+        <Button className="w-10 md:w-9" variant="outline" size="icon" data-testid="navigation-options-button">
           <DotsVerticalIcon className="w-4 h-4" />
           <span className="sr-only">Options</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuLabel>Appearance</DropdownMenuLabel>
-        {/* <DropdownMenuSeparator /> */}
-        <DropdownMenuItem onClick={() => setTheme('light')}>
+        <DropdownMenuItem onClick={() => setTheme('light')} data-testid="navigation-options-theme">
           <SunIcon className="mr-2" />
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('dark')}>
+        <DropdownMenuItem onClick={() => setTheme('dark')} data-testid="navigation-options-theme">
           <MoonIcon className="mr-2" />
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('system')}>
+        <DropdownMenuItem onClick={() => setTheme('system')} data-testid="navigation-options-theme">
           <GlobeIcon className="mr-2" />
           System
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
+        <DropdownMenuItem data-testid="navigation-options-github">
           <a href="https://github.com/vpapadopou/ls-cards-online" target="_blank" rel="noopener noreferrer">
             <GitHubLogoIcon className="inline-block align-baseline mr-2" />
             GitHub
@@ -53,6 +52,7 @@ function NavigationOptions() {
           onClick={() => {
             navigate('/about');
           }}
+          data-testid="navigation-options-about"
         >
           <InfoCircledIcon className="mr-2" />
           About
