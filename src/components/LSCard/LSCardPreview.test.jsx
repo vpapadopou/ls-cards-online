@@ -1,6 +1,8 @@
 import { describe, expect, test, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 
+import LsLogoSvg from '@/data/LsLogo';
+
 import LSCardPreview from './LSCardPreview';
 
 describe('Component: LSCardPreview', () => {
@@ -8,7 +10,7 @@ describe('Component: LSCardPreview', () => {
     id: 1,
     title: 'Testing Title',
     description: 'Testing Description',
-    logo: 'testing_path',
+    logo: LsLogoSvg,
     categories: [1, 2],
     time: 20,
   };

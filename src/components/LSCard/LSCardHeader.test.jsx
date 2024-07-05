@@ -1,6 +1,8 @@
 import { beforeEach, describe, expect, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
+import LsLogoSvg from '@/data/LsLogo';
+
 import LSCardHeader from './LSCardHeader';
 
 describe('Component: LSCardHeader', () => {
@@ -8,17 +10,13 @@ describe('Component: LSCardHeader', () => {
     id: 1,
     title: 'Testing Title',
     description: 'Testing Description',
-    logo: 'testing_path',
+    logo: LsLogoSvg,
     categories: [1, 2],
     time: 20,
   };
 
   beforeEach(() => {
     render(<LSCardHeader data={testCardData} />);
-  });
-
-  test('should feed the correct src link in the image', () => {
-    expect(screen.getByTestId('card-logo').src).toContain('testing_path');
   });
 
   test('should display the title text inside <h4>', () => {

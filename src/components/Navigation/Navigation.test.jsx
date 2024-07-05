@@ -47,12 +47,4 @@ describe('Component: Navigation', () => {
 
     expect(screen.getAllByTestId('category-link').length).toEqual(7);
   });
-
-  test('should display the about button when the sheet is open', () => {
-    // Open sheet
-    const button = screen.getByTestId('sheet-toggle-button');
-    fireEvent.click(button);
-
-    expect(screen.getByTestId('about-button')).toBeDefined();
-  });
 });

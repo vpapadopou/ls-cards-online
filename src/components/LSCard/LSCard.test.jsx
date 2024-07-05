@@ -1,6 +1,8 @@
 import { beforeEach, describe, expect, test } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 
+import LsLogoSvg from '@/data/LsLogo';
+
 import LSCard from './LSCard';
 
 describe('Component: LSCard', () => {
@@ -8,7 +10,7 @@ describe('Component: LSCard', () => {
     id: 1,
     title: 'Testing Title',
     description: 'Testing Description',
-    logo: 'testing_path',
+    logo: LsLogoSvg,
     categories: [1, 2],
     time: 20,
     invitation: 'Testing Invitation',

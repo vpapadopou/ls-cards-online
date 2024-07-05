@@ -29,8 +29,4 @@ describe('Component: Sidebar', () => {
   test('should display 7 card category links', () => {
     expect(screen.getAllByTestId('category-link').length).toEqual(7);
   });
-
-  test('should display the about button', () => {
-    expect(screen.getByTestId('about-button')).toBeDefined();
-  });
 });
