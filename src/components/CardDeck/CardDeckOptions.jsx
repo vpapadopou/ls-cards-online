@@ -3,6 +3,7 @@ import React from 'react';
 import { SortAscending } from '@phosphor-icons/react';
 
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 import { useCardStore } from '@/hooks/use-card-store';
 
@@ -15,6 +16,13 @@ function CardDeckOptions() {
 
   return (
     <div className="flex flex-row px-4 py-6">
+      {/* Tab Selection */}
+      <TabsList>
+        <TabsTrigger value="cardView">Cards</TabsTrigger>
+        <TabsTrigger value="listView">List</TabsTrigger>
+      </TabsList>
+      {/* /Tab Selection */}
+      {/* Sorting Selection */}
       <div className="ml-auto">
         <Select defaultValue="id" value={selectedSortingId} onValueChange={setSelectedSortingId} data-testid="sorting-trigger">
           <SelectTrigger data-testid="sorting-option-trigger">
@@ -41,6 +49,7 @@ function CardDeckOptions() {
           </SelectContent>
         </Select>
       </div>
+      {/* /Sorting Selection */}
     </div>
   );
 }

@@ -3,7 +3,10 @@ import { React } from 'react';
 import { useCardStore } from '@/hooks/use-card-store';
 import { useMediaQuery } from '@/hooks/use-media-query';
 
+import { Tabs, TabsContent } from '@/components/ui/tabs';
+
 import CardDeckGrid from './CardDeckGrid';
+import CardDeckList from './CardDeckList';
 import CardDeckOptions from './CardDeckOptions';
 
 function CardDeck() {
@@ -17,10 +20,16 @@ function CardDeck() {
   };
 
   return (
-    <>
+    <Tabs defaultValue="cardView">
       <CardDeckOptions />
-      <CardDeckGrid onClick={handleCardPreviewclick} />
-    </>
+
+      <TabsContent value="cardView">
+        <CardDeckGrid onClick={handleCardPreviewclick} />
+      </TabsContent>
+      <TabsContent value="listView">
+        <CardDeckList onClick={handleCardPreviewclick} />
+      </TabsContent>
+    </Tabs>
   );
 }
 
