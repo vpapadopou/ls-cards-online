@@ -29,6 +29,7 @@ function CardDeckList({ onClick }) {
             })}
             type="button"
             onClick={() => onClick(card.id)}
+            data-testid="card-list-option"
           >
             <div className="flex w-full flex-col gap-1">
               <div className="flex items-center">

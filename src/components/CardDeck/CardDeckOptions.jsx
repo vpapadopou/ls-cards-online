@@ -18,8 +18,12 @@ function CardDeckOptions() {
     <div className="flex flex-row px-4 py-6">
       {/* Tab Selection */}
       <TabsList>
-        <TabsTrigger value="cardView">Cards</TabsTrigger>
-        <TabsTrigger value="listView">List</TabsTrigger>
+        <TabsTrigger value="cardView" data-testid="tab-trigger">
+          Cards
+        </TabsTrigger>
+        <TabsTrigger value="listView" data-testid="tab-trigger">
+          List
+        </TabsTrigger>
       </TabsList>
       {/* /Tab Selection */}
       {/* Sorting Selection */}
