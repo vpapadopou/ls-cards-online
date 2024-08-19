@@ -14,7 +14,7 @@ function LSCardHeader({ data }) {
       <div className="flex flex-row space-x-5">
         {/* Left column - Icon */}
         <div className="basis-1/5 pt-2">
-          <CardLogo className="max-h-16" />
+          <CardLogo className="w-16 max-h-16" />
         </div>
         {/* /Left column - Icon */}
         {/* Right column - Details */}
