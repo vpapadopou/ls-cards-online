@@ -4,7 +4,7 @@ An online version of the [print-at-home card deck](https://github.com/vpapadopou
 
 Inspired by Holisticon's card deck it can help you create strings easily or act as a quick reminder of each format.
 
-Current version: 0.8.0 **(Beta)**
+Current version: 0.9.0 **(Beta)**
 
 ## Instructions
 
