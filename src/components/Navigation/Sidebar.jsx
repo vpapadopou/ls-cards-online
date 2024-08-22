@@ -2,20 +2,12 @@ import clsx from 'clsx';
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import { CircleIcon } from '@radix-ui/react-icons';
-
 import { Button } from '@/components/ui/button';
 
 import LsLogoSvg from '@/data/LsLogo';
 
-import { useCardStore } from '@/hooks/use-card-store';
-
-import { getAllCategories } from '@/services/card-categories';
-
 function Sidebar() {
   const location = useLocation();
-  const selectedCategoryId = useCardStore((state) => state.selectedCategoryId);
-  const setSelectedCategoryId = useCardStore((state) => state.setSelectedCategoryId);
 
   return (
     <div className="border-r hidden md:block">
@@ -31,55 +23,30 @@ function Sidebar() {
         {/* Sidebar Content */}
         <div className="flex-1">
           <nav className="grid gap-1 text-sm font-medium items-start px-2 lg:px-4">
-            {/* All cards link */}
+            {/* Cards */}
             <Button
               className={clsx('flex gap-5 justify-start items-center px-3 py-2', {
-                'bg-accent': location.pathname === '/' && selectedCategoryId === 0,
+                'bg-accent': location.pathname === '/',
               })}
               variant="ghost"
-              // Use 0 as a special id for all cards
-              onClick={() => setSelectedCategoryId(0)}
-              data-testid="category-link"
+              data-testid="cards-page-button"
               asChild
             >
-              <Link to="/">
-                <CircleIcon className="w-3 h-3" />
-                All Cards
-              </Link>
+              <Link to="/">Cards</Link>
             </Button>
-            {/* /All cards link */}
-            {/* Loop through categories */}
-            {getAllCategories().map((cardCategory) => (
-              <Button
-                key={cardCategory.id}
-                className={clsx('flex gap-5 justify-start items-center px-3 py-2', {
-                  'bg-accent': location.pathname === '/' && selectedCategoryId === cardCategory.id,
-                })}
-                variant="ghost"
-                onClick={() => setSelectedCategoryId(cardCategory.id)}
-                data-testid="category-link"
-                asChild
-              >
-                <Link to="/">
-                  <span className={`w-3 h-3 ${cardCategory.color} rounded-full`} />
-                  {cardCategory.title}
-                </Link>
-              </Button>
-            ))}
-            {/* /Loop through categories */}
-            {/* Pages */}
-            {/* <Separator className="my-4" />
+            {/* /Cards */}
+            {/* About */}
             <Button
               className={clsx('flex gap-5 justify-start items-center px-3 py-2', {
                 'bg-accent': location.pathname === '/about',
               })}
               variant="ghost"
-              data-testid="about-button"
+              data-testid="about-page-button"
               asChild
             >
               <Link to="/about">About</Link>
-            </Button> */}
-            {/* /Pages */}
+            </Button>
+            {/* /About */}
           </nav>
         </div>
         {/* /Sidebar Content */}
