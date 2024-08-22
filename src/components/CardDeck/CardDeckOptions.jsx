@@ -34,16 +34,18 @@ function CardDeckOptions() {
   };
 
   return (
-    <div className="flex flex-row flex-wrap gap-4 px-4 py-6">
+    <div className="flex flex-col md:flex-row gap-4 px-4 py-6">
       {/* Tab Selection */}
-      <TabsList>
-        <TabsTrigger value="cardView" data-testid="tab-trigger">
-          Cards
-        </TabsTrigger>
-        <TabsTrigger value="listView" data-testid="tab-trigger">
-          List
-        </TabsTrigger>
-      </TabsList>
+      <div>
+        <TabsList>
+          <TabsTrigger value="cardView" data-testid="tab-trigger">
+            Cards
+          </TabsTrigger>
+          <TabsTrigger value="listView" data-testid="tab-trigger">
+            List
+          </TabsTrigger>
+        </TabsList>
+      </div>
       {/* /Tab Selection */}
       {/* Filter Options */}
       <div className="flex flex-row gap-2">
