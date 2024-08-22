@@ -25,7 +25,7 @@ function Sidebar() {
           <nav className="grid gap-1 text-sm font-medium items-start px-2 lg:px-4">
             {/* Cards */}
             <Button
-              className={clsx('flex gap-5 justify-start items-center px-3 py-2', {
+              className={clsx('justify-start px-3 py-2', {
                 'bg-accent': location.pathname === '/',
               })}
               variant="ghost"
@@ -37,7 +37,7 @@ function Sidebar() {
             {/* /Cards */}
             {/* About */}
             <Button
-              className={clsx('flex gap-5 justify-start items-center px-3 py-2', {
+              className={clsx('justify-start px-3 py-2', {
                 'bg-accent': location.pathname === '/about',
               })}
               variant="ghost"

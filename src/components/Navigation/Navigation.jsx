@@ -38,7 +38,7 @@ function Navigation() {
             {/* Sheet content */}
             {/* Cards */}
             <Button
-              className={clsx('flex gap-5 text-md justify-start items-center px-3 py-2', {
+              className={clsx('text-md justify-start px-3 py-2', {
                 'bg-accent': location.pathname === '/',
               })}
               variant="ghost"
@@ -51,7 +51,7 @@ function Navigation() {
             {/* /Cards */}
             {/* About */}
             <Button
-              className={clsx('flex gap-5 text-md justify-start items-center px-3 py-2', {
+              className={clsx('text-md justify-start px-3 py-2', {
                 'bg-accent': location.pathname === '/about',
               })}
               variant="ghost"
