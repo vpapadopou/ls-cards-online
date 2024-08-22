@@ -55,7 +55,7 @@ function CardDeckOptions() {
               {selectedCategoryId ? selectedCategory.title : 'All Categories'}
             </Button>
           </PopoverTrigger>
-          <PopoverContent className="p-0" side="bottom" align="start">
+          <PopoverContent className="w-40 p-0" side="bottom" align="start">
             <Command>
               <CommandList>
                 <CommandGroup>
@@ -95,7 +95,7 @@ function CardDeckOptions() {
               {sortingOptions[selectedSortingId].title}
             </Button>
           </PopoverTrigger>
-          <PopoverContent className="p-0" side="bottom" align="start">
+          <PopoverContent className="w-52 p-0" side="bottom" align="start">
             <Command>
               <CommandList>
                 <CommandGroup>
