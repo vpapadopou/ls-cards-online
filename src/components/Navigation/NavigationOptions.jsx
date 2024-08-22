@@ -1,7 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
-import { GitHubLogoIcon, GlobeIcon, InfoCircledIcon, MoonIcon, SunIcon, DotsVerticalIcon } from '@radix-ui/react-icons';
+import { GitHubLogoIcon, GlobeIcon, MoonIcon, SunIcon, DotsVerticalIcon } from '@radix-ui/react-icons';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -16,7 +15,6 @@ import {
 import { useTheme } from '@/providers/theme-provider';
 
 function NavigationOptions() {
-  const navigate = useNavigate();
   const { setTheme } = useTheme();
 
   return (
@@ -47,15 +45,6 @@ function NavigationOptions() {
             <GitHubLogoIcon className="inline-block align-baseline mr-2" />
             GitHub
           </a>
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => {
-            navigate('/about');
-          }}
-          data-testid="navigation-options-about"
-        >
-          <InfoCircledIcon className="mr-2" />
-          About
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
