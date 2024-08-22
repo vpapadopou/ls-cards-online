@@ -90,7 +90,7 @@ function CardDeckOptions() {
       <Popover open={openSortingFilter} onOpenChange={setOpenSortingFilter}>
         <PopoverTrigger asChild>
           <Button variant="outline" className="justify-start">
-            {sortingOptions[selectedSortingId].name}
+            {sortingOptions[selectedSortingId].title}
           </Button>
         </PopoverTrigger>
         <PopoverContent className="p-0" side="bottom" align="start">
@@ -99,13 +99,13 @@ function CardDeckOptions() {
               <CommandGroup>
                 {sortingOptions.map((sortingOption) => (
                   <CommandItem
-                    key={sortingOption.value}
-                    value={sortingOption.value}
+                    key={sortingOption.id}
+                    value={sortingOption.id}
                     onSelect={() => {
-                      handleSortingSelection(sortingOption.value);
+                      handleSortingSelection(sortingOption.id);
                     }}
                   >
-                    <span>{sortingOption.name}</span>
+                    <span>{sortingOption.title}</span>
                   </CommandItem>
                 ))}
               </CommandGroup>
