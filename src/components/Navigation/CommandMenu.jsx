@@ -51,6 +51,7 @@ function CommandMenu() {
         variant="outline"
         className="relative h-9 w-full justify-start rounded-[0.5rem] bg-background text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-52 lg:w-80"
         onClick={() => setOpenCommandMenu(true)}
+        data-testid="command-menu-trigger"
       >
         <MagnifyingGlassIcon className="mr-2 h-4 w-4 shrink-0 opacity-50" />
 
@@ -66,20 +67,14 @@ function CommandMenu() {
           {/* Cards */}
           <CommandGroup>
             {cardList.map((card) => (
-              <CommandItem key={card.id} onSelect={() => handleCardSelection(card.id)}>
+              <CommandItem key={card.id} onSelect={() => handleCardSelection(card.id)} data-testid="command-menu-item">
                 {card.title}
                 <div className="flex flex-row ml-auto">
                   {/* Loop through categories */}
                   {card.categories.map((categoryId) => (
                     <div className="flex items-center mr-3" key={categoryId}>
-                      {/* The category data is in the -1 position in the array since id numbering starts from 1 */}
-                      <span
-                        className={`w-3 h-3 ${getCategoryById(categoryId).color} rounded-full mr-2 inline-block`}
-                        data-testid="command-category-color"
-                      />
-                      <span className="text-sm font-bold text-muted-foreground" data-testid="command-category-title">
-                        {getCategoryById(categoryId).title}
-                      </span>
+                      <span className={`w-3 h-3 ${getCategoryById(categoryId).color} rounded-full mr-2 inline-block`} />
+                      <span className="text-sm font-bold text-muted-foreground">{getCategoryById(categoryId).title}</span>
                     </div>
                   ))}
                 </div>
