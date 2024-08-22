@@ -19,6 +19,9 @@ describe('Component: CardDeckOptions', () => {
   // Stub the global ResizeObserver
   vi.stubGlobal('ResizeObserver', ResizeObserverMock);
 
+  // Mock scrollIntoView function
+  window.HTMLElement.prototype.scrollIntoView = vi.fn();
+
   beforeEach(() => {
     render(
       <Tabs defaultValue="cardView">
@@ -26,9 +29,6 @@ describe('Component: CardDeckOptions', () => {
       </Tabs>
     );
   });
-
-  // Mock scrollIntoView function
-  window.HTMLElement.prototype.scrollIntoView = vi.fn();
 
   test('should have 2 tab triggerts', () => {
     expect(screen.getAllByTestId('tab-trigger').length).toEqual(2);

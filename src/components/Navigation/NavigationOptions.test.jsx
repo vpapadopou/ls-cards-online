@@ -11,7 +11,7 @@ const stub = vi.fn();
 describe('Component: NavigationOptions', () => {
   const user = userEvent.setup();
 
-  // Mock useMediaQuery to return that we are in a desktop by default
+  // Mock theme provider
   vi.mock('@/providers/theme-provider', async (importOriginal) => {
     const mod = await importOriginal();
     return {
