@@ -28,23 +28,15 @@ describe('Component: Navigation', () => {
     expect(screen.getByTestId('sheet-toggle-button')).toBeDefined();
   });
 
-  test('should NOT display the "All Cards" category link when the sheet is closed', () => {
-    expect(screen.queryByText('All Cards', { selector: 'link' })).toBeNull();
+  test('should NOT display any navigation page links when the sheet is closed', () => {
+    expect(screen.queryAllByTestId('navigation-page-link').length).toEqual(0);
   });
 
-  test('should display the "All Cards" category button when the sheet is open', () => {
+  test('should display 2 navigation page links when the sheet is open', () => {
     // Open sheet
     const button = screen.getByTestId('sheet-toggle-button');
     fireEvent.click(button);
 
-    expect(screen.getByText('All Cards')).toBeDefined();
-  });
-
-  test('should display 7 card category links when the sheet is open', () => {
-    // Open sheet
-    const button = screen.getByTestId('sheet-toggle-button');
-    fireEvent.click(button);
-
-    expect(screen.getAllByTestId('category-link').length).toEqual(7);
+    expect(screen.getAllByTestId('navigation-page-link').length).toEqual(2);
   });
 });

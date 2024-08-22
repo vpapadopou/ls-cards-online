@@ -22,11 +22,7 @@ describe('Component: Sidebar', () => {
     expect(screen.getByTestId('sidebar-logo')).toBeDefined();
   });
 
-  test('should display the "All Cards" category link', () => {
-    expect(screen.getByText('All Cards')).toBeDefined();
-  });
-
-  test('should display 7 card category links', () => {
-    expect(screen.getAllByTestId('category-link').length).toEqual(7);
+  test('should display 2 navigation page links', () => {
+    expect(screen.getAllByTestId('navigation-page-link').length).toEqual(2);
   });
 });

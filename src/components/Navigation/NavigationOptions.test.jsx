@@ -55,14 +55,6 @@ describe('Component: NavigationOptions', () => {
     expect(screen.getByTestId('navigation-options-github')).toBeDefined();
   });
 
-  test('should display the About button when the dropdown is open', async () => {
-    // Open dropdown
-    const button = screen.getByTestId('navigation-options-button');
-    await user.click(button);
-
-    expect(screen.getByTestId('navigation-options-about')).toBeDefined();
-  });
-
   test('should call the useTheme provider with "light" as parameter when the light theme button is pressed', async () => {
     // Open dropdown
     const dropdownButton = screen.getByTestId('navigation-options-button');

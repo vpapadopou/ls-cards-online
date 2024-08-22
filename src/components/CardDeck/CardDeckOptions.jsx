@@ -52,7 +52,7 @@ function CardDeckOptions() {
         {/* Category Selection */}
         <Popover open={openCategoryFilter} onOpenChange={setOpenCategoryFilter}>
           <PopoverTrigger asChild>
-            <Button variant="outline" className="justify-start">
+            <Button variant="outline" className="justify-start" data-testid="category-selection-trigger">
               {!!selectedCategoryId && <span className={`w-3 h-3 ${selectedCategory.color} rounded-full mr-2 inline-block`} />}
               {selectedCategoryId ? selectedCategory.title : 'All Categories'}
             </Button>
@@ -61,13 +61,14 @@ function CardDeckOptions() {
             <Command>
               <CommandList>
                 <CommandGroup>
-                  {/* All cards is a special option with id 0 */}
+                  {/* All categories is a special option with id 0 */}
                   <CommandItem
                     key={0}
                     value={0}
                     onSelect={() => {
                       handleCategorySelection(0);
                     }}
+                    data-testid="category-selection-all"
                   >
                     <CircleIcon className="w-3 h-3 mr-2 inline-block" />
                     <span>All Categories</span>
@@ -79,6 +80,7 @@ function CardDeckOptions() {
                       onSelect={() => {
                         handleCategorySelection(cardCategory.id);
                       }}
+                      data-testid="category-selection-option"
                     >
                       <span className={`w-3 h-3 ${cardCategory.color} rounded-full mr-2 inline-block`} />
                       <span>{cardCategory.title}</span>
@@ -93,7 +95,7 @@ function CardDeckOptions() {
         {/* Sorting Selection */}
         <Popover open={openSortingFilter} onOpenChange={setOpenSortingFilter}>
           <PopoverTrigger asChild>
-            <Button variant="outline" className="justify-start">
+            <Button variant="outline" className="justify-start" data-testid="sorting-selection-trigger">
               {sortingOptions[selectedSortingId].title}
             </Button>
           </PopoverTrigger>
@@ -108,6 +110,7 @@ function CardDeckOptions() {
                       onSelect={() => {
                         handleSortingSelection(sortingOption.id);
                       }}
+                      data-testid="sorting-selection-option"
                     >
                       <span>{sortingOption.title}</span>
                     </CommandItem>

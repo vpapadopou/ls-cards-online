@@ -43,7 +43,7 @@ function Navigation() {
               })}
               variant="ghost"
               onClick={() => setOpenSheet(false)}
-              data-testid="cards-page-button"
+              data-testid="navigation-page-link"
               asChild
             >
               <Link to="/">Cards</Link>
@@ -56,7 +56,7 @@ function Navigation() {
               })}
               variant="ghost"
               onClick={() => setOpenSheet(false)}
-              data-testid="cards-about-button"
+              data-testid="navigation-page-link"
               asChild
             >
               <Link to="/about">About</Link>

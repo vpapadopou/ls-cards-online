@@ -29,7 +29,7 @@ function Sidebar() {
                 'bg-accent': location.pathname === '/',
               })}
               variant="ghost"
-              data-testid="cards-page-button"
+              data-testid="navigation-page-link"
               asChild
             >
               <Link to="/">Cards</Link>
@@ -41,7 +41,7 @@ function Sidebar() {
                 'bg-accent': location.pathname === '/about',
               })}
               variant="ghost"
-              data-testid="about-page-button"
+              data-testid="navigation-page-link"
               asChild
             >
               <Link to="/about">About</Link>
