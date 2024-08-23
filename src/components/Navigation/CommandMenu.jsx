@@ -61,7 +61,7 @@ function CommandMenu() {
         </kbd>
       </Button>
       <CommandDialog open={openCommandMenu} onOpenChange={setOpenCommandMenu}>
-        <CommandInput placeholder="Search cards..." />
+        <CommandInput placeholder="Search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           {/* Cards */}
