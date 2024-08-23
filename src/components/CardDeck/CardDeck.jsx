@@ -10,8 +10,11 @@ import CardDeckList from './CardDeckList';
 import CardDeckOptions from './CardDeckOptions';
 
 function CardDeck() {
+  const selectedTab = useCardStore((state) => state.selectedTab);
+  const setSelectedTab = useCardStore((state) => state.setSelectedTab);
   const setSelectedCardId = useCardStore((state) => state.setSelectedCardId);
   const setOpenCardDrawer = useCardStore((state) => state.setOpenCardDrawer);
+
   const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   const handleCardPreviewclick = (cardId) => {
@@ -20,7 +23,7 @@ function CardDeck() {
   };
 
   return (
-    <Tabs defaultValue="cardView">
+    <Tabs value={selectedTab} onValueChange={setSelectedTab}>
       <CardDeckOptions />
 
       <TabsContent value="cardView">

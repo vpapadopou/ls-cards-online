@@ -3,6 +3,8 @@ import { create } from 'zustand';
 export const useCardStore = create((set) => ({
   selectedCardId: 1,
   setSelectedCardId: (card) => set(() => ({ selectedCardId: card })),
+  selectedTab: 'cardView',
+  setSelectedTab: (tab) => set(() => ({ selectedTab: tab })),
   selectedCategoryId: 0,
   setSelectedCategoryId: (category) => set(() => ({ selectedCategoryId: category })),
   selectedSortingId: 0,
