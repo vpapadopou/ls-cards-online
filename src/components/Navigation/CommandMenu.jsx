@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 
@@ -16,18 +16,26 @@ function CommandMenu() {
   const cardList = getAllCards();
   const setSelectedCardId = useCardStore((state) => state.setSelectedCardId);
   const setOpenCardDrawer = useCardStore((state) => state.setOpenCardDrawer);
-  const [openCommandMenu, setOpenCommandMenu] = useState(false);
+
   const location = useLocation();
+  const navigate = useNavigate();
   const isDesktop = useMediaQuery('(min-width: 1024px)');
 
+  const [openCommandMenu, setOpenCommandMenu] = useState(false);
+
   // When selecting a card, set the selected card id in the store,
-  // then close the command menu and if we are on a mobile device
-  // or on a page other than the card deck show the card dialog
+  // then close the command menu and if we on a page other than the
+  // card deck navigate to the card deck page. If we are on a mobile
+  // device, show the card dialog
   const handleCardSelection = (cardId) => {
     setSelectedCardId(cardId);
     setOpenCommandMenu(false);
 
-    if (location.pathname !== '/' || !isDesktop) {
+    if (location.pathname !== '/') {
+      navigate('/');
+    }
+
+    if (!isDesktop) {
       setOpenCardDrawer(true);
     }
   };
