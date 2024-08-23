@@ -18,7 +18,8 @@ function CardDeckList({ onClick }) {
 
   return (
     // Scroll height is screen minus navbar minus approx 5.2rem for the sorting options
-    <ScrollArea className="h-[calc(100vh-60px-5.2rem)]">
+    // For small screens where it wraps to 2 rows, use 9rem
+    <ScrollArea className="h-[calc(100vh-60px-9rem)] md:h-[calc(100vh-60px-5.2rem)]">
       <div className="flex flex-col gap-2 p-4 pt-0">
         {/* Loop through cards */}
         {cards.map((card) => (
