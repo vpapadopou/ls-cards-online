@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -24,23 +23,14 @@ function Sidebar() {
         <div className="flex-1">
           <nav className="grid gap-1 text-sm font-medium items-start px-2 lg:px-4">
             {/* Cards */}
-            <Button
-              className={clsx('justify-start px-3 py-2', {
-                'bg-accent': location.pathname === '/',
-              })}
-              variant="ghost"
-              data-testid="navigation-page-link"
-              asChild
-            >
+            <Button className="justify-start px-3 py-2" variant={location.pathname === '/' ? '' : 'ghost'} data-testid="navigation-page-link" asChild>
               <Link to="/">Cards</Link>
             </Button>
             {/* /Cards */}
             {/* About */}
             <Button
-              className={clsx('justify-start px-3 py-2', {
-                'bg-accent': location.pathname === '/about',
-              })}
-              variant="ghost"
+              className="justify-start px-3 py-2"
+              variant={location.pathname === '/about' ? '' : 'ghost'}
               data-testid="navigation-page-link"
               asChild
             >

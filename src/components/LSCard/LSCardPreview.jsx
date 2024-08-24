@@ -15,7 +15,7 @@ function LSCardPreview({ data, onClick }) {
   return (
     // On click send the card id back to open the drawer
     <button className="flex-auto max-w-sm" type="button" onClick={() => onClick(data.id)} data-testid="card-preview">
-      <Card className={clsx('text-left hover:bg-accent', { 'bg-accent': selectedCardId === data.id })}>
+      <Card className={clsx('text-left hover:bg-muted', { 'bg-muted': selectedCardId === data.id })}>
         <CardContent className="flex flex-col min-h-44 place-content-between gap-4 p-4">
           <LSCardHeader data={data} />
         </CardContent>

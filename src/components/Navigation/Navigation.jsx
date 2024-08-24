@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { React, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -38,10 +37,8 @@ function Navigation() {
             {/* Sheet content */}
             {/* Cards */}
             <Button
-              className={clsx('text-md justify-start px-3 py-2', {
-                'bg-accent': location.pathname === '/',
-              })}
-              variant="ghost"
+              className="text-md justify-start px-3 py-2"
+              variant={location.pathname === '/' ? '' : 'ghost'}
               onClick={() => setOpenSheet(false)}
               data-testid="navigation-page-link"
               asChild
@@ -51,10 +48,8 @@ function Navigation() {
             {/* /Cards */}
             {/* About */}
             <Button
-              className={clsx('text-md justify-start px-3 py-2', {
-                'bg-accent': location.pathname === '/about',
-              })}
-              variant="ghost"
+              className="text-md justify-start px-3 py-2"
+              variant={location.pathname === '/about' ? '' : 'ghost'}
               onClick={() => setOpenSheet(false)}
               data-testid="navigation-page-link"
               asChild
