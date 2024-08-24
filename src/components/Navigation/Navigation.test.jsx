@@ -32,11 +32,11 @@ describe('Component: Navigation', () => {
     expect(screen.queryAllByTestId('navigation-page-link').length).toEqual(0);
   });
 
-  test('should display 2 navigation page links when the sheet is open', () => {
+  test('should display 3 navigation page links when the sheet is open', () => {
     // Open sheet
     const button = screen.getByTestId('sheet-toggle-button');
     fireEvent.click(button);
 
-    expect(screen.getAllByTestId('navigation-page-link').length).toEqual(2);
+    expect(screen.getAllByTestId('navigation-page-link').length).toEqual(3);
   });
 });
