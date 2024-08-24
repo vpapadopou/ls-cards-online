@@ -23,14 +23,19 @@ function Sidebar() {
         <div className="flex-1">
           <nav className="grid gap-1 text-sm font-medium items-start px-2 lg:px-4">
             {/* Cards */}
-            <Button className="justify-start px-3 py-2" variant={location.pathname === '/' ? '' : 'ghost'} data-testid="navigation-page-link" asChild>
+            <Button
+              className="justify-start px-3 py-2"
+              variant={location.pathname === '/' ? 'secondary' : 'ghost'}
+              data-testid="navigation-page-link"
+              asChild
+            >
               <Link to="/">Cards</Link>
             </Button>
             {/* /Cards */}
             {/* About */}
             <Button
               className="justify-start px-3 py-2"
-              variant={location.pathname === '/about' ? '' : 'ghost'}
+              variant={location.pathname === '/about' ? 'secondary' : 'ghost'}
               data-testid="navigation-page-link"
               asChild
             >

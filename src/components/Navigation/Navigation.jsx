@@ -38,7 +38,7 @@ function Navigation() {
             {/* Cards */}
             <Button
               className="text-md justify-start px-3 py-2"
-              variant={location.pathname === '/' ? '' : 'ghost'}
+              variant={location.pathname === '/' ? 'secondary' : 'ghost'}
               onClick={() => setOpenSheet(false)}
               data-testid="navigation-page-link"
               asChild
@@ -49,7 +49,7 @@ function Navigation() {
             {/* About */}
             <Button
               className="text-md justify-start px-3 py-2"
-              variant={location.pathname === '/about' ? '' : 'ghost'}
+              variant={location.pathname === '/about' ? 'secondary' : 'ghost'}
               onClick={() => setOpenSheet(false)}
               data-testid="navigation-page-link"
               asChild
