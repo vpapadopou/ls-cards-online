@@ -29,7 +29,10 @@ function CardDeckDetails() {
   return (
     // Height of scroll area is screen minus header
     <ScrollArea className="h-[calc(100vh-60px)]">
-      <div className="flex justify-center px-8 py-10">{loading ? <LoadingSpinner /> : <LSCard data={card} />}</div>
+      {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
+      <div className="flex justify-center px-8 py-10" tabIndex="0">
+        {loading ? <LoadingSpinner /> : <LSCard data={card} />}
+      </div>
     </ScrollArea>
   );
 }

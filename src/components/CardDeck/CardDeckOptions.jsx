@@ -59,7 +59,7 @@ function CardDeckOptions() {
           </PopoverTrigger>
           <PopoverContent className="w-40 p-0" side="bottom" align="start">
             <Command>
-              <CommandList>
+              <CommandList tabIndex="0">
                 <CommandGroup>
                   {/* All categories is a special option with id 0 */}
                   <CommandItem
@@ -101,7 +101,7 @@ function CardDeckOptions() {
           </PopoverTrigger>
           <PopoverContent className="w-52 p-0" side="bottom" align="start">
             <Command>
-              <CommandList>
+              <CommandList tabIndex="0">
                 <CommandGroup>
                   {sortingOptions.map((sortingOption) => (
                     <CommandItem
