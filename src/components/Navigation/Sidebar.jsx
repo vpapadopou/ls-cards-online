@@ -33,16 +33,16 @@ function Sidebar() {
               <Link to="/">Cards</Link>
             </Button>
             {/* /Cards */}
-            {/* Workshops */}
+            {/* Saved */}
             <Button
               className="justify-start px-3 py-2"
-              variant={location.pathname === '/workshops' ? 'secondary' : 'ghost'}
+              variant={location.pathname === '/saved' ? 'secondary' : 'ghost'}
               data-testid="navigation-page-link"
               asChild
             >
-              <Link to="/workshops">Workshops</Link>
+              <Link to="/saved">Saved</Link>
             </Button>
-            {/* /Workshops */}
+            {/* /Saved */}
             <Separator className="my-2" />
             {/* About */}
             <Button

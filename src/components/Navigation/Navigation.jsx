@@ -47,17 +47,17 @@ function Navigation() {
               <Link to="/">Cards</Link>
             </Button>
             {/* /Cards */}
-            {/* Workshops */}
+            {/* Saved */}
             <Button
               className="text-md justify-start px-3 py-2"
-              variant={location.pathname === '/workshops' ? 'secondary' : 'ghost'}
+              variant={location.pathname === '/saved' ? 'secondary' : 'ghost'}
               onClick={() => setOpenSheet(false)}
               data-testid="navigation-page-link"
               asChild
             >
-              <Link to="/workshops">Workshops</Link>
+              <Link to="/saved">Saved</Link>
             </Button>
-            {/* /Workshops */}
+            {/* /Saved */}
             <Separator className="my-2" />
             {/* About */}
             <Button

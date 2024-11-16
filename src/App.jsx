@@ -9,7 +9,7 @@ import { useCardStore } from './hooks/use-card-store';
 
 import About from './pages/About';
 import Cards from './pages/Cards';
-import Workshops from './pages/Workshops';
+import Saved from './pages/Saved';
 import NotFound from './pages/NotFound';
 
 import { ThemeProvider } from './providers/theme-provider';
@@ -31,7 +31,7 @@ function App() {
             {/* /Card Drawer */}
             <Routes>
               <Route path="/" element={<Cards />} />
-              <Route path="/workshops" element={<Workshops />} />
+              <Route path="/saved" element={<Saved />} />
               <Route path="/about" element={<About />} />
               <Route path="/*" element={<NotFound />} />
             </Routes>
