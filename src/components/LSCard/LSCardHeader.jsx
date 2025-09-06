@@ -1,12 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { HeartIcon } from '@phosphor-icons/react';
+
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+
+import { useSavedCardsStore } from '@/hooks/use-saved-cards-store';
 
 import { getCategoryById } from '@/services/card-categories';
 
-function LSCardHeader({ data }) {
+function LSCardHeader({ data, canSave = false }) {
   const CardLogo = data.logo;
+  const isCardSaved = useSavedCardsStore((state) => state.isCardSaved(data.id));
+  const toggleCardSaved = useSavedCardsStore((state) => state.toggleCardSaved);
 
   return (
     <>
@@ -25,7 +32,13 @@ function LSCardHeader({ data }) {
             <h4 className="scroll-m-20 text-xl font-semibold tracking-tight text-foreground mt-1">{data.title}</h4>
             {/* /Title */}
             {/* Actions */}
-            <div className="flex flex-row ml-auto" />
+            {canSave && (
+              <div className="flex flex-row ml-auto">
+                <Button className="rounded-full p-2" variant="ghost" onClick={() => toggleCardSaved(data.id)}>
+                  <HeartIcon className={`w-5 h-5 ${isCardSaved ? 'text-red-500' : 'text-current'}`} weight={isCardSaved ? 'fill' : 'regular'} />
+                </Button>
+              </div>
+            )}
             {/* /Actions */}
           </div>
           {/* /Title & actions */}
@@ -59,6 +72,7 @@ function LSCardHeader({ data }) {
 }
 
 LSCardHeader.propTypes = {
+  canSave: PropTypes.bool,
   data: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
