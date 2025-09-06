@@ -11,7 +11,7 @@ import { getCardById } from '@/services/cards';
 
 function CardDeckDetails() {
   const selectedCardId = useCardStore((state) => state.selectedCardId);
-  const card = getCardById(selectedCardId);
+  const [card, setCard] = useState(() => getCardById(selectedCardId));
   const [loading, setLoading] = useState(true);
 
   // Used for fake loading indicator
@@ -19,6 +19,10 @@ function CardDeckDetails() {
     setLoading(true);
     // Use setTimeout to turn off the loading indicator after 300ms
     const timeoutId = setTimeout(() => {
+      // Update the card data here after the loading spinner ends otherwise the
+      // state for the saved card icon is updated first and it flickers before
+      // the loading spinner is displayed
+      setCard(getCardById(selectedCardId));
       setLoading(false);
     }, 300);
 
