@@ -17,7 +17,7 @@ function LSCardPreview({ data, onClick }) {
     <button className="flex-auto max-w-sm" type="button" onClick={() => onClick(data.id)} data-testid="card-preview">
       <Card className={clsx('text-left hover:bg-muted', { 'bg-muted': selectedCardId === data.id })}>
         <CardContent className="flex flex-col min-h-44 place-content-between gap-4 p-4">
-          <LSCardHeader data={data} />
+          <LSCardHeader data={data} canSave />
         </CardContent>
       </Card>
       <span className="sr-only">{data.title}</span>

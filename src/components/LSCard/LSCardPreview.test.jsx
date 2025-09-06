@@ -27,7 +27,7 @@ describe('Component: LSCardPreview', () => {
     cleanup();
     render(<LSCardPreview data={testCardData} onClick={stub} />);
 
-    const card = screen.getByRole('button');
+    const card = screen.getByTestId('card-preview');
     fireEvent.click(card);
 
     // We expect the callback with the card's id as parameter
