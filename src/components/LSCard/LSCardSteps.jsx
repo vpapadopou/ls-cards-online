@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Badge } from '@/components/ui/badge';
 
-function LSCardSteps({ title, steps }) {
+function LSCardSteps({ title = 'Steps', steps }) {
   return (
     <div>
       <h5 className="scroll-m-20 text-m font-semibold tracking-tight text-foreground">{title}</h5>
@@ -41,10 +41,6 @@ LSCardSteps.propTypes = {
       time: PropTypes.string,
     })
   ).isRequired,
-};
-
-LSCardSteps.defaultProps = {
-  title: 'Steps',
 };
 
 export default LSCardSteps;
