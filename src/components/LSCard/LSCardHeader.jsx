@@ -15,6 +15,9 @@ function LSCardHeader({ data, canSave = false }) {
   const isCardSaved = useSavedCardsStore((state) => state.isCardSaved(data.id));
   const toggleCardSaved = useSavedCardsStore((state) => state.toggleCardSaved);
 
+  // Save button / Red when saved - Outline when not
+  const saveIcon = <HeartIcon className={`w-5 h-5 ${isCardSaved ? 'text-red-500' : 'text-current'}`} weight={isCardSaved ? 'fill' : 'regular'} />;
+
   return (
     <>
       {/* Row 1 - Header */}
@@ -32,13 +35,17 @@ function LSCardHeader({ data, canSave = false }) {
             <h4 className="scroll-m-20 text-xl font-semibold tracking-tight text-foreground mt-1">{data.title}</h4>
             {/* /Title */}
             {/* Actions */}
-            {canSave && (
-              <div className="flex flex-row ml-auto">
+            {/* Saved Button / Indicator */}
+            <div className="flex flex-row ml-auto">
+              {canSave ? (
                 <Button className="rounded-full p-2" variant="ghost" onClick={() => toggleCardSaved(data.id)}>
-                  <HeartIcon className={`w-5 h-5 ${isCardSaved ? 'text-red-500' : 'text-current'}`} weight={isCardSaved ? 'fill' : 'regular'} />
+                  {saveIcon}
                 </Button>
-              </div>
-            )}
+              ) : (
+                saveIcon
+              )}
+            </div>
+            {/* /Saved Button / Indicator */}
             {/* /Actions */}
           </div>
           {/* /Title & actions */}
