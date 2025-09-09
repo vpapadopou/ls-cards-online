@@ -35,7 +35,7 @@ function CardDeckDetails() {
     <ScrollArea className="h-[calc(100vh-60px)]">
       {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
       <div className="flex justify-center px-8 py-10" tabIndex="0">
-        {loading ? <LoadingSpinner /> : <LSCard data={card} />}
+        {loading ? <LoadingSpinner /> : <LSCard data={card} canSave />}
       </div>
     </ScrollArea>
   );
