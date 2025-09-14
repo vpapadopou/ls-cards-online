@@ -23,7 +23,7 @@ function LSCardPreview({ data, onClick }) {
       className="flex-auto max-w-sm cursor-pointer"
     >
       <Card
-        className={clsx('text-left hover:bg-muted focus:outline-none focus:ring-2 focus:ring-ring rounded-lg', {
+        className={clsx('text-left hover:bg-accent focus:outline-none focus:ring-2 focus:ring-ring rounded-lg', {
           'bg-muted': selectedCardId === data.id,
         })}
       >

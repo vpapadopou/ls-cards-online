@@ -42,7 +42,7 @@ function CardDeckList({ onClick }) {
             onKeyDown={(e) => e.key === 'Enter' && onClick(card.id)}
             className={clsx(
               'flex flex-col items-start gap-2 rounded-lg border p-3 text-left text-md transition-all hover:bg-accent cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring',
-              { 'bg-accent': selectedCardId === card.id }
+              { 'bg-muted': selectedCardId === card.id }
             )}
             data-testid="card-list-option"
           >
