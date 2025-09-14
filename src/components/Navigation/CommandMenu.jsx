@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+import { BookmarksIcon, CardsIcon, InfoIcon } from '@phosphor-icons/react';
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 
 import { Button } from '@/components/ui/button';
@@ -40,6 +41,11 @@ function CommandMenu() {
     }
   };
 
+  const handlePageSelection = (path) => {
+    setOpenCommandMenu(false);
+    navigate(path);
+  };
+
   // Used to handle heystrokes
   useEffect(() => {
     const handleKeyDown = (keyboardEvent) => {
@@ -73,9 +79,9 @@ function CommandMenu() {
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           {/* Cards */}
-          <CommandGroup>
+          <CommandGroup heading="Cards">
             {cardList.map((card) => (
-              <CommandItem key={card.id} onSelect={() => handleCardSelection(card.id)} data-testid="command-menu-item">
+              <CommandItem key={card.id} onSelect={() => handleCardSelection(card.id)} data-testid="command-menu-item-cards">
                 {card.title}
                 <div className="flex flex-row ml-auto">
                   {/* Loop through categories */}
@@ -91,6 +97,22 @@ function CommandMenu() {
             ))}
           </CommandGroup>
           {/* /Cards */}
+          {/* Pages */}
+          <CommandGroup heading="Pages">
+            <CommandItem onSelect={() => handlePageSelection('/')} data-testid="command-menu-item-pages">
+              <CardsIcon className="mr-2" />
+              <span>Cards</span>
+            </CommandItem>
+            <CommandItem onSelect={() => handlePageSelection('/saved')} data-testid="command-menu-item-pages">
+              <BookmarksIcon className="mr-2" />
+              Saved
+            </CommandItem>
+            <CommandItem onSelect={() => handlePageSelection('/about')} data-testid="command-menu-item-pages">
+              <InfoIcon className="mr-2" />
+              About
+            </CommandItem>
+          </CommandGroup>
+          {/* /Pages */}
         </CommandList>
       </CommandDialog>
     </>

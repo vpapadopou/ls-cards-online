@@ -41,14 +41,22 @@ describe('Component: CommandMenu', () => {
   });
 
   test('should NOT display command menu items when the command menu is closed', () => {
-    expect(screen.queryAllByTestId('command-menu-item').length).toEqual(0);
+    expect(screen.queryAllByTestId('command-menu-item-cards').length).toEqual(0);
   });
 
-  test('should display 33 command menu items when the command menu is open', async () => {
+  test('should display 33 command menu items cards when the command menu is open', async () => {
     // Open command menu
     const button = screen.getByTestId('command-menu-trigger');
     await user.click(button);
 
-    expect(screen.getAllByTestId('command-menu-item').length).toEqual(33);
+    expect(screen.getAllByTestId('command-menu-item-cards').length).toEqual(33);
+  });
+
+  test('should display 3 command menu items pages when the command menu is open', async () => {
+    // Open command menu
+    const button = screen.getByTestId('command-menu-trigger');
+    await user.click(button);
+
+    expect(screen.getAllByTestId('command-menu-item-pages').length).toEqual(3);
   });
 });
