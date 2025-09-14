@@ -26,7 +26,7 @@ function CardDrawer({ openDrawer, setOpenDrawer }) {
         <ScrollArea className="h-[80vh]">
           <div className="flex flex-col items-center p-8">
             <div className="max-w-sm">
-              <LSCard data={cardData} />
+              <LSCard data={cardData} canSave />
             </div>
           </div>
         </ScrollArea>

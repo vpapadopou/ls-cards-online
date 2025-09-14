@@ -2,11 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+
+import { useSavedCardsStore } from '@/hooks/use-saved-cards-store';
 
 import { getCategoryById } from '@/services/card-categories';
 
-function LSCardHeader({ data }) {
+import LSCardSavedIndicator from './LSCardSavedIndicator';
+
+function LSCardHeader({ data, canSave = false }) {
   const CardLogo = data.logo;
+  const toggleCardSaved = useSavedCardsStore((state) => state.toggleCardSaved);
+
+  const handleSaveButtonClick = (event) => {
+    event.stopPropagation();
+    toggleCardSaved(data.id);
+  };
+
+  // Save button / Red when saved - Outline when not
+  const saveIcon = <LSCardSavedIndicator cardId={data.id} />;
 
   return (
     <>
@@ -25,7 +39,17 @@ function LSCardHeader({ data }) {
             <h4 className="scroll-m-20 text-xl font-semibold tracking-tight text-foreground mt-1">{data.title}</h4>
             {/* /Title */}
             {/* Actions */}
-            <div className="flex flex-row ml-auto" />
+            {/* Saved Button / Indicator */}
+            <div className="flex flex-row ml-auto">
+              {canSave ? (
+                <Button className="rounded-full p-2" variant="ghost" onClick={handleSaveButtonClick}>
+                  {saveIcon}
+                </Button>
+              ) : (
+                saveIcon
+              )}
+            </div>
+            {/* /Saved Button / Indicator */}
             {/* /Actions */}
           </div>
           {/* /Title & actions */}
@@ -59,6 +83,7 @@ function LSCardHeader({ data }) {
 }
 
 LSCardHeader.propTypes = {
+  canSave: PropTypes.bool,
   data: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,

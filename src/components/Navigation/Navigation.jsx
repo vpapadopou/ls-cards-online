@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { HamburgerMenuIcon } from '@radix-ui/react-icons';
 
 import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 import LsLogoSvg from '@/data/LsLogo';
@@ -46,6 +47,18 @@ function Navigation() {
               <Link to="/">Cards</Link>
             </Button>
             {/* /Cards */}
+            {/* Saved */}
+            <Button
+              className="text-md justify-start px-3 py-2"
+              variant={location.pathname === '/saved' ? 'secondary' : 'ghost'}
+              onClick={() => setOpenSheet(false)}
+              data-testid="navigation-page-link"
+              asChild
+            >
+              <Link to="/saved">Saved</Link>
+            </Button>
+            {/* /Saved */}
+            <Separator className="my-2" />
             {/* About */}
             <Button
               className="text-md justify-start px-3 py-2"

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
 
 import LsLogoSvg from '@/data/LsLogo';
 
@@ -32,6 +33,17 @@ function Sidebar() {
               <Link to="/">Cards</Link>
             </Button>
             {/* /Cards */}
+            {/* Saved */}
+            <Button
+              className="justify-start px-3 py-2"
+              variant={location.pathname === '/saved' ? 'secondary' : 'ghost'}
+              data-testid="navigation-page-link"
+              asChild
+            >
+              <Link to="/saved">Saved</Link>
+            </Button>
+            {/* /Saved */}
+            <Separator className="my-2" />
             {/* About */}
             <Button
               className="justify-start px-3 py-2"

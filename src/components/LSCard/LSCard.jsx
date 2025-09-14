@@ -5,10 +5,10 @@ import LSCardHeader from './LSCardHeader';
 import LSCardSteps from './LSCardSteps';
 import LSCardText from './LSCardText';
 
-function LSCard({ data }) {
+function LSCard({ data, canSave = false }) {
   return (
     <div className="flex flex-col place-content-evenly gap-4">
-      <LSCardHeader data={data} />
+      <LSCardHeader data={data} canSave={canSave} />
       {data.invitation && <LSCardText title="Invitation" text={data.invitation} />}
       <LSCardText title="People" text={data.people} />
       <LSCardText title="Space & Materials" text={data.spaceAndMaterials} />
@@ -19,6 +19,7 @@ function LSCard({ data }) {
 }
 
 LSCard.propTypes = {
+  canSave: PropTypes.bool,
   data: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,

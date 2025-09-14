@@ -22,7 +22,7 @@ describe('Component: Sidebar', () => {
     expect(screen.getByTestId('sidebar-logo')).toBeDefined();
   });
 
-  test('should display 2 navigation page links', () => {
-    expect(screen.getAllByTestId('navigation-page-link').length).toEqual(2);
+  test('should display 3 navigation page links', () => {
+    expect(screen.getAllByTestId('navigation-page-link').length).toEqual(3);
   });
 });

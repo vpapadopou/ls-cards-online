@@ -26,5 +26,7 @@ module.exports = {
     // 'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/jsx-uses-vars': 'error',
     'react/jsx-uses-react': 'error',
+    // Defaultprops are now deprecated so turn off
+    'react/require-default-props': 'off',
   },
 };

@@ -14,14 +14,25 @@ function LSCardPreview({ data, onClick }) {
 
   return (
     // On click send the card id back to open the drawer
-    <button className="flex-auto max-w-sm" type="button" onClick={() => onClick(data.id)} data-testid="card-preview">
-      <Card className={clsx('text-left hover:bg-muted', { 'bg-muted': selectedCardId === data.id })}>
+    <div
+      role="button"
+      tabIndex={0}
+      onClick={() => onClick(data.id)}
+      onKeyDown={(e) => e.key === 'Enter' && onClick(data.id)}
+      data-testid="card-preview"
+      className="flex-auto max-w-sm cursor-pointer"
+    >
+      <Card
+        className={clsx('text-left hover:bg-muted focus:outline-none focus:ring-2 focus:ring-ring rounded-lg', {
+          'bg-muted': selectedCardId === data.id,
+        })}
+      >
         <CardContent className="flex flex-col min-h-44 place-content-between gap-4 p-4">
-          <LSCardHeader data={data} />
+          <LSCardHeader data={data} canSave />
         </CardContent>
       </Card>
       <span className="sr-only">{data.title}</span>
-    </button>
+    </div>
   );
 }
 
