@@ -2,6 +2,8 @@ import clsx from 'clsx';
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import LSCardSavedIndicator from '@/components/LSCard/LSCardSavedIndicator';
+
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
@@ -14,6 +16,7 @@ function CardDeckList({ onClick }) {
   const selectedCardId = useCardStore((state) => state.selectedCardId);
   const selectedCategoryId = useCardStore((state) => state.selectedCategoryId);
   const selectedSortingId = useCardStore((state) => state.selectedSortingId);
+
   const cards = getCardsByCategorySorted(selectedCategoryId, selectedSortingId);
 
   return (
@@ -43,19 +46,32 @@ function CardDeckList({ onClick }) {
               </div>
             </div>
             <div className="text-sm text-muted-foreground">{card.description}</div>
-            <div className="flex items-center gap-2">
-              {/* Loop through categories */}
-              {card.categories.map((categoryId) => (
-                <div className="flex items-center mr-3" key={categoryId}>
-                  {/* The category data is in the -1 position in the array since id numbering starts from 1 */}
-                  <span className={`w-2.5 h-2.5 ${getCategoryById(categoryId).color} rounded-full mr-2`} data-testid="category-color" />
-                  <span className="text-sm font-bold text-muted-foreground" data-testid="category-title">
-                    {getCategoryById(categoryId).title}
-                  </span>
+            {/* Categories and Actions */}
+            <div className="flex w-full flex-col gap-1">
+              <div className="flex items-center">
+                {/* Categories */}
+                <div className="flex items-center gap-2">
+                  {/* Loop through categories */}
+                  {card.categories.map((categoryId) => (
+                    <div className="flex items-center mr-3" key={categoryId}>
+                      {/* The category data is in the -1 position in the array since id numbering starts from 1 */}
+                      <span className={`w-2.5 h-2.5 ${getCategoryById(categoryId).color} rounded-full mr-2`} data-testid="category-color" />
+                      <span className="text-sm font-bold text-muted-foreground" data-testid="category-title">
+                        {getCategoryById(categoryId).title}
+                      </span>
+                    </div>
+                  ))}
+                  {/* /Loop through categories */}
                 </div>
-              ))}
-              {/* /Loop through categories */}
+                {/* /Categories */}
+                {/* Actions (pull right) */}
+                <div className="ml-auto">
+                  <LSCardSavedIndicator cardId={card.id} />
+                </div>
+                {/* /Actions */}
+              </div>
             </div>
+            {/* /Categories and Actions */}
           </button>
         ))}
         {/* /Loop through cards */}

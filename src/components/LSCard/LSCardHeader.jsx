@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { HeartIcon } from '@phosphor-icons/react';
-
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
@@ -10,13 +8,14 @@ import { useSavedCardsStore } from '@/hooks/use-saved-cards-store';
 
 import { getCategoryById } from '@/services/card-categories';
 
+import LSCardSavedIndicator from './LSCardSavedIndicator';
+
 function LSCardHeader({ data, canSave = false }) {
   const CardLogo = data.logo;
-  const isCardSaved = useSavedCardsStore((state) => state.isCardSaved(data.id));
   const toggleCardSaved = useSavedCardsStore((state) => state.toggleCardSaved);
 
   // Save button / Red when saved - Outline when not
-  const saveIcon = <HeartIcon className={`w-5 h-5 ${isCardSaved ? 'text-red-500' : 'text-current'}`} weight={isCardSaved ? 'fill' : 'regular'} />;
+  const saveIcon = <LSCardSavedIndicator cardId={data.id} />;
 
   return (
     <>
