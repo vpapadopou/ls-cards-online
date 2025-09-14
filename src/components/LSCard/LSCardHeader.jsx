@@ -14,6 +14,11 @@ function LSCardHeader({ data, canSave = false }) {
   const CardLogo = data.logo;
   const toggleCardSaved = useSavedCardsStore((state) => state.toggleCardSaved);
 
+  const handleSaveButtonClick = (event) => {
+    event.stopPropagation();
+    toggleCardSaved(data.id);
+  };
+
   // Save button / Red when saved - Outline when not
   const saveIcon = <LSCardSavedIndicator cardId={data.id} />;
 
@@ -37,7 +42,7 @@ function LSCardHeader({ data, canSave = false }) {
             {/* Saved Button / Indicator */}
             <div className="flex flex-row ml-auto">
               {canSave ? (
-                <Button className="rounded-full p-2" variant="ghost" onClick={() => toggleCardSaved(data.id)}>
+                <Button className="rounded-full p-2" variant="ghost" onClick={handleSaveButtonClick}>
                   {saveIcon}
                 </Button>
               ) : (
